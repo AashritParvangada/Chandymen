@@ -15,6 +15,6 @@ public class Gun : MonoBehaviour
 	public void ShootProjectile(Transform _origin)
 	{
 		GameObject newBullet = Instantiate(Projectile, _origin.position, _origin.rotation, null);
-		newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * bulletSpeed;
+		newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.up * bulletSpeed;
 	}
 }
