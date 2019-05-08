@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [SerializeField] int i_health = 100;
+    [SerializeField] int i_MaxHealth = 100;
     public float rotationSpeed = 450;
     Rigidbody rb;
     public float defaultWalkSpeed = 5;
@@ -79,5 +80,10 @@ public class PlayerController : MonoBehaviour
         walkSpeed = defaultWalkSpeed;
         yield return new WaitForSeconds(dashCoolDownTime);
         canDash = true;
+    }
+
+    public void DamageHealth(int DecreaseBy)
+    {
+        i_health -= DecreaseBy;
     }
 }
