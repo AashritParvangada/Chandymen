@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    public void AcidDamageHealth(int DecreaseBy)
+    public void DamageHealth(int DecreaseBy)
     {
         if (b_AboveAcid == false)
         {

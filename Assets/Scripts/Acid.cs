@@ -29,7 +29,7 @@ public class Acid : MonoBehaviour
         {
             if (b_PlayerisinAcid)
             {
-                playa.AcidDamageHealth(35);
+                playa.DamageHealth(35);
                 StartCoroutine(AcidCooldown());
 
             }
