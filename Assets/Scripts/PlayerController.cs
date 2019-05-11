@@ -15,12 +15,15 @@ public class PlayerController : MonoBehaviour
     public float dashTime = 0.3f;
     public float dashCoolDownTime = 3;
     private Quaternion targetRotation;
+
+    public bool b_AboveAcid = false;
     Gun playerGun;
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerGun = GetComponentInChildren<Gun>();
+
     }
 
     // Update is called once per frame
@@ -76,14 +79,25 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         walkSpeed = dashSpeed;
+        b_AboveAcid=true;
         yield return new WaitForSeconds(dashTime);
         walkSpeed = defaultWalkSpeed;
+        b_AboveAcid=false;
         yield return new WaitForSeconds(dashCoolDownTime);
         canDash = true;
     }
 
-    public void DamageHealth(int DecreaseBy)
+    public void AcidDamageHealth(int DecreaseBy)
     {
-        i_health -= DecreaseBy;
+        if (b_AboveAcid == false)
+        {
+            i_health -= DecreaseBy;
+            if (i_health <= 0)
+            {
+                i_health = 0;
+                this.enabled = false;
+            }
+
+        }
     }
 }
