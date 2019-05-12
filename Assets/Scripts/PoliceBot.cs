@@ -18,12 +18,14 @@ public class PoliceBot : MonoBehaviour
         SetTarget(_target);
     }
 
+    //Sets the bot to target the player and loops a coroutine that retargets the player's location every .3 seconds.
     public void SetTarget(PlayerController _target)
     {
         agent.SetDestination(_target.transform.position);
         StartCoroutine(RetargetPlayer(_target));
     }
 
+//Decrease the bot's health when shot. Currently is a 1HKO.
     private void OnTriggerEnter(Collider other) {
         if(other.GetComponent<PlasmaBullet>())
         {

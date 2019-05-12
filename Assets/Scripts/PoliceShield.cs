@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PoliceShield : MonoBehaviour
 {
+    //Destroy bullets that hit the shield, but damage the player who hits it.
     private void OnTriggerEnter(Collider other) {
         if(other.GetComponent<PlasmaBullet>())
         {

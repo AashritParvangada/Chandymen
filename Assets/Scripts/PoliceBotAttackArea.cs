@@ -5,7 +5,11 @@ using UnityEngine;
 public class PoliceBotAttackArea : MonoBehaviour
 {
     PlayerController PC_Playa;
+
+    //Assign a bunch of bots whom are activated by the player entering this trigger volume.
     [SerializeField] PoliceBot[] PB_Arr_BotsTriggeredByThis;
+
+    //When the player enters this volume, activate the bots.
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())

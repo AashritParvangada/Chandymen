@@ -29,23 +29,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+///Use these to test the player inputs to see if everything is working.
         //Debug.Log("Left Hor is " +Input.GetAxis("Left_Horizontal"));
         //Debug.Log("Left Ver is " +Input.GetAxis("Left_Vertical"));
         //Debug.Log("Right Hor is " +Input.GetAxis("Right_Horizontal"));
         //Debug.Log("Right Ver is " +Input.GetAxis("Right_Vertical"));
 
+        //Get the left and right controller's input based on some select axes.
         Vector3 left_Input =
         new Vector3(Input.GetAxisRaw("Left_Horizontal"), 0, -Input.GetAxisRaw("Left_Vertical"));
         Vector3 right_Input =
         new Vector3(Input.GetAxisRaw("Right_Horizontal"), 0, -Input.GetAxisRaw("Right_Vertical"));
         Vector3 motion = left_Input;
 
+//Only face the direction of right input if the player is pressing something.
         if (right_Input != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(right_Input);
 
         }
+
+        //If left input is full
         motion *= (Mathf.Abs(left_Input.x) == 1 && Mathf.Abs(left_Input.z) == 1) ? .7f : 1;
         motion *= walkSpeed;
 
