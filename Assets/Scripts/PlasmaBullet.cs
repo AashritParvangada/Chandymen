@@ -12,6 +12,7 @@ public class PlasmaBullet : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        StartCoroutine(DestroyBullet());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,5 +35,11 @@ public class PlasmaBullet : MonoBehaviour
             transform.eulerAngles = new Vector3(0, rot, 0);
             rb.velocity = 8 * transform.forward;
         }
+    }
+
+    IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }
