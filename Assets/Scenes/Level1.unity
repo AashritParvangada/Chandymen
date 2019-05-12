@@ -4118,11 +4118,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
-  orthographic size: 8
+  orthographic: 0
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4131,8 +4131,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
+  m_HDR: 1
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -4164,8 +4164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2729ea1f73a600a46b92beadbe4c06fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 9, z: -10}
-  angle: {x: 40, y: 0, z: 0}
+  position: {x: 0, y: 15, z: -8}
+  angle: {x: 55, y: 0, z: 0}
   puzzleMode: 0
 --- !u!1 &971901258
 GameObject:
