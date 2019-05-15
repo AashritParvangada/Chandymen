@@ -13,7 +13,7 @@ public class Centrifuge : MonoBehaviour
         {
             Debug.Log("Entered Trigger");
             PlasmaBullet thisBullet = other.GetComponent<PlasmaBullet>();
-            if(thisBullet.I_BulletCharge==i_chargesNeeded)
+            if (thisBullet.I_BulletCharge == i_chargesNeeded)
             {
                 //Should put animation here.
                 Destroy(go_door);
