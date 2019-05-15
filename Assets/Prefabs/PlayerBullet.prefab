@@ -91,7 +91,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8871055059298780262
 Rigidbody:
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a5cf3dc08814a4b9dd13f78517961f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxReflectionCount: 10
-  maxStepDistance: 200
-  bulletCharge: 0
+  I_maxReflectionCount: 10
+  F_maxStepDistance: 200
+  I_BulletCharge: 0
+  F_bulletDestroyTime: 10
