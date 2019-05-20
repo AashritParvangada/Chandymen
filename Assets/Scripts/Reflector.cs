@@ -14,12 +14,12 @@ public class Reflector : MonoBehaviour
     }
 
 
+    //If the player is within the sphere trigger.
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Got Player");
         if (other.tag=="Player")
         {
-            if (Input.GetKeyDown(KeyCode.JoystickButton1)) //Was 1
+            if (Input.GetKeyDown(KeyCode.JoystickButton1)) //Joystick 1 is X
             {
                 RotateReflector();
             }
@@ -35,7 +35,7 @@ public class Reflector : MonoBehaviour
         }
     }
 
-    void MakeHorizontalOrVertical()
+    void MakeHorizontalOrVertical() //Depending on which angle the reflector starts with, make it the other one.
     {
         if (isHorizontal)
         {
@@ -52,7 +52,7 @@ public class Reflector : MonoBehaviour
         }
     }
 
-    IEnumerator CloseToRotateForTime(float time)
+    IEnumerator CloseToRotateForTime(float time) //Lock rotation for a few seconds (OnTriggerStay calls every frame)
     {
         openToRotate = false;
         yield return new WaitForSeconds(time);
