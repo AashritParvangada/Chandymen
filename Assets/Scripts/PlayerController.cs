@@ -74,7 +74,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton4)) //Was 4 PS4
         {
-            Debug.Log("Dash Button");
             if (canDash) StartCoroutine(Dash());
         }
     }
