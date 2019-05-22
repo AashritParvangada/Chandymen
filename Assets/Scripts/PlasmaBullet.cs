@@ -6,7 +6,7 @@ public class PlasmaBullet : MonoBehaviour
 {
     public int I_maxReflectionCount = 10;
     public float F_maxStepDistance = 200;
-
+    [SerializeField] int F_BulletDamage = 50;
     public int I_BulletCharge = 0;
     [SerializeField] float F_bulletDestroyTime=10;
     Rigidbody rb;
@@ -21,6 +21,12 @@ public class PlasmaBullet : MonoBehaviour
         if (other.tag == "Reflector")
         {
             Reflect();
+        }
+
+        else if (other.GetComponent<Grunt>())
+        {
+            other.GetComponent<Grunt>().DamageHealth(F_BulletDamage);
+            Destroy(gameObject);
         }
     }
 
