@@ -6,10 +6,10 @@ using UnityEngine.AI;
 public class CleanerBot : MonoBehaviour
 {
     NavMeshAgent agent;
-    [SerializeField] Transform[] PatrolPathPoints;
+    public Transform[] Trans_Arr_PatrolPathPoints;
     int currentDestination = 0;
-    [SerializeField] float f_TimeInterval = 1;
-    [SerializeField] float f_ResetTimeInterval = 1;
+    public float f_TimeInterval = 1;
+    public float f_ResetTimeInterval = 1;
     PlayerController player;
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +26,7 @@ public class CleanerBot : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
+            other.transform.parent = transform;
             player.b_AboveAcid = true;
         }
     }
@@ -44,12 +45,21 @@ public class CleanerBot : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
-        Patrol();
+
+        CheckArraySizeToPatrol();
     }
 
-    void Patrol()
+    public void CheckArraySizeToPatrol()
     {
-        if (PatrolPathPoints.Length <= currentDestination + 1)
+        if (Trans_Arr_PatrolPathPoints.Length > 0)
+        {
+            Patrol();
+        }
+    }
+
+    void Patrol()//Goes through the array by moving.
+    {
+        if (Trans_Arr_PatrolPathPoints.Length <= currentDestination + 1)
         {
             currentDestination = 0;
             StartCoroutine(GoToNextDestination(currentDestination, f_ResetTimeInterval));
@@ -66,7 +76,7 @@ public class CleanerBot : MonoBehaviour
 
     IEnumerator GoToNextDestination(int _currDest, float _time)
     {
-        agent.SetDestination(PatrolPathPoints[currentDestination].position);
+        agent.SetDestination(Trans_Arr_PatrolPathPoints[currentDestination].position);
         yield return new WaitForSeconds(_time);
         Patrol();
     }

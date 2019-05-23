@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7463950349469379984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.63, y: 0.88, z: -12.85}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 0.2, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,9 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecd328dc1c17b8459bb9da0b34548ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatrolPathPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  Trans_Arr_PatrolPathPoints: []
   f_TimeInterval: 3
   f_ResetTimeInterval: 5
