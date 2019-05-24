@@ -8,8 +8,8 @@ public class CleanerBot : MonoBehaviour
     NavMeshAgent agent;
     public Transform[] Trans_Arr_PatrolPathPoints;
     int currentDestination = 0;
-    public float f_TimeInterval = 1;
-    public float f_ResetTimeInterval = 1;
+    public float F_TimeInterval = 1;
+    public float F_ResetTimeInterval = 1;
     PlayerController player;
 
     private void OnTriggerEnter(Collider other)
@@ -62,14 +62,14 @@ public class CleanerBot : MonoBehaviour
         if (Trans_Arr_PatrolPathPoints.Length <= currentDestination + 1)
         {
             currentDestination = 0;
-            StartCoroutine(GoToNextDestination(currentDestination, f_ResetTimeInterval));
+            StartCoroutine(GoToNextDestination(currentDestination, F_ResetTimeInterval));
 
         }
 
         else
         {
             currentDestination++;
-            StartCoroutine(GoToNextDestination(currentDestination, f_TimeInterval));
+            StartCoroutine(GoToNextDestination(currentDestination, F_TimeInterval));
         }
 
     }
