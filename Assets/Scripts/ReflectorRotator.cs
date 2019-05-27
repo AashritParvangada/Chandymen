@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reflector : MonoBehaviour
+public class ReflectorRotator : MonoBehaviour
 {
     Transform reflectorTransform;
     bool openToRotate = true;
@@ -10,17 +10,18 @@ public class Reflector : MonoBehaviour
     [SerializeField] float f_Time = 0.5f;
     private void Start()
     {
-        reflectorTransform = transform;
+        reflectorTransform = transform.parent;
     }
 
 
     //If the player is within the sphere trigger.
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag=="Player")
+        if (other.GetComponent<PlayerController>())
         {
             if (Input.GetKeyDown(KeyCode.JoystickButton1)) //Joystick 1 is X
             {
+            Debug.Log("Player in radius");
                 RotateReflector();
             }
         }

@@ -36,7 +36,7 @@ public class PlasmaBullet : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, F_maxStepDistance))
         {
-            Debug.Log("Hit Reflector");
+            //Debug.Log("Hit Reflector");
             //Calculates the angle for reflecting the bullet from walls.
             Vector3 reflectDirection = Vector3.Reflect(ray.direction, hit.normal);
 
