@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 ///Use these to test the player inputs to see if everything is working.
-        Debug.Log("Left Hor is " +Input.GetAxis("Left_Horizontal"));
+        //Debug.Log("Left Hor is " +Input.GetAxis("Left_Horizontal"));
         //Log("Left Ver is " +Input.GetAxis("Left_Vertical"));
         //Debug.Log("Right Hor is " +Input.GetAxis("Right_Horizontal"));
         //Debug.Log("Right Ver is " +Input.GetAxis("Right_Vertical"));

@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13377504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.13, y: 0.215, z: 42.12}
+  m_LocalPosition: {x: 3.06, y: 0.215, z: 41.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1992189956}
@@ -2051,6 +2051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: PatrolPathPoints.Array.data[0]
       value: 
       objectReference: {fileID: 478435364}
@@ -2067,6 +2072,26 @@ PrefabInstance:
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
       propertyPath: f_TimeInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 478435364}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1704298391}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2101,7 +2126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478435363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.27, y: 0.215, z: 32.39}
+  m_LocalPosition: {x: -16.28, y: 0.215, z: 32.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1018219193}
@@ -2261,6 +2286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  F_TimeInterval: 1
+  I_DamageCaused: 35
 --- !u!65 &488529641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3566,6 +3593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  F_TimeInterval: 1
+  I_DamageCaused: 35
 --- !u!65 &739215846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4125,6 +4154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: PatrolPathPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1574800868}
@@ -4153,6 +4187,36 @@ PrefabInstance:
       propertyPath: PatrolPathPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1740011737}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1574800868}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1632666689}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 2059409132}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1740011737}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
 --- !u!4 &884923207 stripped
@@ -4977,6 +5041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  F_TimeInterval: 1
+  I_DamageCaused: 35
 --- !u!114 &1134239825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5249,6 +5315,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: PatrolPathPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1249959178}
@@ -5265,6 +5336,26 @@ PrefabInstance:
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
       propertyPath: f_ResetTimeInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1249959178}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 122927069}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5536,6 +5627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  F_TimeInterval: 1
+  I_DamageCaused: 35
 --- !u!65 &1227811322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5856,6 +5949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: f_TimeInterval
       value: 6
       objectReference: {fileID: 0}
@@ -5874,6 +5972,26 @@ PrefabInstance:
       propertyPath: PatrolPathPoints.Array.data[1]
       value: 
       objectReference: {fileID: 112292616}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 112292616}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1103885254}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
 --- !u!4 &1247636726 stripped
@@ -6027,7 +6145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284974467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.25, y: 0.215, z: -12.5}
+  m_LocalPosition: {x: 9.21, y: 0.215, z: -11.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 312267457}
@@ -7183,6 +7301,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: f_TimeInterval
       value: 2
       objectReference: {fileID: 0}
@@ -7206,6 +7329,31 @@ PrefabInstance:
       propertyPath: PatrolPathPoints.Array.data[2]
       value: 
       objectReference: {fileID: 794292604}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1317529886}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 428285188}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 794292604}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
 --- !u!4 &1460139520 stripped
@@ -8429,6 +8577,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: f_ResetTimeInterval
       value: 3
       objectReference: {fileID: 0}
@@ -8440,6 +8593,26 @@ PrefabInstance:
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
       propertyPath: PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1625372932}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1673473508}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1625372932}
     m_RemovedComponents: []
@@ -8524,6 +8697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: PatrolPathPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1415570039}
@@ -8536,6 +8714,26 @@ PrefabInstance:
         type: 3}
       propertyPath: f_ResetTimeInterval
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1415570039}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 65436948}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
@@ -8824,7 +9022,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 4a1357029d6fe0d46835e54b27e0ef87, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fda8d165586db194a871917115053571, type: 2}
 --- !u!1 &1752458541
 GameObject:
   m_ObjectHideFlags: 0
@@ -9885,6 +10083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: PatrolPathPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1901390972}
@@ -9897,6 +10100,26 @@ PrefabInstance:
         type: 3}
       propertyPath: f_ResetTimeInterval
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1901390972}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 13377505}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
@@ -10397,6 +10620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
       propertyPath: PatrolPathPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1284974468}
@@ -10410,6 +10638,31 @@ PrefabInstance:
       propertyPath: PatrolPathPoints.Array.data[2]
       value: 
       objectReference: {fileID: 501096256}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1284974468}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1647697785}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: Trans_Arr_PatrolPathPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 501096256}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_TimeInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: F_ResetTimeInterval
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
 --- !u!1001 &3632318156318631077
@@ -10608,7 +10861,7 @@ PrefabInstance:
     - target: {fileID: 9149613961138742756, guid: 6f9548cee8652d54880f03016cad54c3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.7
+      value: -20.9
       objectReference: {fileID: 0}
     - target: {fileID: 9149613961138742756, guid: 6f9548cee8652d54880f03016cad54c3,
         type: 3}
@@ -10618,7 +10871,7 @@ PrefabInstance:
     - target: {fileID: 9149613961138742756, guid: 6f9548cee8652d54880f03016cad54c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.8
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 9149613961138742756, guid: 6f9548cee8652d54880f03016cad54c3,
         type: 3}
