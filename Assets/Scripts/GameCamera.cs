@@ -14,7 +14,7 @@ public class GameCamera : MonoBehaviour
         if (!puzzleMode)
         {
 
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindObjectOfType<PlayerController>().transform;
             transform.eulerAngles = new Vector3(80, 0, 0);
         }
     }
