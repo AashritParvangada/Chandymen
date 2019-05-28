@@ -214,12 +214,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ef2cf017dfa1e4887f56a29ad881ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  i_health: 100
+  i_MaxHealth: 100
   rotationSpeed: 450
   defaultWalkSpeed: 5
   walkSpeed: 5
   dashSpeed: 15
   dashTime: 0.2
   dashCoolDownTime: 2
+  b_AboveAcid: 0
 --- !u!54 &9149613961138742759
 Rigidbody:
   m_ObjectHideFlags: 0

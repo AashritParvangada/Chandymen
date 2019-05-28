@@ -8,6 +8,7 @@ public class ReflectorRotator : MonoBehaviour
     bool openToRotate = true;
     [SerializeField] bool isHorizontal;
     [SerializeField] float f_Time = 0.5f;
+    [SerializeField] float f_AngleOne = 45, f_AngleTwo=135;
     private void Start()
     {
         reflectorTransform = transform.parent;
@@ -40,14 +41,14 @@ public class ReflectorRotator : MonoBehaviour
     {
         if (isHorizontal)
         {
-            Vector3 verticalTransform = new Vector3(0, 45, 0);
+            Vector3 verticalTransform = new Vector3(0, f_AngleOne, 0);
             reflectorTransform.eulerAngles = verticalTransform;
             isHorizontal = false;
         }
 
         else if (!isHorizontal)
         {
-            Vector3 horizontalTransform = new Vector3(0, 135, 0);
+            Vector3 horizontalTransform = new Vector3(0, f_AngleTwo, 0);
             reflectorTransform.eulerAngles = horizontalTransform;
             isHorizontal = true;
         }

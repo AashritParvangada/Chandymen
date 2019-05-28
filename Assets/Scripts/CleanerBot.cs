@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class CleanerBot : MonoBehaviour
 {
-    NavMeshAgent agent;
+    NavMeshAgent NavMes_agent;
     public Transform[] Trans_Arr_PatrolPathPoints;
     int currentDestination = 0;
     public float F_TimeInterval = 1;
@@ -44,7 +44,7 @@ public class CleanerBot : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<PlayerController>();
-        agent = GetComponent<NavMeshAgent>();
+        NavMes_agent = GetComponent<NavMeshAgent>();
 
         CheckArraySizeToPatrol();
     }
@@ -76,7 +76,7 @@ public class CleanerBot : MonoBehaviour
 
     IEnumerator GoToNextDestination(int _currDest, float _time)
     {
-        agent.SetDestination(Trans_Arr_PatrolPathPoints[currentDestination].position);
+        NavMes_agent.SetDestination(Trans_Arr_PatrolPathPoints[currentDestination].position);
         yield return new WaitForSeconds(_time);
         Patrol();
     }
