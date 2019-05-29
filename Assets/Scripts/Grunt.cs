@@ -48,10 +48,6 @@ public class Grunt : MonoBehaviour
                 Shoot();
             }
 
-            else
-            {
-                Debug.Log("Where are you hiding, punk?");
-            }
         }
     }
 
