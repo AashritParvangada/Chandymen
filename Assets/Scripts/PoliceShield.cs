@@ -15,5 +15,10 @@ public class PoliceShield : MonoBehaviour
         {
             other.GetComponent<PlayerController>().DamageHealth(40);
         }
+
+        if(other.GetComponent<Gun>())
+        {
+            other.GetComponent<Gun>().DamageParent(40);
+        }
     }
 }

@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         motion *= walkSpeed;
 
         rb.velocity = motion;
-        Debug.Log(rb.velocity.magnitude);
         anim.SetFloat("Speed", rb.velocity.magnitude);
         motion += Vector3.up * -8;
         CheckForShot();
