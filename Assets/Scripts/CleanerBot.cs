@@ -11,12 +11,13 @@ public class CleanerBot : MonoBehaviour
     public float F_TimeInterval = 1;
     public float F_ResetTimeInterval = 1;
     PlayerController player;
+    Animator anim;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
-            Debug.Log("Got Player");
+            anim.SetTrigger("Land");
             other.transform.SetParent(gameObject.transform);
             player.b_AboveAcid = true;
         }
@@ -43,10 +44,16 @@ public class CleanerBot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindObjectOfType<PlayerController>();
-        NavMes_agent = GetComponent<NavMeshAgent>();
+        GetVariables();
 
         CheckArraySizeToPatrol();
+    }
+
+    void GetVariables()
+    {
+        player = GameObject.FindObjectOfType<PlayerController>();
+        NavMes_agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     public void CheckArraySizeToPatrol()
