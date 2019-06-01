@@ -7,7 +7,7 @@ public class Grunt : MonoBehaviour
 {
     int I_Health = 100;
 
-    PlayerController PlayCont_Player;
+    PlayerController PlayCont_Player; Gun Gun_PlayaGun;
     [SerializeField] float RayDistance = 50;
     List<Zone> Zon_Zones = new List<Zone>();
     [SerializeField] float F_MinMovementCheckTime, F_MaxMovementCheckTime;
@@ -27,6 +27,7 @@ public class Grunt : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         PlayCont_Player = FindObjectOfType<PlayerController>();
+        Gun_PlayaGun=FindObjectOfType<Gun>();
         GetZones();
         StartCoroutine(CheckToMove());//Start the movement. Will delay this later during the cutscene.
         StartCoroutine(CheckToShoot());//Start shooting. Will delay this later.
@@ -43,7 +44,7 @@ public class Grunt : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, (PlayCont_Player.transform.position - transform.position), out hit, RayDistance))
         {
-            if (hit.transform == PlayCont_Player.transform)
+            if (hit.transform == PlayCont_Player.transform || hit.transform == Gun_PlayaGun.transform)
             {
                 Shoot();
             }
