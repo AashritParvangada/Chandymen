@@ -7,9 +7,20 @@ public class PoliceBot : MonoBehaviour
 {
     public int i_health = 100;
     NavMeshAgent agent;
+    [SerializeField] bool b_AttackOnStart = false;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        CheckAttackOnStart();
+    }
+
+    void CheckAttackOnStart()
+    {
+        if(b_AttackOnStart)
+        {
+           PlayerController _playa = FindObjectOfType<PlayerController>();
+           SetTarget(_playa);
+        }
     }
 
     IEnumerator RetargetPlayer(PlayerController _target)

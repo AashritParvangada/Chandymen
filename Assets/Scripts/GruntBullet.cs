@@ -17,6 +17,11 @@ public class GruntBullet : MonoBehaviour
             other.GetComponent<PlayerController>().DamageHealth(I_DamageCaused);
             Destroy(gameObject);
         }
+
+        else if(other.gameObject.layer==9)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

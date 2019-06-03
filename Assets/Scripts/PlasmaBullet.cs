@@ -8,7 +8,7 @@ public class PlasmaBullet : MonoBehaviour
     public float F_maxStepDistance = 200;
     [SerializeField] int F_BulletDamage = 50;
     public int I_BulletCharge = 0;
-    [SerializeField] float F_bulletDestroyTime=10;
+    [SerializeField] float F_bulletDestroyTime = 10;
     Rigidbody rb;
     private void Start()
     {
@@ -26,6 +26,11 @@ public class PlasmaBullet : MonoBehaviour
         else if (other.GetComponent<Grunt>())
         {
             other.GetComponent<Grunt>().DamageHealth(F_BulletDamage);
+            Destroy(gameObject);
+        }
+
+        else if (other.gameObject.layer == 9)
+        {
             Destroy(gameObject);
         }
     }
