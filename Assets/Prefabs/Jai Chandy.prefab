@@ -316,7 +316,7 @@ MonoBehaviour:
   walkSpeed: 7
   dashSpeed: 11
   dashTime: 0.3
-  dashCoolDownTime: 3
+  dashCoolDownTime: 2
   b_AboveAcid: 0
 --- !u!65 &8296172668473961869
 BoxCollider:
