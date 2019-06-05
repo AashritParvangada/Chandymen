@@ -18,6 +18,7 @@ public class Grunt : MonoBehaviour
     [SerializeField] Transform Trans_GruntGun;
     [SerializeField] GameObject GO_Bullet;
     [SerializeField] float F_BulletSpeed;
+    EventManager EvMan_EventManager;
     //How this agent works:
     //Ray cast to player.
     //If the player isn't found, set destination to player while raycasting for player every half second.
@@ -25,12 +26,19 @@ public class Grunt : MonoBehaviour
 
     private void Start()//Get variables.
     {
-        agent = GetComponent<NavMeshAgent>();
-        PlayCont_Player = FindObjectOfType<PlayerController>();
-        Gun_PlayaGun=FindObjectOfType<Gun>();
-        GetZones();
+        GetVariables();
         StartCoroutine(CheckToMove());//Start the movement. Will delay this later during the cutscene.
         StartCoroutine(CheckToShoot());//Start shooting. Will delay this later.
+    }
+
+    void GetVariables()
+    {
+        EvMan_EventManager = FindObjectOfType<EventManager>();
+        agent = GetComponent<NavMeshAgent>();
+        PlayCont_Player = FindObjectOfType<PlayerController>();
+        Gun_PlayaGun = FindObjectOfType<Gun>();
+        GetZones();
+
     }
 
     private void Update()
@@ -82,12 +90,12 @@ public class Grunt : MonoBehaviour
 
     }
 
-IEnumerator CheckToShoot()
-{
-    yield return new WaitForSeconds(CheckShootTime());
-    CheckIfCanShootPlayer();
-    StartCoroutine(CheckToShoot());
-}
+    IEnumerator CheckToShoot()
+    {
+        yield return new WaitForSeconds(CheckShootTime());
+        CheckIfCanShootPlayer();
+        StartCoroutine(CheckToShoot());
+    }
 
     IEnumerator CheckToMove() //Waits, then moves to a point within the zone.
     {
@@ -130,7 +138,7 @@ IEnumerator CheckToShoot()
 
     float CheckShootTime()//Randomizes shoot time
     {
-        float _shoottime=Random.Range(F_MinShootTime, F_MaxShootTime);
+        float _shoottime = Random.Range(F_MinShootTime, F_MaxShootTime);
         return _shoottime;
     }
 
@@ -141,10 +149,14 @@ IEnumerator CheckToShoot()
 
     public void DamageHealth(int _Damage)
     {
-        I_Health-=_Damage;
-        if(I_Health<=0)
+        I_Health -= _Damage;
+        if (I_Health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy() {
+        EvMan_EventManager.CountEnemyKilled();
     }
 }

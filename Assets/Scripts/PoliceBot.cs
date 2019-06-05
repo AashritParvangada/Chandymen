@@ -8,18 +8,25 @@ public class PoliceBot : MonoBehaviour
     public int i_health = 100;
     NavMeshAgent agent;
     [SerializeField] bool b_AttackOnStart = false;
+    EventManager EvMan_EventManager;
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        GetVariables();
         CheckAttackOnStart();
+    }
+
+    void GetVariables()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        EvMan_EventManager = FindObjectOfType<EventManager>();
     }
 
     void CheckAttackOnStart()
     {
-        if(b_AttackOnStart)
+        if (b_AttackOnStart)
         {
-           PlayerController _playa = FindObjectOfType<PlayerController>();
-           SetTarget(_playa);
+            PlayerController _playa = FindObjectOfType<PlayerController>();
+            SetTarget(_playa);
         }
     }
 
@@ -37,9 +44,10 @@ public class PoliceBot : MonoBehaviour
         StartCoroutine(RetargetPlayer(_target));
     }
 
-//Decrease the bot's health when shot. Currently is a 1HKO.
-    private void OnTriggerEnter(Collider other) {
-        if(other.GetComponent<PlasmaBullet>())
+    //Decrease the bot's health when shot. Currently is a 1HKO.
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<PlasmaBullet>())
         {
             DecreaseHealth(100);
         }
@@ -47,10 +55,15 @@ public class PoliceBot : MonoBehaviour
 
     void DecreaseHealth(int _DecreaseBy)
     {
-        i_health-=_DecreaseBy;
-        if(i_health<=0)
+        i_health -= _DecreaseBy;
+        if (i_health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        EvMan_EventManager.CountEnemyKilled();
     }
 }
