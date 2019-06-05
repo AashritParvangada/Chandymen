@@ -8171,11 +8171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9173501857363417354, guid: 72554e0734c788d47b495571b3655e0a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3148620004651801051, guid: 72554e0734c788d47b495571b3655e0a,
         type: 3}
       propertyPath: PatrolPathPoints.Array.size
@@ -8221,6 +8216,11 @@ PrefabInstance:
       propertyPath: Trans_Arr_PatrolPathPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1625372932}
+    - target: {fileID: 9173501857363417354, guid: 72554e0734c788d47b495571b3655e0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72554e0734c788d47b495571b3655e0a, type: 3}
 --- !u!4 &1687173579 stripped
@@ -10314,6 +10314,11 @@ PrefabInstance:
     - target: {fileID: 2839392753472807734, guid: d1f446d56ddf6ad4886cbb61d770332a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069868995964897297, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+      propertyPath: b_AttackOnStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7069868995964897296, guid: d1f446d56ddf6ad4886cbb61d770332a,
