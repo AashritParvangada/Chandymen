@@ -91,7 +91,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8871055059298780262
 Rigidbody:
@@ -123,5 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_maxReflectionCount: 10
   F_maxStepDistance: 200
+  F_BulletDamage: 50
   I_BulletCharge: 0
   F_bulletDestroyTime: 10
