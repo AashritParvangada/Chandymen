@@ -20,7 +20,7 @@ public class ReflectorRotator : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
-            if (Input.GetKeyDown(KeyCode.JoystickButton1)) //Joystick 1 is X
+            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.E)) //Joystick 1 is X
             {
             Debug.Log("Player in radius");
                 RotateReflector();

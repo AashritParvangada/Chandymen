@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2354827507365799707}
   - component: {fileID: 2354827507365799706}
   - component: {fileID: 2354827507365799717}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Centrifuge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

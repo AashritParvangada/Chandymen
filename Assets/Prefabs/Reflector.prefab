@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6940764566434331265}
   - component: {fileID: 7253571611117279469}
   - component: {fileID: 8485531566975954315}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Reflector
   m_TagString: Reflector
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 833215898954294946}
   - component: {fileID: 7356416196301872458}
   - component: {fileID: 7071249576684125795}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,3 +151,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHorizontal: 0
   f_Time: 0.5
+  f_AngleOne: 45
+  f_AngleTwo: 135

@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         //Log("Left Ver is " +Input.GetAxis("Left_Vertical"));
         //Debug.Log("Right Hor is " +Input.GetAxis("Right_Horizontal"));
         //Debug.Log("Right Ver is " +Input.GetAxis("Right_Vertical"));
+        //Debug.Log("Mouse Pos is " + Input.GetAxis("MousePos"));
 
         //Get the left and right controller's input based on some select axes.
         Vector3 left_Input =
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        //This makes sure that if both inputs are down at the same time then the player doesn't move around.
         motion *= (Mathf.Abs(left_Input.x) == 1 && Mathf.Abs(left_Input.z) == 1) ? .7f : 1;
         motion *= walkSpeed;
 
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
         motion += Vector3.up * -8;
         CheckForShot();
         CheckDash();
+        CheckMousePoint();
     }
 
     void GetVariables()
@@ -68,16 +71,21 @@ public class PlayerController : MonoBehaviour
 
     void CheckForShot()
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton5)) //Was 5 PS4
+        if (Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetMouseButtonDown(0)) //Was 5 PS4
         {
-            anim.SetTrigger("Shot");
-            playerGun.ShootProjectile(playerGun.transform);
+            Shoot();
         }
+    }
+
+    void Shoot()
+    {
+        anim.SetTrigger("Shot");
+        playerGun.ShootProjectile(playerGun.transform);
     }
 
     void CheckDash()
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton4)) //Was 4 PS4
+        if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.Space)) //Was 4 PS4
         {
             anim.SetTrigger("Dash");
             if (canDash) StartCoroutine(Dash());
@@ -107,6 +115,21 @@ public class PlayerController : MonoBehaviour
                 this.enabled = false;
             }
 
+        }
+    }
+
+    public void CheckMousePoint()
+    {
+        if (Input.GetAxis("MousePos_X")>0.1 || Input.GetAxis("MousePos_Y")>0.1 || Input.GetAxis("MousePos_X")<-0.1|| Input.GetAxis("MousePos_Y")<-0.1)
+        {
+            RaycastHit hit;
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 V3_LookPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                transform.LookAt(V3_LookPos);
+            }
         }
     }
 }
