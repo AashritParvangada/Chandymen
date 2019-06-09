@@ -39,7 +39,7 @@ public class PoliceBot : MonoBehaviour
     //Sets the bot to target the player and loops a coroutine that retargets the player's location every .3 seconds.
     public void SetTarget(PlayerController _target)
     {
-        Debug.Log(_target.name);
+        //Debug.Log(_target.name);
         agent.SetDestination(_target.transform.position);
         StartCoroutine(RetargetPlayer(_target));
     }
