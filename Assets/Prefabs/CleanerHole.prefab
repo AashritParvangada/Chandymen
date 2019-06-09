@@ -156,11 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a96b2fb29501a547a4eccacd424970c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_CleanerBot: {fileID: 7463950349469379984, guid: 72554e0734c788d47b495571b3655e0a,
+  GO_CleanerBot: {fileID: 8876685102611635032, guid: 00e8c934593bd3a4a99e1d6f462dadd7,
     type: 3}
   F_SpawnTime: 3
   Trans_Arr_NavPoints: []
   F_SetBotMovementTimeInvetvalTo: 0
+  F_BotSpeed: 5
 --- !u!54 &-4291658504140366861
 Rigidbody:
   m_ObjectHideFlags: 0
