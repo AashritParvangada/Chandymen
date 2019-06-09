@@ -9,7 +9,7 @@ public class ElectricDoorButton : MonoBehaviour
     [SerializeField] GameObject G_Door;
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E) )
         {
             OpenDoor();
         }
