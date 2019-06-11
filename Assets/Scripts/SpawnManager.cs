@@ -5,9 +5,12 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     int i_EnemiesKilled = 0;
-    [SerializeField] int I_MaxNumberOfEnemies, I_KilledThresehold_1, I_KilledThresehold_2, I_KilledThresehold_3;
+    [SerializeField] bool b_isActive = false;
+
+    [SerializeField] int I_MaxSimultanEnemies, I_KilledThresehold_1, I_KilledThresehold_2, I_KilledThresehold_3, I_TotalEnemiesToKill;
     [SerializeField] Transform[] Trans_SpawnPoints;
-    [SerializeField] GameObject GO_Grunt, GO_PoliceBot;
+    [SerializeField] GameObject GO_Grunt, GO_PoliceBot, GO_DoorToCloseOnStart;
+    [SerializeField] GameObject[] GO_DoorsToOpenWhenDone;
     private void OnEnable()
     {
         EventManager.OnEnemyKilled += CountEnemies;
@@ -22,32 +25,77 @@ public class SpawnManager : MonoBehaviour
 
     }
 
+    void SetActive()
+    {
+        b_isActive = true;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<PlayerController>() && !b_isActive)
+        {
+            SetActive();
+            RandomlyInstantiate();
+            GetComponent<BoxCollider>().enabled = false;
+            CloseDoor();
+        }
+    }
+
     void CountEnemies()
     {
-        int _totalEnemies = 0;
-        foreach (Grunt _grunt in FindObjectsOfType<Grunt>())
+        if (b_isActive)
         {
-            _totalEnemies++;
-        }
+            int _totalEnemies = 0;
+            foreach (Grunt _grunt in FindObjectsOfType<Grunt>())
+            {
+                _totalEnemies++;
+            }
 
-        foreach (PoliceBot _PB in FindObjectsOfType<PoliceBot>())
-        {
-            _totalEnemies++;
-        }
+            foreach (PoliceBot _PB in FindObjectsOfType<PoliceBot>())
+            {
+                _totalEnemies++;
+            }
 
-        SpawnEnemy(_totalEnemies);
+            SpawnEnemy(_totalEnemies);
+        }
     }
 
     void EnemyKilled()
     {
-        i_EnemiesKilled++;
-        Debug.Log(i_EnemiesKilled);
-        CheckMax();
+        if (b_isActive)
+        {
+            i_EnemiesKilled++;
+            CheckTotal();
+            CheckMax();
+        }
+    }
+
+    void CheckTotal()
+    {
+        if (i_EnemiesKilled >= I_TotalEnemiesToKill)
+        {
+            OpenDoors();
+            gameObject.SetActive(false);
+        }
+    }
+
+    void OpenDoors()
+    {
+        foreach (GameObject _Door in GO_DoorsToOpenWhenDone)
+        {
+            _Door.SetActive(false);
+        }
+    }
+
+    void CloseDoor()
+    {
+        GO_DoorToCloseOnStart.SetActive(true);
     }
 
     void SpawnEnemy(int _totalEnemies)
     {
-        while (_totalEnemies < I_MaxNumberOfEnemies)
+        while (_totalEnemies < I_MaxSimultanEnemies)
         {
             Debug.Log("Instantiating");
             RandomlyInstantiate();
@@ -68,9 +116,9 @@ public class SpawnManager : MonoBehaviour
 
     void CheckMax()
     {
-        if (i_EnemiesKilled >= I_KilledThresehold_1) I_MaxNumberOfEnemies = 2;
-        if (i_EnemiesKilled >= I_KilledThresehold_2) I_MaxNumberOfEnemies++;
-        if (i_EnemiesKilled >= I_KilledThresehold_3) I_MaxNumberOfEnemies++;
+        if (i_EnemiesKilled >= I_KilledThresehold_1) I_MaxSimultanEnemies = 2;
+        if (i_EnemiesKilled >= I_KilledThresehold_2) I_MaxSimultanEnemies++;
+        if (i_EnemiesKilled >= I_KilledThresehold_3) I_MaxSimultanEnemies++;
     }
 
 }
