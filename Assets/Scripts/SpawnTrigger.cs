@@ -70,6 +70,7 @@ public class SpawnTrigger : MonoBehaviour
 
     void OpenDoor()
     {
+        if(GO_DoorToOpen)
         GO_DoorToOpen.SetActive(false);
     }
 
