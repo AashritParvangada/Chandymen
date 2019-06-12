@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    int i_EnemiesKilled = 0;
+    int i_EnemiesKilled = 0, i_enemiesSpawned = 0;
     [SerializeField] bool b_isActive = false;
 
     [SerializeField] int I_MaxSimultanEnemies, I_KilledThresehold_1, I_KilledThresehold_2, I_KilledThresehold_3, I_TotalEnemiesToKill;
@@ -95,12 +95,15 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy(int _totalEnemies)
     {
-        while (_totalEnemies < I_MaxSimultanEnemies)
+
+        while (_totalEnemies < I_MaxSimultanEnemies && i_enemiesSpawned < I_TotalEnemiesToKill)
         {
             Debug.Log("Instantiating");
             RandomlyInstantiate();
             _totalEnemies++;
         }
+
+
 
     }
 
@@ -112,6 +115,8 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(GO_Grunt, Trans_SpawnPoints[Random.Range(0, Trans_SpawnPoints.Length)]).GetComponent<PoliceBot>();
         }
+
+        i_enemiesSpawned++;
     }
 
     void CheckMax()
