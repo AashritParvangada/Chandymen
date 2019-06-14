@@ -10132,12 +10132,12 @@ PrefabInstance:
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: i_health
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: i_MaxHealth
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07523acf795f54f49b863df3592ec9e1, type: 3}
@@ -11258,6 +11258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Electric Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616805485007031587, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
