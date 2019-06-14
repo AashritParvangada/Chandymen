@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] int i_health = 100;
     [SerializeField] int i_MaxHealth = 100;
-    public float rotationSpeed = 450;
     Rigidbody rb;
     public float defaultWalkSpeed = 5;
     bool canDash = true;
@@ -14,12 +14,12 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 10;
     public float dashTime = 0.3f;
     public float dashCoolDownTime = 3;
-    private Quaternion targetRotation;
-
     public bool b_AboveAcid = false;
     Gun playerGun;
-
+    [SerializeField] TextMesh Txt_TempHealthIndicator;
     Animator anim;
+
+
     // Use this for initialization
     void Start()
     {
@@ -108,10 +108,9 @@ public class PlayerController : MonoBehaviour
     {
         if (b_AboveAcid == false)
         {
-            i_health -= DecreaseBy;
+            ChangeHealth(-DecreaseBy);
             if (i_health <= 0)
             {
-                i_health = 0;
                 this.enabled = false;
             }
 
@@ -120,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
     public void CheckMousePoint()
     {
-        if (Input.GetAxis("MousePos_X")>0.1 || Input.GetAxis("MousePos_Y")>0.1 || Input.GetAxis("MousePos_X")<-0.1|| Input.GetAxis("MousePos_Y")<-0.1)
+        if (Input.GetAxis("MousePos_X") > 0.1 || Input.GetAxis("MousePos_Y") > 0.1 || Input.GetAxis("MousePos_X") < -0.1 || Input.GetAxis("MousePos_Y") < -0.1)
         {
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -130,6 +129,21 @@ public class PlayerController : MonoBehaviour
                 Vector3 V3_LookPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                 transform.LookAt(V3_LookPos);
             }
+        }
+    }
+
+    void ChangeHealth(int _healthChange)
+    {
+        Mathf.Clamp(i_health += _healthChange, 0, i_MaxHealth);
+        Txt_TempHealthIndicator.text = i_health.ToString();
+    }
+
+    public void AddHealthFromPotion(int _amountToAdd, HealthPotion _HP)
+    {
+        if (i_health < i_MaxHealth)
+        {
+            ChangeHealth(_amountToAdd);
+            Destroy(_HP.gameObject);
         }
     }
 }
