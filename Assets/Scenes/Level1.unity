@@ -1563,7 +1563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1704769551}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &406667651
 MonoBehaviour:
@@ -2348,8 +2348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F_TimeInterval: 1
-  I_DamageCaused: 35
+  F_TimeInterval: 0.1
+  I_DamageCaused: 2
 --- !u!65 &488529641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3586,8 +3586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F_TimeInterval: 1
-  I_DamageCaused: 35
+  F_TimeInterval: 0.1
+  I_DamageCaused: 2
 --- !u!65 &739215846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4832,8 +4832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F_TimeInterval: 1
-  I_DamageCaused: 35
+  F_TimeInterval: 0.1
+  I_DamageCaused: 2
 --- !u!114 &1134239825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5423,8 +5423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F_TimeInterval: 1
-  I_DamageCaused: 35
+  F_TimeInterval: 0.1
+  I_DamageCaused: 2
 --- !u!65 &1227811322
 BoxCollider:
   m_ObjectHideFlags: 0
