@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.GetComponent<PlayerController>())
+            FindObjectOfType<GameManager>().SetLastCheckpoint(this);
     }
 }

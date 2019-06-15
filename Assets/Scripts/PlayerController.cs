@@ -109,12 +109,12 @@ public class PlayerController : MonoBehaviour
         if (b_AboveAcid == false)
         {
             ChangeHealth(-DecreaseBy);
-            if (i_health <= 0)
-            {
-                this.enabled = false;
-            }
-
         }
+    }
+
+    void Die()
+    {
+        FindObjectOfType<Scene_Manager>().ReloadScene();
     }
 
     public void CheckMousePoint()
@@ -135,6 +135,13 @@ public class PlayerController : MonoBehaviour
     void ChangeHealth(int _healthChange)
     {
         Mathf.Clamp(i_health += _healthChange, 0, i_MaxHealth);
+
+        if (i_health <= 0)
+        {
+            Die();
+        }
+
+
         Txt_TempHealthIndicator.text = i_health.ToString();
     }
 

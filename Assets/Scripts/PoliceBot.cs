@@ -64,6 +64,7 @@ public class PoliceBot : MonoBehaviour
 
     private void OnDestroy()
     {
-        EvMan_EventManager.CountEnemyKilled();
+        if (EvMan_EventManager)
+            EvMan_EventManager.CountEnemyKilled();
     }
 }
