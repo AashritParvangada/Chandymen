@@ -6,7 +6,7 @@ public class DestroyerHole : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)//If this is a destroyer and the cleaner bot enters its radius.
     {
-        CheckToDestroyCleanerBot(other);
+        CheckToDestroyCleanerBot(other);//Destroy it.
     }
 
     void CheckToDestroyCleanerBot(Collider other)

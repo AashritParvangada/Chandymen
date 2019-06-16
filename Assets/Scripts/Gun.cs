@@ -5,8 +5,8 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
 
-    [SerializeField] float bulletSpeed = 10;
-    public GameObject Projectile;
+    [SerializeField] float F_bulletSpeed = 10;
+    public GameObject GO_Projectile;
     PlayerController PlaCont_Playa;
     // Use this for initialization
     void Start()
@@ -14,15 +14,15 @@ public class Gun : MonoBehaviour
         PlaCont_Playa = GetComponentInParent<PlayerController>();
     }
 
-    public void DamageParent(int _Damage)
+    public void DamageParent(int _Damage)//Currently called from cleaner bot script.
     {
         PlaCont_Playa.DamageHealth(_Damage);
     }
 
-    public void ShootProjectile(Transform _origin)
+    public void ShootProjectile(Transform _origin)//Instantiate a PlasmaBullet, set its speed and direction.
     {
-        GameObject newBullet = Instantiate(Projectile, _origin.position, _origin.rotation, null);
-        newBullet.GetComponent<Rigidbody>().velocity = transform.up * bulletSpeed;
+        GameObject newBullet = Instantiate(GO_Projectile, _origin.position, _origin.rotation, null);
+        newBullet.GetComponent<Rigidbody>().velocity = transform.up * F_bulletSpeed;
         newBullet.transform.forward = transform.up;
 
     }

@@ -22,13 +22,12 @@ public class CleanerHome : MonoBehaviour
         StartCoroutine(RepeatSpawnCleanerBots());
     }
 
-    void SpawnCleanerBot()
+    void SpawnCleanerBot()//Spawns a cleaner bot, then assigns its patrol path points as this object's array, then sets its time intervals and speed.
     {
         CleanerBot CleBot_Script = Instantiate(GO_cleanerBot, transform).GetComponent<CleanerBot>();
         CleBot_Script.Trans_Arr_PatrolPathPoints = Trans_Arr_navPoints;
         CleBot_Script.F_ResetTimeInterval=F_setBotMovementTimeInvetvalTo; CleBot_Script.F_TimeInterval=F_setBotMovementTimeInvetvalTo;
         CleBot_Script.GetComponent<NavMeshAgent>().speed = F_botSpeed;
-       // CleBot_Script.CheckArraySizeToPatrol();
     }
 
     void StartSpawningBots()

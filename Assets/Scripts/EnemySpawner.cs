@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject GO_EnemyToSpawn;
+    [SerializeField] GameObject GO_enemyToSpawn;
 
-    public void SpawnEnemy()
+    public void SpawnEnemy()//Called from within Spawn Trigger.
     {
-        Instantiate(GO_EnemyToSpawn, transform);
+        Instantiate(GO_enemyToSpawn, transform);
     }
 }

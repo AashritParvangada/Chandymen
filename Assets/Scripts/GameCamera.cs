@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class GameCamera : MonoBehaviour
 {
-    Transform target;
-    public Vector3 position, angle;
-    Vector3 camTarget;
-    [SerializeField] bool puzzleMode;
+    Transform trans_target;
+    public Vector3 v3_distanceFromPlayer, v3_viewingAngle;
+    Vector3 v3_camTarget;
+    public bool B_PuzzleMode;
     // Use this for initialization
     void Start()
     {
-        if (!puzzleMode)
+        if (!B_PuzzleMode)
         {
 
-            target = GameObject.FindObjectOfType<PlayerController>().transform;
+            trans_target = GameObject.FindObjectOfType<PlayerController>().transform;
             transform.eulerAngles = new Vector3(80, 0, 0);
         }
     }
@@ -22,13 +22,21 @@ public class GameCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!puzzleMode)
+        if (!B_PuzzleMode)
         {
 
-            camTarget = target.position + position;
-            transform.position = Vector3.Lerp(transform.position, camTarget, Time.deltaTime * 8);
+            v3_camTarget = trans_target.position + v3_distanceFromPlayer;
+            transform.position = Vector3.Lerp(transform.position, v3_camTarget, Time.deltaTime * 8);
 
-            transform.eulerAngles = angle;
+            transform.eulerAngles = v3_viewingAngle;
         }
+    }
+
+    void FollowTarget()
+    {
+        v3_camTarget = trans_target.position + v3_distanceFromPlayer;//Set cam target separately from player target.
+        transform.position = Vector3.Lerp(transform.position, v3_camTarget, Time.deltaTime * 8);//Lerp smoothly to cam target.
+
+        transform.eulerAngles = v3_viewingAngle;//Look at player from this specific angle.
     }
 }

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    private static GameManager gamMan_instance;
     public Vector3 V3_LastCheckpointPos;
     // Start is called before the first frame update
     private void Awake()
     {
-        if (instance == null)
+        if (gamMan_instance == null)
         {
-            instance = this;
+            gamMan_instance = this;
             DontDestroyOnLoad(this);
         }
 
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetLastCheckpoint(Checkpoint _Checkpoint)
+    public void SetLastCheckpoint(Checkpoint _Checkpoint)//Called from Checkpoint Script. When the player dies, they respawn here.
     {
         V3_LastCheckpointPos = _Checkpoint.transform.position;
     }
