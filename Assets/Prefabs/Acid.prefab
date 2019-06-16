@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171167a07bd7544ae5a3e764d956ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F_TimeInterval: 0.1
-  I_DamageCaused: 2
+  F_timeInterval: 0.1
+  I_damageCaused: 2

@@ -5,30 +5,42 @@ using UnityEngine.AI;
 
 public class CleanerBot : MonoBehaviour
 {
-    NavMeshAgent NavMes_agent;
+    NavMeshAgent navmesh_agent;
     public Transform[] Trans_Arr_PatrolPathPoints;
-    int currentDestination = 0;
+    int i_currentDestination = 0;
     public float F_TimeInterval = 1;
     public float F_ResetTimeInterval = 1;
-    PlayerController player;
-    Animator anim;
+    PlayerController plctrl_playa;
+    Animator animor_anim;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        GetVariables();
+        CheckArraySizeToPatrol();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
-            anim.SetTrigger("Land");
-            other.transform.SetParent(gameObject.transform);
-            player.b_AboveAcid = true;
+            PlayerLanded(other);
         }
     }
 
+    void PlayerLanded(Collider other)
+    {
+        animor_anim.SetTrigger("Land");
+        other.transform.SetParent(transform);
+        plctrl_playa.b_AboveAcid = true;
+    }
+
+    //This is currently to ensure that when the dash mode turns off, Jai doesn't start getting killed. This should be edited later.
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
             other.transform.parent = transform;
-            player.b_AboveAcid = true;
+            plctrl_playa.b_AboveAcid = true;
         }
     }
 
@@ -37,25 +49,25 @@ public class CleanerBot : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             other.transform.parent = null;
-            player.b_AboveAcid = false;
+            plctrl_playa.b_AboveAcid = false;
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void PlayerGotOff(Collider other)
     {
-        GetVariables();
-
-        CheckArraySizeToPatrol();
+        other.transform.parent = null;
+        plctrl_playa.b_AboveAcid = false;
     }
 
+    //Find the player, your own agent, animator.
     void GetVariables()
     {
-        player = GameObject.FindObjectOfType<PlayerController>();
-        NavMes_agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
+        plctrl_playa = GameObject.FindObjectOfType<PlayerController>();
+        navmesh_agent = GetComponent<NavMeshAgent>();
+        animor_anim = GetComponent<Animator>();
     }
 
+    //If there is an array that is greater than 1 point in length, start patrolling.
     public void CheckArraySizeToPatrol()
     {
         if (Trans_Arr_PatrolPathPoints.Length > 0)
@@ -64,26 +76,26 @@ public class CleanerBot : MonoBehaviour
         }
     }
 
-    void Patrol()//Goes through the array by moving.
+    void Patrol()//Goes through the array by moving. Has a different reset time than the regular time because agent returns to spot 1.
     {
-        if (Trans_Arr_PatrolPathPoints.Length <= currentDestination + 1)
+        if (Trans_Arr_PatrolPathPoints.Length <= i_currentDestination + 1)
         {
-            currentDestination = 0;
-            StartCoroutine(GoToNextDestination(currentDestination, F_ResetTimeInterval));
+            i_currentDestination = 0;
+            StartCoroutine(GoToNextDestination(i_currentDestination, F_ResetTimeInterval));
 
         }
 
         else
         {
-            currentDestination++;
-            StartCoroutine(GoToNextDestination(currentDestination, F_TimeInterval));
+            i_currentDestination++;
+            StartCoroutine(GoToNextDestination(i_currentDestination, F_TimeInterval));
         }
 
     }
 
     IEnumerator GoToNextDestination(int _currDest, float _time)
     {
-        NavMes_agent.SetDestination(Trans_Arr_PatrolPathPoints[currentDestination].position);
+        navmesh_agent.SetDestination(Trans_Arr_PatrolPathPoints[i_currentDestination].position);
         yield return new WaitForSeconds(_time);
         Patrol();
     }

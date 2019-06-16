@@ -5,21 +5,18 @@ using UnityEngine.AI;
 
 public class ElectricDoorButton : MonoBehaviour
 {
-    [SerializeField] NavMeshSurface NMS_NavToRebake;
-    [SerializeField] GameObject G_Door;
+    [SerializeField] GameObject G_door;
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E) )
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E))
         {
             OpenDoor();
         }
     }
 
+    //Opens the door and rebakes the nav mesh.
     void OpenDoor()
     {
-        G_Door.SetActive(false);
-
-        if (NMS_NavToRebake)
-            NMS_NavToRebake.BuildNavMesh();
+        G_door.SetActive(false);
     }
 }

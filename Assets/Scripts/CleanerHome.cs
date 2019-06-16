@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class CleanerHome : MonoBehaviour
 {
-    [SerializeField] GameObject GO_CleanerBot;
-    [SerializeField] float F_SpawnTime = 3;
-    [SerializeField] Transform[] Trans_Arr_NavPoints;
-    [SerializeField] float F_SetBotMovementTimeInvetvalTo, F_BotSpeed = 5;
+    [SerializeField] GameObject GO_cleanerBot;
+    [SerializeField] float F_spawnTime = 3;
+    [SerializeField] Transform[] Trans_Arr_navPoints;
+    [SerializeField] float F_setBotMovementTimeInvetvalTo, F_botSpeed = 5;
 
     private void Start()
     {
@@ -17,17 +17,17 @@ public class CleanerHome : MonoBehaviour
 
     IEnumerator RepeatSpawnCleanerBots()
     {
-        yield return new WaitForSeconds(F_SpawnTime);
+        yield return new WaitForSeconds(F_spawnTime);
         SpawnCleanerBot();
         StartCoroutine(RepeatSpawnCleanerBots());
     }
 
     void SpawnCleanerBot()
     {
-        CleanerBot CleBot_Script = Instantiate(GO_CleanerBot, transform).GetComponent<CleanerBot>();
-        CleBot_Script.Trans_Arr_PatrolPathPoints = Trans_Arr_NavPoints;
-        CleBot_Script.F_ResetTimeInterval=F_SetBotMovementTimeInvetvalTo; CleBot_Script.F_TimeInterval=F_SetBotMovementTimeInvetvalTo;
-        CleBot_Script.GetComponent<NavMeshAgent>().speed = F_BotSpeed;
+        CleanerBot CleBot_Script = Instantiate(GO_cleanerBot, transform).GetComponent<CleanerBot>();
+        CleBot_Script.Trans_Arr_PatrolPathPoints = Trans_Arr_navPoints;
+        CleBot_Script.F_ResetTimeInterval=F_setBotMovementTimeInvetvalTo; CleBot_Script.F_TimeInterval=F_setBotMovementTimeInvetvalTo;
+        CleBot_Script.GetComponent<NavMeshAgent>().speed = F_botSpeed;
        // CleBot_Script.CheckArraySizeToPatrol();
     }
 

@@ -5,43 +5,48 @@ using UnityEngine;
 public class Acid : MonoBehaviour
 {
     bool b_PlayerisinAcid;
-    bool b_damangeCoolingdown = false;
-    [SerializeField] float F_TimeInterval = 1;
-    [SerializeField] int I_DamageCaused = 35;
+    bool b_DamageCoolingdown = false;
+    [SerializeField] float F_timeInterval = .1f;
+    [SerializeField] int I_damageCaused = 2;
     private void OnTriggerEnter(Collider other)
     {
         b_PlayerisinAcid = true;
     }
 
+    //When the player is in acid, start the damage function.
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<PlayerController>())
             TriggerPlayerAcidDamage(other.GetComponent<PlayerController>());
     }
 
+    //To stop the loop of the player being damaged.
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<PlayerController>())
             b_PlayerisinAcid = false;
     }
 
+
+    //Start damaging the player and set a loop.
     void TriggerPlayerAcidDamage(PlayerController playa)
     {
-        if (!b_damangeCoolingdown)
+        if (!b_DamageCoolingdown)
         {
             if (b_PlayerisinAcid)
             {
-                playa.DamageHealth(I_DamageCaused);
+                playa.DamageHealth(I_damageCaused);
                 StartCoroutine(AcidCooldown());
 
             }
         }
     }
 
+    //To damage the player gradually over time.
     IEnumerator AcidCooldown()
     {
-        b_damangeCoolingdown = true;
-        yield return new WaitForSeconds(F_TimeInterval);
-        b_damangeCoolingdown = false;
+        b_DamageCoolingdown = true;
+        yield return new WaitForSeconds(F_timeInterval);
+        b_DamageCoolingdown = false;
     }
 }

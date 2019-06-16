@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Centrifuge : MonoBehaviour
 {
-    [SerializeField] int i_chargesNeeded;
-    [SerializeField] GameObject go_door;
+    [SerializeField] int I_chargesNeeded;
+    [SerializeField] GameObject GO_door;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -13,10 +13,10 @@ public class Centrifuge : MonoBehaviour
         {
             Debug.Log("Entered Trigger");
             PlasmaBullet thisBullet = other.GetComponent<PlasmaBullet>();
-            if (thisBullet.I_BulletCharge == i_chargesNeeded)
+            if (thisBullet.I_BulletCharge == I_chargesNeeded)
             {
                 //Should put animation here.
-                Destroy(go_door);
+                Destroy(GO_door);
                 Destroy(thisBullet);
             }
         }
