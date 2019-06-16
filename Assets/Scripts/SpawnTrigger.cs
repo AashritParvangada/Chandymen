@@ -7,7 +7,7 @@ public class SpawnTrigger : MonoBehaviour
     bool b_isActive = false;
     int i_numberOfSpawnersWithin = 0;
     int i_enemiesKilled = 0;
-    [SerializeField] GameObject GO_DoorToOpen;
+    [SerializeField] GameObject GO_doorToOpen;
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class SpawnTrigger : MonoBehaviour
         }
     }
 
-    void SpawnEnemies()
+    void SpawnEnemies()//Spawn an enemy in each spawner.
     {
         foreach (EnemySpawner _EnSpawn in GetComponentsInChildren<EnemySpawner>())
         {
@@ -48,7 +48,7 @@ public class SpawnTrigger : MonoBehaviour
         b_isActive = true;
     }
 
-    void CountNumberOfSpawners()
+    void CountNumberOfSpawners()//Used to know when to spawn more enemies and how many more to spawn.
     {
         foreach (EnemySpawner _EnSpawn in GetComponentsInChildren<EnemySpawner>())
         {
@@ -56,11 +56,11 @@ public class SpawnTrigger : MonoBehaviour
         }
     }
 
-    void KilledEnemy()
+    void KilledEnemy()//Called on event.
     {
         if (b_isActive)
         {
-            i_enemiesKilled++;
+            i_enemiesKilled++;//Add another enemy killed. If all enemies have been killed, open the next door.
             if (i_enemiesKilled >= i_numberOfSpawnersWithin)
             {
                 OpenDoor();
@@ -70,8 +70,9 @@ public class SpawnTrigger : MonoBehaviour
 
     void OpenDoor()
     {
-        if(GO_DoorToOpen)
-        GO_DoorToOpen.SetActive(false);
+        if (GO_doorToOpen)
+            GO_doorToOpen.SetActive(false);
+        b_isActive = false;
     }
 
 

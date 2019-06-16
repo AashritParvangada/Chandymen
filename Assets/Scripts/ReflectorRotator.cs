@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ReflectorRotator : MonoBehaviour
 {
-    Transform reflectorTransform;
-    bool openToRotate = true;
-    [SerializeField] bool isHorizontal;
-    [SerializeField] float f_Time = 0.5f;
-    [SerializeField] float f_AngleOne = 45, f_AngleTwo=135;
+    Transform trans_reflectorTransform;
+    bool b_openToRotate = true;
+    [SerializeField] bool B_isHorizontal;
+    [SerializeField] float F_time = 0.5f;
+    [SerializeField] float F_angleOne = 45, F_angleTwo=135;
     private void Start()
     {
-        reflectorTransform = transform.parent;
+        trans_reflectorTransform = transform.parent;
     }
 
 
@@ -30,34 +30,34 @@ public class ReflectorRotator : MonoBehaviour
 
     void RotateReflector()
     {
-        if (openToRotate)
+        if (b_openToRotate)
         {
             MakeHorizontalOrVertical();
-            StartCoroutine(CloseToRotateForTime(f_Time));
+            StartCoroutine(CloseToRotateForTime(F_time));//This is for lerping. MUST ADD LERPING
         }
     }
 
     void MakeHorizontalOrVertical() //Depending on which angle the reflector starts with, make it the other one.
     {
-        if (isHorizontal)
+        if (B_isHorizontal)
         {
-            Vector3 verticalTransform = new Vector3(0, f_AngleOne, 0);
-            reflectorTransform.eulerAngles = verticalTransform;
-            isHorizontal = false;
+            Vector3 verticalTransform = new Vector3(0, F_angleOne, 0);
+            trans_reflectorTransform.eulerAngles = verticalTransform;
+            B_isHorizontal = false;
         }
 
-        else if (!isHorizontal)
+        else if (!B_isHorizontal)
         {
-            Vector3 horizontalTransform = new Vector3(0, f_AngleTwo, 0);
-            reflectorTransform.eulerAngles = horizontalTransform;
-            isHorizontal = true;
+            Vector3 horizontalTransform = new Vector3(0, F_angleTwo, 0);
+            trans_reflectorTransform.eulerAngles = horizontalTransform;
+            B_isHorizontal = true;
         }
     }
 
     IEnumerator CloseToRotateForTime(float time) //Lock rotation for a few seconds (OnTriggerStay calls every frame)
     {
-        openToRotate = false;
+        b_openToRotate = false;
         yield return new WaitForSeconds(time);
-        openToRotate = true;
+        b_openToRotate = true;
     }
 }

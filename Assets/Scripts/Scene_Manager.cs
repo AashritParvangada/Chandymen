@@ -6,19 +6,12 @@ using UnityEngine.SceneManagement;
 public class Scene_Manager : MonoBehaviour
 {
 
-    GameManager GmMngr_CheckpointManager;
-
-    private void Start()
-    {
-        GmMngr_CheckpointManager = FindObjectOfType<GameManager>();
-    }
-
-    public void SceneChange(string _SceneName)
+    public void SceneChange(string _SceneName)//Isn't being used yet. Use when shifting levels.
     {
         SceneManager.LoadScene(_SceneName);
     }
 
-    public void ReloadScene()
+    public void ReloadScene()//Is being used on player death.
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

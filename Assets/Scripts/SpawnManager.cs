@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    int i_EnemiesKilled = 0, i_enemiesSpawned = 0;
-    [SerializeField] bool b_isActive = false;
+    int i_enemiesKilled = 0, i_enemiesSpawned = 0;
+    [SerializeField] bool B_isActive = false;
 
-    [SerializeField] int I_MaxSimultanEnemies, I_KilledThresehold_1, I_KilledThresehold_2, I_KilledThresehold_3, I_TotalEnemiesToKill;
-    [SerializeField] Transform[] Trans_SpawnPoints;
-    [SerializeField] GameObject GO_Grunt, GO_PoliceBot, GO_DoorToCloseOnStart;
-    [SerializeField] GameObject[] GO_DoorsToOpenWhenDone;
+    [SerializeField] int I_maxSimultanEnemies, I_killedThresehold_1, I_killedThresehold_2, I_killedThresehold_3, I_totalEnemiesToKill;
+    [SerializeField] Transform[] Trans_Arr_spawnPoints;
+    [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart;
+    [SerializeField] GameObject[] GO_Arr_doorsToOpenWhenDone;
     private void OnEnable()
     {
         EventManager.OnEnemyKilled += CountEnemies;
@@ -27,13 +27,13 @@ public class SpawnManager : MonoBehaviour
 
     void SetActive()
     {
-        b_isActive = true;
+        B_isActive = true;
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerController>() && !b_isActive)
+        if (other.GetComponent<PlayerController>() && !B_isActive)
         {
             SetActive();
             RandomlyInstantiate();
@@ -42,9 +42,9 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void CountEnemies()
+    void CountEnemies()//Called on enemy killed event.
     {
-        if (b_isActive)
+        if (B_isActive)//If this has been activated by OnTriggerEnter.
         {
             int _totalEnemies = 0;
             foreach (Grunt _grunt in FindObjectsOfType<Grunt>())
@@ -57,46 +57,46 @@ public class SpawnManager : MonoBehaviour
                 _totalEnemies++;
             }
 
-            SpawnEnemy(_totalEnemies);
+            SpawnEnemy(_totalEnemies);//Compares total enemis around with the amount that should be around now.
         }
     }
 
     void EnemyKilled()
     {
-        if (b_isActive)
+        if (B_isActive)
         {
-            i_EnemiesKilled++;
-            CheckTotal();
-            CheckMax();
+            i_enemiesKilled++;
+            CheckTotal();//Sets this to false if player has killed all required enemies.
+            CheckIncreaseDifficulty();//Checks to increase maximum simultaneous enemies around at once. Happens at the various threseholds.
         }
     }
 
-    void CheckTotal()
+    void CheckTotal()//Is the player objective to reach total.
     {
-        if (i_EnemiesKilled >= I_TotalEnemiesToKill)
+        if (i_enemiesKilled >= I_totalEnemiesToKill)
         {
             OpenDoors();
             gameObject.SetActive(false);
         }
     }
 
-    void OpenDoors()
+    void OpenDoors()//Open all doors within this array
     {
-        foreach (GameObject _Door in GO_DoorsToOpenWhenDone)
+        foreach (GameObject _Door in GO_Arr_doorsToOpenWhenDone)
         {
             _Door.SetActive(false);
         }
     }
 
-    void CloseDoor()
+    void CloseDoor()//Close exits when player enters volume.
     {
-        GO_DoorToCloseOnStart.SetActive(true);
+        GO_doorToCloseOnStart.SetActive(true);
     }
 
-    void SpawnEnemy(int _totalEnemies)
+    void SpawnEnemy(int _totalEnemies)//Spawn enemies until total enemies = max simultaneous, but not if there's only a few enemies left until goal.
     {
 
-        while (_totalEnemies < I_MaxSimultanEnemies && i_enemiesSpawned < I_TotalEnemiesToKill)
+        while (_totalEnemies < I_maxSimultanEnemies && i_enemiesSpawned < I_totalEnemiesToKill)
         {
             Debug.Log("Instantiating");
             RandomlyInstantiate();
@@ -107,23 +107,23 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    void RandomlyInstantiate()
+    void RandomlyInstantiate()//Randomly instantiate a grunt or police bot depending on two numbers. MUST ADD THESE TWO NUMBERS TO SER FIELD.
     {
         int _rand = Random.Range(0, 2);
-        if (_rand == 0) Instantiate(GO_PoliceBot, Trans_SpawnPoints[Random.Range(0, Trans_SpawnPoints.Length)]).GetComponent<PoliceBot>();
+        if (_rand == 0) Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
         else
         {
-            Instantiate(GO_Grunt, Trans_SpawnPoints[Random.Range(0, Trans_SpawnPoints.Length)]).GetComponent<PoliceBot>();
+            Instantiate(GO_grunt, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
         }
 
         i_enemiesSpawned++;
     }
 
-    void CheckMax()
+    void CheckIncreaseDifficulty()//See if player has crossed the thresehold of enemies to kill before increasing the difficulty.
     {
-        if (i_EnemiesKilled >= I_KilledThresehold_1) I_MaxSimultanEnemies = 2;
-        if (i_EnemiesKilled >= I_KilledThresehold_2) I_MaxSimultanEnemies++;
-        if (i_EnemiesKilled >= I_KilledThresehold_3) I_MaxSimultanEnemies++;
+        if (i_enemiesKilled >= I_killedThresehold_1) I_maxSimultanEnemies = 2;
+        if (i_enemiesKilled >= I_killedThresehold_2) I_maxSimultanEnemies++;
+        if (i_enemiesKilled >= I_killedThresehold_3) I_maxSimultanEnemies++;
     }
 
 }
