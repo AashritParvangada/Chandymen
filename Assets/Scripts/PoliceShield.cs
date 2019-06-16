@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class PoliceShield : MonoBehaviour
 {
+    [SerializeField] int I_damage = 40;
     //Destroy bullets that hit the shield, but damage the player who hits it.
-    private void OnTriggerEnter(Collider other) {
-        if(other.GetComponent<PlasmaBullet>())
+    private void OnTriggerEnter(Collider other)
+    {
+        CheckPlasmaBullet(other);
+        CheckPlayer(other);
+        CheckPlayerGun(other);
+    }
+
+    void CheckPlasmaBullet(Collider other)
+    {
+        if (other.GetComponent<PlasmaBullet>())
         {
             Destroy(other.gameObject);
         }
+    }
 
-        if(other.GetComponent<PlayerController>())
+    void CheckPlayer(Collider other)
+    {
+        if (other.GetComponent<PlayerController>())
         {
-            other.GetComponent<PlayerController>().DamageHealth(40);
+            other.GetComponent<PlayerController>().DamageHealth(I_damage);
         }
+    }
 
-        if(other.GetComponent<Gun>())
+    void CheckPlayerGun(Collider other)
+    {
+        if (other.GetComponent<Gun>())
         {
-            other.GetComponent<Gun>().DamageParent(40);
+            other.GetComponent<Gun>().DamageParent(I_damage);
         }
     }
 }

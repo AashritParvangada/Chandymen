@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour
 {
-    [SerializeField] int I_HealthAddition = 20;
+    [SerializeField] int I_healthAddition = 20;
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
-            other.GetComponent<PlayerController>().AddHealthFromPotion(I_HealthAddition, this);
+            other.GetComponent<PlayerController>().AddHealthFromPotion(I_healthAddition, this);
         }
     }
 

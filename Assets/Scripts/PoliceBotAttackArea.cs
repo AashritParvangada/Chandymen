@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PoliceBotAttackArea : MonoBehaviour
 {
-    PlayerController PC_Playa;
+    PlayerController playCont_playa;
 
     //Assign a bunch of bots whom are activated by the player entering this trigger volume.
-    [SerializeField] PoliceBot[] PB_Arr_BotsTriggeredByThis;
+    [SerializeField] PoliceBot[] PB_Arr_botsTriggeredByThis;
 
     //When the player enters this volume, activate the bots.
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
-            PC_Playa = other.GetComponent<PlayerController>();
-            foreach (PoliceBot _pb in PB_Arr_BotsTriggeredByThis)
+            playCont_playa = other.GetComponent<PlayerController>();
+            foreach (PoliceBot _pb in PB_Arr_botsTriggeredByThis)
             {
-                _pb.SetTarget(PC_Playa);
+                _pb.SetTarget(playCont_playa);
             }
         }
     }

@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] int i_health = 100;
-    [SerializeField] int i_MaxHealth = 100;
+    [SerializeField] int I_health = 100;
+    [SerializeField] int I_maxHealth = 100;
     Rigidbody rb;
-    public float defaultWalkSpeed = 5;
-    bool canDash = true;
-    public float walkSpeed = 5;
-    public float dashSpeed = 10;
-    public float dashTime = 0.3f;
-    public float dashCoolDownTime = 3;
-    public bool b_AboveAcid = false;
-    Gun playerGun;
-    [SerializeField] TextMesh Txt_TempHealthIndicator;
-    Animator anim;
+    public float F_DefaultWalkSpeed = 5;
+    bool b_canDash = true;
+    public float F_WalkSpeed = 5;
+    public float F_DashSpeed = 10;
+    public float F_DashTime = 0.3f;
+    public float F_DashCooldownTime = 3;
+    public bool B_AboveAcid = false;
+    Gun gun_playerGun;
+    [SerializeField] TextMesh Txt_tempHealthIndicator;
+    Animator anmtr_anim;
 
 
     // Use this for initialization
@@ -50,12 +50,12 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        //This makes sure that if both inputs are down at the same time then the player doesn't move around.
+        //This makes sure that if both inputs are down at the same time then the player doesn't move around at a higher speed.
         motion *= (Mathf.Abs(left_Input.x) == 1 && Mathf.Abs(left_Input.z) == 1) ? .7f : 1;
-        motion *= walkSpeed;
+        motion *= F_WalkSpeed;
 
         rb.velocity = motion;
-        anim.SetFloat("Speed", rb.velocity.magnitude);
+        anmtr_anim.SetFloat("Speed", rb.velocity.magnitude);
         motion += Vector3.up * -8;
         CheckForShot();
         CheckDash();
@@ -65,11 +65,11 @@ public class PlayerController : MonoBehaviour
     void GetVariables()
     {
         rb = GetComponent<Rigidbody>();
-        playerGun = GetComponentInChildren<Gun>();
-        anim = GetComponent<Animator>();
+        gun_playerGun = GetComponentInChildren<Gun>();
+        anmtr_anim = GetComponent<Animator>();
     }
 
-    void CheckForShot()
+    void CheckForShot()//On input, shoot.
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetMouseButtonDown(0)) //Was 5 PS4
         {
@@ -77,47 +77,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Shoot()
+    void Shoot()//Shoot from gun script.
     {
-        anim.SetTrigger("Shot");
-        playerGun.ShootProjectile(playerGun.transform);
+        anmtr_anim.SetTrigger("Shot");
+        gun_playerGun.ShootProjectile(gun_playerGun.transform);
     }
 
-    void CheckDash()
+    void CheckDash()//Check Dash input.
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.Space)) //Was 4 PS4
         {
-            anim.SetTrigger("Dash");
-            if (canDash) StartCoroutine(Dash());
+            anmtr_anim.SetTrigger("Dash");
+            if (b_canDash) StartCoroutine(Dash());
         }
     }
 
-    IEnumerator Dash()
+    IEnumerator Dash()//Move faster, then move slower. Also prevent acid damage during this time. MUST LATER SEPARATE THIS VAR
     {
-        canDash = false;
-        walkSpeed = dashSpeed;
-        b_AboveAcid = true;
-        yield return new WaitForSeconds(dashTime);
-        walkSpeed = defaultWalkSpeed;
-        b_AboveAcid = false;
-        yield return new WaitForSeconds(dashCoolDownTime);
-        canDash = true;
+        b_canDash = false;
+        F_WalkSpeed = F_DashSpeed;
+        B_AboveAcid = true;
+        yield return new WaitForSeconds(F_DashTime);
+        F_WalkSpeed = F_DefaultWalkSpeed;
+        B_AboveAcid = false;
+        yield return new WaitForSeconds(F_DashCooldownTime);
+        b_canDash = true;
     }
 
     public void DamageHealth(int DecreaseBy)
     {
-        if (b_AboveAcid == false)
+        if (B_AboveAcid == false)
         {
             ChangeHealth(-DecreaseBy);
         }
     }
 
-    void Die()
+    void Die()//Respawn by reloading the scene. 
     {
         FindObjectOfType<Scene_Manager>().ReloadScene();
     }
 
-    public void CheckMousePoint()
+    public void CheckMousePoint()//See where the mouse is pointing only if there is mouse motion.
     {
         if (Input.GetAxis("MousePos_X") > 0.1 || Input.GetAxis("MousePos_Y") > 0.1 || Input.GetAxis("MousePos_X") < -0.1 || Input.GetAxis("MousePos_Y") < -0.1)
         {
@@ -134,20 +134,20 @@ public class PlayerController : MonoBehaviour
 
     void ChangeHealth(int _healthChange)
     {
-        Mathf.Clamp(i_health += _healthChange, 0, i_MaxHealth);
+        Mathf.Clamp(I_health += _healthChange, 0, I_maxHealth);
 
-        if (i_health <= 0)
+        if (I_health <= 0)
         {
             Die();
         }
 
 
-        Txt_TempHealthIndicator.text = i_health.ToString();
+        Txt_tempHealthIndicator.text = I_health.ToString();
     }
 
     public void AddHealthFromPotion(int _amountToAdd, HealthPotion _HP)
     {
-        if (i_health < i_MaxHealth)
+        if (I_health < I_maxHealth)
         {
             ChangeHealth(_amountToAdd);
             Destroy(_HP.gameObject);

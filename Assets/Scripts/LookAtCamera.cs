@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
 {
+    //Made so that text looks at the camera.
     Camera Cam;
     private void Start()
     {

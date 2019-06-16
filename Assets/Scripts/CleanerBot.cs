@@ -31,7 +31,7 @@ public class CleanerBot : MonoBehaviour
     {
         animor_anim.SetTrigger("Land");
         other.transform.SetParent(transform);
-        plctrl_playa.b_AboveAcid = true;
+        plctrl_playa.B_AboveAcid = true;
     }
 
     //This is currently to ensure that when the dash mode turns off, Jai doesn't start getting killed. This should be edited later.
@@ -40,7 +40,7 @@ public class CleanerBot : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             other.transform.parent = transform;
-            plctrl_playa.b_AboveAcid = true;
+            plctrl_playa.B_AboveAcid = true;
         }
     }
 
@@ -49,14 +49,14 @@ public class CleanerBot : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             other.transform.parent = null;
-            plctrl_playa.b_AboveAcid = false;
+            plctrl_playa.B_AboveAcid = false;
         }
     }
 
     void PlayerGotOff(Collider other)
     {
         other.transform.parent = null;
-        plctrl_playa.b_AboveAcid = false;
+        plctrl_playa.B_AboveAcid = false;
     }
 
     //Find the player, your own agent, animator.

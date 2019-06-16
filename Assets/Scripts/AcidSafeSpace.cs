@@ -9,7 +9,7 @@ public class AcidSafeSpace : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
-            other.GetComponent<PlayerController>().b_AboveAcid = true;
+            other.GetComponent<PlayerController>().B_AboveAcid = true;
         }
     }
 
@@ -17,7 +17,7 @@ public class AcidSafeSpace : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
-            other.GetComponent<PlayerController>().b_AboveAcid = false;
+            other.GetComponent<PlayerController>().B_AboveAcid = false;
         }
     }
 }

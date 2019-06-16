@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class PoliceBot : MonoBehaviour
 {
-    public int i_health = 100;
-    NavMeshAgent agent;
-    [SerializeField] bool b_AttackOnStart = false;
-    EventManager EvMan_EventManager;
+    [SerializeField] int I_health = 100;
+    NavMeshAgent navMeshAg_agent;
+    [SerializeField] bool B_attackOnStart = false;
+    EventManager evMan_eventManager;
     void Start()
     {
         GetVariables();
@@ -17,20 +17,20 @@ public class PoliceBot : MonoBehaviour
 
     void GetVariables()
     {
-        agent = GetComponent<NavMeshAgent>();
-        EvMan_EventManager = FindObjectOfType<EventManager>();
+        navMeshAg_agent = GetComponent<NavMeshAgent>();
+        evMan_eventManager = FindObjectOfType<EventManager>();
     }
 
     void CheckAttackOnStart()
     {
-        if (b_AttackOnStart)
+        if (B_attackOnStart)
         {
             PlayerController _playa = FindObjectOfType<PlayerController>();
             SetTarget(_playa);
         }
     }
 
-    IEnumerator RetargetPlayer(PlayerController _target)
+    IEnumerator RetargetPlayer(PlayerController _target)//Loops with Set Target
     {
         yield return new WaitForSeconds(.3f);
         SetTarget(_target);
@@ -40,7 +40,7 @@ public class PoliceBot : MonoBehaviour
     public void SetTarget(PlayerController _target)
     {
         //Debug.Log(_target.name);
-        agent.SetDestination(_target.transform.position);
+        navMeshAg_agent.SetDestination(_target.transform.position);
         StartCoroutine(RetargetPlayer(_target));
     }
 
@@ -53,18 +53,18 @@ public class PoliceBot : MonoBehaviour
         }
     }
 
-    void DecreaseHealth(int _DecreaseBy)
+    void DecreaseHealth(int _DecreaseBy)//To damage this Police Bot's health.
     {
-        i_health -= _DecreaseBy;
-        if (i_health <= 0)
+        I_health -= _DecreaseBy;
+        if (I_health <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    private void OnDestroy()
+    private void OnDestroy()//Event manager destroy event.
     {
-        if (EvMan_EventManager)
-            EvMan_EventManager.CountEnemyKilled();
+        if (evMan_eventManager)
+            evMan_eventManager.CountEnemyKilled();
     }
 }
