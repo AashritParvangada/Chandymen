@@ -128,15 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3017aa23fdaa7ee44aaac22537b55025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RayDistance: 50
-  F_MinMovementCheckTime: 1
-  F_MaxMovementCheckTime: 2
-  F_MinShootTime: 1
-  F_MaxShootTime: 2
-  Trans_GruntGun: {fileID: 6052017224297149252}
-  GO_Bullet: {fileID: 6351978325533245481, guid: 3d654e802b4075241902d60bc3e8d74b,
+  I_health: 100
+  F_rayDistance: 50
+  F_minMovementCheckTime: 1
+  F_maxMovementCheckTime: 3
+  F_minShootTime: 1
+  F_maxShootTime: 3
+  Trans_gruntGun: {fileID: 6052017224297149252}
+  GO_bullet: {fileID: 6351978325533245481, guid: 3d654e802b4075241902d60bc3e8d74b,
     type: 3}
-  F_BulletSpeed: 10
+  F_bulletSpeed: 15
 --- !u!1 &6052017224297149255
 GameObject:
   m_ObjectHideFlags: 0
