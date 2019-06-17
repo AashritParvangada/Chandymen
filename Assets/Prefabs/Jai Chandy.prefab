@@ -415,15 +415,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ef2cf017dfa1e4887f56a29ad881ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_health: 100
-  i_MaxHealth: 100
-  defaultWalkSpeed: 7
-  walkSpeed: 7
-  dashSpeed: 11
-  dashTime: 0.3
-  dashCoolDownTime: 2
-  b_AboveAcid: 0
-  Txt_TempHealthIndicator: {fileID: 2943299482634046364}
+  I_health: 100
+  I_maxHealth: 100
+  F_DefaultWalkSpeed: 6
+  F_WalkSpeed: 6
+  F_DashSpeed: 12
+  F_DashTime: 0.3
+  F_DashCooldownTime: 3
+  B_AboveAcid: 0
+  Txt_tempHealthIndicator: {fileID: 2943299482634046364}
 --- !u!65 &8296172668473961869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1452ac62ea942de4b821bbcc5580b5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
-  Projectile: {fileID: 8871055059298780269, guid: 1e5a583ccc9408b4a9cf5e4cedb70ec5,
+  F_bulletSpeed: 10
+  GO_Projectile: {fileID: 8871055059298780269, guid: 1e5a583ccc9408b4a9cf5e4cedb70ec5,
     type: 3}
 --- !u!65 &4178515583141823394
 BoxCollider:

@@ -60,7 +60,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -96,6 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2729ea1f73a600a46b92beadbe4c06fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 9, z: -10}
-  angle: {x: 40, y: 0, z: 0}
-  puzzleMode: 0
+  v3_distanceFromPlayer: {x: 0, y: 10, z: -10}
+  v3_viewingAngle: {x: 45, y: 0, z: 0}
+  B_PuzzleMode: 0
