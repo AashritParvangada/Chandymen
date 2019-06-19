@@ -11,7 +11,8 @@ public class DialogueManager : MonoBehaviour
     public Text Txt_NameText;
     public Text Txt_SentenceText;
     PlayerController plCont_playa;
-    public Animator Anim_Animator;
+    public Animator Anim_DialogBox;
+    public GameObject[] GO_Arr_Characters;
     private void Start()
     {
         plCont_playa = FindObjectOfType<PlayerController>();
@@ -19,7 +20,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue _dialogue)
     {
-        Anim_Animator.SetTrigger("Open");
         EnableOrDisableCont(false);
         ClearQueues();
         QueueSentences(_dialogue);
@@ -66,15 +66,39 @@ public class DialogueManager : MonoBehaviour
         string name = s_Queue_names.Dequeue();
         Txt_NameText.text = name;
 
+        DialogBoxAnimations(name);
+
         string sentence = s_Queue_sentences.Dequeue();
         Txt_SentenceText.text = sentence;
     }
+
+    void DialogBoxAnimations(string _name)
+    {
+        if (_name == "jai")
+        {
+            Anim_DialogBox.SetTrigger("Open_Left");
+        }
+
+        else
+        {
+            Anim_DialogBox.SetTrigger("Open_Right");
+        }
+
+        foreach (GameObject _GO in GO_Arr_Characters)
+        {
+            _GO.SetActive(_GO.name == _name ? true : false);
+        }
+    }
+
+
     void EndDialogue()
     {
         EnableOrDisableCont(true);
-        Anim_Animator.SetTrigger("Close");
-
-        Debug.Log("End of conversation");
+        Anim_DialogBox.SetTrigger("Close");
+        foreach (GameObject _GO in GO_Arr_Characters)
+        {
+            _GO.SetActive(false);
+        }
     }
 
     private void Update()

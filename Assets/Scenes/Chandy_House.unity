@@ -2513,8 +2513,54 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: katoot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e0043256fff1334ab6f83a727b8b222, type: 3}
+--- !u!1 &6442457012165735533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 6442457012165735532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6442457012165735534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4827399237613283323, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 6442457012165735532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442457012165735533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6442457012165735535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 6442457012165735532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6442457012165735536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3768422464158234340, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 6442457012165735532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442457012165735535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7667242545086787208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2522,6 +2568,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6314586348538130387, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Spr_Arr_Sprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Img_Arr_Characters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: Txt_NameText
@@ -2537,11 +2603,31 @@ PrefabInstance:
       propertyPath: Anim_Animator
       value: 
       objectReference: {fileID: 275620315}
-    - target: {fileID: 6314586348538130387, guid: d9e398d4863b75247a8d13a12ec9caa4,
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
-      propertyPath: m_Name
-      value: DialogueManager
-      objectReference: {fileID: 0}
+      propertyPath: Anim_DialogBox
+      value: 
+      objectReference: {fileID: 275620315}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Img_Arr_Characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 6442457012165735536}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Img_Arr_Characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 6442457012165735534}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 6442457012165735535}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 6442457012165735533}
     - target: {fileID: 7638603273446681852, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: m_LocalPosition.x
