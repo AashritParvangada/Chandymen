@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     PlayerController plCont_playa;
     public Animator Anim_DialogBox;
     public GameObject[] GO_Arr_Characters;
+    bool b_textAvailable = true, b_active = false;
     private void Start()
     {
         plCont_playa = FindObjectOfType<PlayerController>();
@@ -20,10 +21,15 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue _dialogue)
     {
-        EnableOrDisableCont(false);
-        ClearQueues();
-        QueueSentences(_dialogue);
-        CheckNextSentence();
+
+        if (b_textAvailable)
+        {
+            b_active = true;
+            EnableOrDisableCont(false);
+            ClearQueues();
+            QueueSentences(_dialogue);
+            CheckNextSentence();
+        }
     }
 
     void EnableOrDisableCont(bool _enabled)
@@ -47,7 +53,6 @@ public class DialogueManager : MonoBehaviour
         foreach (string sentence in _dialogue.S_Sentences)
         {
             s_Queue_sentences.Enqueue(sentence);
-
         }
     }
     public void CheckNextSentence()
@@ -99,11 +104,12 @@ public class DialogueManager : MonoBehaviour
         {
             _GO.SetActive(false);
         }
+        b_textAvailable = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E))
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E)) && b_active)
         {
             CheckNextSentence();
         }

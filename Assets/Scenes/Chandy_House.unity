@@ -2523,6 +2523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: katoot
       objectReference: {fileID: 0}
+    - target: {fileID: 2752496056391356146, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: police_bot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e0043256fff1334ab6f83a727b8b222, type: 3}
 --- !u!1 &6442457012165735533 stripped
