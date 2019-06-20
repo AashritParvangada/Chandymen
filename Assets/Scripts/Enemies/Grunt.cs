@@ -18,15 +18,31 @@ public class Grunt : MonoBehaviour
     [SerializeField] Transform Trans_gruntGun;
     [SerializeField] GameObject GO_bullet;
     [SerializeField] float F_bulletSpeed;
+    [SerializeField] bool B_shootOnStart = true;
     EventManager evMan_eventManager;
     //How this agent works:
     //Ray cast to player.
     //If the player isn't found, set destination to player while raycasting for player every half second.
     //If the player is found, set a destination depending on which zone the player is in.
-
+    private void OnEnable()
+    {
+        EventManager.OnDialogueComplete += StartCombat;
+    }
+    private void OnDisable()
+    {
+        EventManager.OnDialogueComplete -= StartCombat;
+    }
     private void Start()//Get variables.
     {
         GetVariables();
+        if (B_shootOnStart == true)
+        {
+            StartCombat();
+        }
+    }
+
+    void StartCombat()
+    {
         StartCoroutine(CheckToMove());//Start the movement. Will delay this later during the cutscene.
         StartCoroutine(CheckToShoot());//Start shooting. Will delay this later.
     }

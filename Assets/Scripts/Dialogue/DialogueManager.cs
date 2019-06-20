@@ -105,6 +105,8 @@ public class DialogueManager : MonoBehaviour
             _GO.SetActive(false);
         }
         b_textAvailable = false;
+
+        FindObjectOfType<EventManager>().FinishDialogueEvent();
     }
 
     private void Update()
