@@ -25,8 +25,8 @@ public class PuzzleCamLock : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
-            GO_PlayerCamera.GetComponent<GameCamera>().B_PuzzleMode = false;
-            GO_PlayerCamera.transform.SetParent(null);
+            GO_PlayerCamera.GetComponent<GameCamera>().ExitPuzzleMode(F_camSize);
+
         }
     }
 }

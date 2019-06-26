@@ -22,10 +22,7 @@ public class GameCamera : MonoBehaviour
         if (!B_PuzzleMode)
         {
 
-            v3_camTarget = trans_target.position + v3_distanceFromPlayer;
-            transform.position = Vector3.Lerp(transform.position, v3_camTarget, Time.deltaTime * 8);
-
-            transform.eulerAngles = v3_viewingAngle;
+            FollowTarget();
         }
     }
 
@@ -41,14 +38,38 @@ public class GameCamera : MonoBehaviour
     {
         B_PuzzleMode = true;
         transform.SetParent(_newCamPos);
-        transform.localPosition = new Vector3(0, 0, 0);
-        GetComponent<Camera>().orthographicSize = _camSize;
+        StartCoroutine(LerpCamToPos(transform.localPosition, new Vector3(0, 0, 0), 3));
+        StartCoroutine(LerpCamSize(F_camSize, _camSize, 3));
     }
 
-    public void ExitPuzzleMode()
+    public void ExitPuzzleMode(float _oldCamSize)
     {
         B_PuzzleMode = false;
         transform.SetParent(null);
-        GetComponent<Camera>().orthographicSize = F_camSize;
+        StartCoroutine(LerpCamSize(_oldCamSize, F_camSize, 3));
+    }
+
+    IEnumerator LerpCamToPos(Vector3 _sourcePos, Vector3 _newPos, float _lerpTime)
+    {
+        float _startTime = Time.time;
+        while (Time.time < _startTime + _lerpTime)
+        {
+            transform.localPosition = Vector3.Lerp(_sourcePos, _newPos, (Time.time - _startTime) / _lerpTime);
+            yield return null;
+        }
+
+        transform.localPosition = _newPos;
+    }
+
+    IEnumerator LerpCamSize(float _originSize, float _targetSize, float _lerpTime)
+    {
+        float _startTime = Time.time;
+        while (Time.time < _startTime + _lerpTime)
+        {
+            GetComponent<Camera>().orthographicSize = Mathf.Lerp(_originSize, _targetSize, (Time.time - _startTime) / _lerpTime);
+            yield return null;
+        }
+
+        GetComponent<Camera>().orthographicSize = _targetSize;
     }
 }
