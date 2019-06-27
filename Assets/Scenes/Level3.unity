@@ -4647,7 +4647,7 @@ PrefabInstance:
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 101
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
@@ -4908,7 +4908,7 @@ PrefabInstance:
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 101
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
@@ -6046,7 +6046,7 @@ PrefabInstance:
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 101
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
@@ -7009,7 +7009,7 @@ PrefabInstance:
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 101
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,
         type: 3}
@@ -8572,7 +8572,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.7
+      value: 47.3
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -8582,7 +8582,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}

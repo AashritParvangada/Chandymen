@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6940764566434331265}
   - component: {fileID: 7253571611117279469}
   - component: {fileID: 8485531566975954315}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Reflector
   m_TagString: Reflector
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815f9382ea68cf049820aa9880c58579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHorizontal: 0
-  f_Time: 0.5
-  f_AngleOne: 45
-  f_AngleTwo: 135
+  B_isHorizontal: 0
+  F_time: 0.5
+  F_angleOne: 45
+  F_angleTwo: 135
