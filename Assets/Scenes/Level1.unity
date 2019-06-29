@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964127, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4759,6 +4759,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: katoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: jai
+      objectReference: {fileID: 0}
     - target: {fileID: 6442457011345966716, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4863,16 +4873,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
-        type: 3}
-      propertyPath: m_Name
-      value: jai
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
-        type: 3}
-      propertyPath: m_Name
-      value: katoot
       objectReference: {fileID: 0}
     - target: {fileID: 2752496056391356146, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
@@ -11461,11 +11461,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 7069868995964897297, guid: d1f446d56ddf6ad4886cbb61d770332a,
-        type: 3}
-      propertyPath: b_AttackOnStart
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2839392753472807734, guid: d1f446d56ddf6ad4886cbb61d770332a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11519,6 +11514,11 @@ PrefabInstance:
     - target: {fileID: 2839392753472807734, guid: d1f446d56ddf6ad4886cbb61d770332a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069868995964897297, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+      propertyPath: b_AttackOnStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7069868995964897296, guid: d1f446d56ddf6ad4886cbb61d770332a,
