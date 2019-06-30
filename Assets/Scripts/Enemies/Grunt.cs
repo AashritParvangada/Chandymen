@@ -20,6 +20,9 @@ public class Grunt : MonoBehaviour
     [SerializeField] float F_bulletSpeed;
     [SerializeField] bool B_shootOnStart = true;
     EventManager evMan_eventManager;
+    Animator anim_Controller;
+    Rigidbody rb_RB;
+    float f_currentSpeed;
     //How this agent works:
     //Ray cast to player.
     //If the player isn't found, set destination to player while raycasting for player every half second.
@@ -53,6 +56,8 @@ public class Grunt : MonoBehaviour
         navMesAg_agent = GetComponent<NavMeshAgent>();
         playcont_player = FindObjectOfType<PlayerController>();
         gun_playaGun = FindObjectOfType<Gun>();
+        anim_Controller = GetComponentInChildren<Animator>();
+        rb_RB = GetComponent<Rigidbody>();
         GetZones();
 
     }
@@ -60,6 +65,7 @@ public class Grunt : MonoBehaviour
     private void Update()
     {
         transform.LookAt(playcont_player.transform);//Just stare at the player.
+        anim_Controller.SetFloat("Speed", navMesAg_agent.velocity.magnitude);
         //CheckToShoot(); //Use later for shotgun.
     }
 
