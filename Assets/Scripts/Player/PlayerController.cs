@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         anmtr_anim.SetFloat("Speed", rb.velocity.magnitude);
         motion += Vector3.up * -8;
         CheckForShot();
-        CheckDash();
+        CheckDash(left_Input.x, left_Input.z);
         CheckMousePoint();
     }
 
@@ -83,12 +83,17 @@ public class PlayerController : MonoBehaviour
         gun_playerGun.ShootProjectile(gun_playerGun.transform);
     }
 
-    void CheckDash()//Check Dash input.
+    void CheckDash(float _motionX, float _motionY)//Check Dash input.
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.Space)) //Was 4 PS4
         {
-            anmtr_anim.SetTrigger("Dash");
-            if (b_canDash) StartCoroutine(Dash());
+            if (b_canDash)
+            {
+                anmtr_anim.SetTrigger("Dash");
+                anmtr_anim.SetFloat("LeftRightMovement", _motionX);
+                anmtr_anim.SetFloat("ForwardBackMovement", _motionY);
+                StartCoroutine(Dash());
+            }
         }
     }
 

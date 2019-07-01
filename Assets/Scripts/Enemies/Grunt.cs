@@ -92,6 +92,8 @@ public class Grunt : MonoBehaviour
 
     void Shoot()//Shoots a spray of bullets.
     {
+        anim_Controller.SetTrigger("Shot");
+
         GameObject _bullet = Instantiate(GO_bullet, null);
         _bullet.transform.position = Trans_gruntGun.position;
         _bullet.transform.forward = transform.forward;

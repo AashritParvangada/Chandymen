@@ -681,41 +681,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Anim_DialogBox
-      value: 
-      objectReference: {fileID: 1283183479}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Txt_NameText
-      value: 
-      objectReference: {fileID: 1283183478}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Txt_SentenceText
-      value: 
-      objectReference: {fileID: 1283183477}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[0]
-      value: 
-      objectReference: {fileID: 1283183482}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[1]
-      value: 
-      objectReference: {fileID: 1283183481}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[2]
-      value: 
-      objectReference: {fileID: 1283183480}
     - target: {fileID: 7638603273446681852, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -771,6 +736,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_DialogBox
+      value: 
+      objectReference: {fileID: 1283183479}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Txt_NameText
+      value: 
+      objectReference: {fileID: 1283183478}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Txt_SentenceText
+      value: 
+      objectReference: {fileID: 1283183477}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1283183482}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1283183481}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[2]
+      value: 
+      objectReference: {fileID: 1283183480}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e398d4863b75247a8d13a12ec9caa4, type: 3}
 --- !u!1001 &259315294
@@ -1063,6 +1063,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
+        type: 3}
+      propertyPath: I_health
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
+        type: 3}
+      propertyPath: I_maxHealth
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 8296172668473961869, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}

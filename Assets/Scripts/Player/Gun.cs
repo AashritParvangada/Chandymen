@@ -22,8 +22,8 @@ public class Gun : MonoBehaviour
     public void ShootProjectile(Transform _origin)//Instantiate a PlasmaBullet, set its speed and direction.
     {
         GameObject newBullet = Instantiate(GO_Projectile, _origin.position, _origin.rotation, null);
-        newBullet.GetComponent<Rigidbody>().velocity = transform.up * F_bulletSpeed;
-        newBullet.transform.forward = transform.up;
+        newBullet.GetComponent<Rigidbody>().velocity = transform.forward * F_bulletSpeed;
+        newBullet.transform.forward = transform.forward;
 
     }
 }
