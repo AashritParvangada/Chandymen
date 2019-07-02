@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         anmtr_anim.SetFloat("Speed", rb.velocity.magnitude);
         motion += Vector3.up * -8;
         CheckForShot();
-        CheckDash(left_Input.x, left_Input.z);
+        CheckDash(motion.x, motion.z);
         CheckMousePoint();
     }
 
