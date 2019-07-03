@@ -96,25 +96,26 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()//Move faster, then move slower. Also prevent acid damage during this time. MUST LATER SEPARATE THIS VAR
     {
-
+        //Make a new object to calculate Jai's direction.
         GameObject directionCalc = new GameObject();
         directionCalc.transform.SetParent(transform);
         directionCalc.transform.localPosition = new Vector3(0, 0, 0);
         directionCalc.transform.SetParent(null);
 
-
+        //Jai starts dashing before the anim.
         b_canDash = false;
         F_WalkSpeed = F_DashSpeed;
         B_AboveAcid = true;
 
-
+        //Check Jai's movement since creating the object and dash in the right direction.
         yield return new WaitForSeconds(0.1f);
         directionCalc.transform.SetParent(transform);
         anmtr_anim.SetFloat("LeftRightMovement", -directionCalc.transform.localPosition.x);
         anmtr_anim.SetFloat("ForwardBackMovement", -directionCalc.transform.localPosition.z);
         anmtr_anim.SetTrigger("Dash");
+        Destroy(directionCalc);
 
-        
+
         yield return new WaitForSeconds(F_DashTime);
         F_WalkSpeed = F_DefaultWalkSpeed;
         B_AboveAcid = false;
