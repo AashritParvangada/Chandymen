@@ -89,9 +89,6 @@ public class PlayerController : MonoBehaviour
         {
             if (b_canDash)
             {
-                anmtr_anim.SetTrigger("Dash");
-                anmtr_anim.SetFloat("LeftRightMovement", _motionX);
-                anmtr_anim.SetFloat("ForwardBackMovement", _motionY);
                 StartCoroutine(Dash());
             }
         }
@@ -99,9 +96,25 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()//Move faster, then move slower. Also prevent acid damage during this time. MUST LATER SEPARATE THIS VAR
     {
+
+        GameObject directionCalc = new GameObject();
+        directionCalc.transform.SetParent(transform);
+        directionCalc.transform.localPosition = new Vector3(0, 0, 0);
+        directionCalc.transform.SetParent(null);
+
+
         b_canDash = false;
         F_WalkSpeed = F_DashSpeed;
         B_AboveAcid = true;
+
+
+        yield return new WaitForSeconds(0.1f);
+        directionCalc.transform.SetParent(transform);
+        anmtr_anim.SetFloat("LeftRightMovement", -directionCalc.transform.localPosition.x);
+        anmtr_anim.SetFloat("ForwardBackMovement", -directionCalc.transform.localPosition.z);
+        anmtr_anim.SetTrigger("Dash");
+
+        
         yield return new WaitForSeconds(F_DashTime);
         F_WalkSpeed = F_DefaultWalkSpeed;
         B_AboveAcid = false;
