@@ -72,7 +72,11 @@ public class Grunt : MonoBehaviour
     void CheckIfCanShootPlayer()//When this is called, sees if the player is in the line of sight. If so, shoot.
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, (playcont_player.transform.position - transform.position), out hit, F_rayDistance))
+
+        Vector3 rayCastOrigin = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        Vector3 rayCastDirectionPoint = new Vector3(playcont_player.transform.position.x, playcont_player.transform.position.y + 1, playcont_player.transform.position.z);
+
+        if (Physics.Raycast(rayCastOrigin, (rayCastDirectionPoint - rayCastOrigin), out hit, F_rayDistance))
         {
             if (hit.transform == playcont_player.transform || hit.transform == gun_playaGun.transform)
             {
