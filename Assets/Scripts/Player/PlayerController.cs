@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     Gun gun_playerGun;
     [SerializeField] TextMesh Txt_tempHealthIndicator;
     Animator anmtr_anim;
+    GameCamera gameCam_PlayerCamera;
 
 
     // Use this for initialization
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         gun_playerGun = GetComponentInChildren<Gun>();
         anmtr_anim = GetComponent<Animator>();
+        gameCam_PlayerCamera = FindObjectOfType<GameCamera>();
     }
 
     void CheckForShot()//On input, shoot.
@@ -125,6 +127,13 @@ public class PlayerController : MonoBehaviour
 
     public void DamageHealth(int DecreaseBy)
     {
+        gameCam_PlayerCamera.CamShake();
+        ChangeHealth(-DecreaseBy);
+    }
+
+    public void AcidDamageHealth(int DecreaseBy)
+    {
+
         if (B_AboveAcid == false)
         {
             ChangeHealth(-DecreaseBy);
