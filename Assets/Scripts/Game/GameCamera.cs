@@ -7,6 +7,7 @@ public class GameCamera : MonoBehaviour
     Transform trans_target;
     public Vector3 v3_distanceFromPlayer, v3_viewingAngle;
     [SerializeField] float F_camSize;
+    [SerializeField] float F_camShakeTime, F_camShakeMagnitude;
     Vector3 v3_camTarget;
     public bool B_PuzzleMode;
     // Use this for initialization
@@ -21,9 +22,11 @@ public class GameCamera : MonoBehaviour
     {
         if (!B_PuzzleMode)
         {
-
             FollowTarget();
         }
+
+        if (Input.GetKeyDown(KeyCode.T)) CamShake();
+
     }
 
     void FollowTarget()
@@ -71,5 +74,29 @@ public class GameCamera : MonoBehaviour
         }
 
         GetComponent<Camera>().orthographicSize = _targetSize;
+    }
+
+    IEnumerator CameraShake(float _duration, float _magnitude)
+    {
+        Vector3 originalPos = transform.localPosition;
+
+        float _timeElapsed = 0f;
+
+        while (_timeElapsed < _duration)
+        {
+            float x = Random.Range(-1, 1.5f) * _magnitude;
+            float y = Random.Range(-1, 1.5f) * _magnitude;
+
+            transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y + y, transform.localPosition.z);
+
+            _timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+    }
+
+    public void CamShake()
+    {
+        StartCoroutine(CameraShake(F_camShakeTime, F_camShakeMagnitude));
     }
 }
