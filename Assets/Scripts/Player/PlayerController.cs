@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] TextMesh Txt_tempHealthIndicator;
     Animator anmtr_anim;
     GameCamera gameCam_PlayerCamera;
-
+    AudioSource AudSrc_ThisSource;
 
     // Use this for initialization
     void Start()
@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
         gun_playerGun = GetComponentInChildren<Gun>();
         anmtr_anim = GetComponent<Animator>();
         gameCam_PlayerCamera = FindObjectOfType<GameCamera>();
+        AudSrc_ThisSource = GetComponent<AudioSource>();
     }
 
     void CheckForShot()//On input, shoot.
@@ -82,6 +83,7 @@ public class PlayerController : MonoBehaviour
     void Shoot()//Shoot from gun script.
     {
         anmtr_anim.SetTrigger("Shot");
+        PlaySound("SFX_Jai_Jgun_2x");
         gun_playerGun.ShootProjectile(gun_playerGun.transform);
     }
 
@@ -180,5 +182,29 @@ public class PlayerController : MonoBehaviour
             ChangeHealth(_amountToAdd);
             Destroy(_HP.gameObject);
         }
+    }
+
+    void PlaySound(string _soundName)
+    {
+
+        int _stringCount = _soundName.Length;
+        Debug.Log(_soundName.Substring(_stringCount - 1, 1));
+        if (_soundName.Substring(_stringCount - 1, 1) == "x")
+        {
+            int _numberOfSounds = int.Parse(_soundName.Substring(_stringCount - 2, 1));
+            int _random = Random.Range(1, _numberOfSounds + 1);
+            Debug.Log(_random);
+
+            string _toPlay = _soundName.Substring(0, _stringCount - 2) + "0" + _random;
+            Debug.Log(_toPlay);
+
+            AudSrc_ThisSource.clip = Resources.Load<AudioClip>("Sounds/Jai/" + _toPlay);
+            AudSrc_ThisSource.Play();
+            return;
+
+        }
+
+        AudSrc_ThisSource.clip = Resources.Load<AudioClip>("Sounds/Jai/" + _soundName);
+        AudSrc_ThisSource.Play();
     }
 }
