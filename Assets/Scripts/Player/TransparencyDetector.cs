@@ -22,9 +22,7 @@ public class TransparencyDetector : MonoBehaviour
     {
         if (other.tag != "Player")
         {
-            Debug.Log("Make transparent");
-
-            SetAlpha(other.GetComponent<Renderer>(), F_transparency);
+            SetAlpha(other, F_transparency);
         }
     }
 
@@ -32,14 +30,19 @@ public class TransparencyDetector : MonoBehaviour
     {
         if (other.tag != "Player")
         {
-            SetAlpha(other.GetComponent<Renderer>(), 1);
+            SetAlpha(other, 1);
         }
     }
 
-    private void SetAlpha(Renderer _rend, float _alpha)
+    private void SetAlpha(Collider _other, float _alpha)
     {
-        Color _color = _rend.material.color;
-        _color.a = _alpha;
-        _rend.material.color = _color;
+        if (_other.GetComponent<Renderer>())
+        {
+            Renderer _rend = _other.GetComponent<Renderer>();
+            Color _color = _rend.material.color;
+            _color.a = _alpha;
+            _rend.material.color = _color;
+        }
+
     }
 }

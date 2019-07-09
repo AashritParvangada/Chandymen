@@ -24,7 +24,7 @@ public class Grunt : MonoBehaviour
     Rigidbody rb_RB;
     float f_currentSpeed;
 
-    AudioSource AudSrc_ThisSource;
+    AudioSource audSrc_thisSource;
     //How this agent works:
     //Ray cast to player.
     //If the player isn't found, set destination to player while raycasting for player every half second.
@@ -60,7 +60,7 @@ public class Grunt : MonoBehaviour
         gun_playaGun = FindObjectOfType<Gun>();
         anim_Controller = GetComponentInChildren<Animator>();
         rb_RB = GetComponent<Rigidbody>();
-        AudSrc_ThisSource = GetComponent<AudioSource>();
+        audSrc_thisSource = GetComponent<AudioSource>();
         GetZones();
 
     }
@@ -124,8 +124,8 @@ public class Grunt : MonoBehaviour
 
     void PlaySound(string _soundName)
     {
-        AudSrc_ThisSource.clip = Resources.Load<AudioClip>("Sounds/Grunt/" + _soundName);
-        AudSrc_ThisSource.Play();
+        audSrc_thisSource.clip = Resources.Load<AudioClip>("Sounds/Grunt/" + _soundName);
+        audSrc_thisSource.Play();
     }
 
     IEnumerator CheckToShoot()//Repeats on itself to keep shooting at the player.
