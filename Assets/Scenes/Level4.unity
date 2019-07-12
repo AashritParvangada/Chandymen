@@ -681,6 +681,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_DialogBox
+      value: 
+      objectReference: {fileID: 1283183479}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Txt_NameText
+      value: 
+      objectReference: {fileID: 1283183478}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Txt_SentenceText
+      value: 
+      objectReference: {fileID: 1283183477}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1283183482}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1283183481}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[2]
+      value: 
+      objectReference: {fileID: 1283183480}
     - target: {fileID: 7638603273446681852, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -736,41 +771,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Anim_DialogBox
-      value: 
-      objectReference: {fileID: 1283183479}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Txt_NameText
-      value: 
-      objectReference: {fileID: 1283183478}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Txt_SentenceText
-      value: 
-      objectReference: {fileID: 1283183477}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[0]
-      value: 
-      objectReference: {fileID: 1283183482}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[1]
-      value: 
-      objectReference: {fileID: 1283183481}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[2]
-      value: 
-      objectReference: {fileID: 1283183480}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e398d4863b75247a8d13a12ec9caa4, type: 3}
 --- !u!1001 &259315294
@@ -1067,12 +1067,12 @@ PrefabInstance:
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: I_health
-      value: 20000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: I_maxHealth
-      value: 20000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8296172668473961869, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -1373,6 +1373,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 96fa6d03486e84f96a9237ccd90f5e0a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -5975033157549033438, guid: 96fa6d03486e84f96a9237ccd90f5e0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1478,11 +1483,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 67f5b2c403eb149d8bd38504b49b55dd, type: 2}
-    - target: {fileID: 2534866581884222612, guid: 96fa6d03486e84f96a9237ccd90f5e0a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fa6d03486e84f96a9237ccd90f5e0a, type: 3}
 --- !u!1 &539509566
@@ -2954,6 +2954,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: katoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_Name
+      value: jai
+      objectReference: {fileID: 0}
     - target: {fileID: 6442457011345966716, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3058,16 +3068,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
-        type: 3}
-      propertyPath: m_Name
-      value: jai
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
-        type: 3}
-      propertyPath: m_Name
-      value: katoot
       objectReference: {fileID: 0}
     - target: {fileID: 2752496056391356146, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}

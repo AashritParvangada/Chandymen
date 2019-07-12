@@ -188,15 +188,12 @@ public class PlayerController : MonoBehaviour
     {
 
         int _stringCount = _soundName.Length;
-        Debug.Log(_soundName.Substring(_stringCount - 1, 1));
         if (_soundName.Substring(_stringCount - 1, 1) == "x")
         {
             int _numberOfSounds = int.Parse(_soundName.Substring(_stringCount - 2, 1));
             int _random = Random.Range(1, _numberOfSounds + 1);
-            Debug.Log(_random);
 
             string _toPlay = _soundName.Substring(0, _stringCount - 2) + "0" + _random;
-            Debug.Log(_toPlay);
 
             AudSrc_ThisSource.clip = Resources.Load<AudioClip>("Sounds/Jai/" + _toPlay);
             AudSrc_ThisSource.Play();

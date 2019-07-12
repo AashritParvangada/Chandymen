@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3398568554397525476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.52, y: 0, z: -8.76}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7660782217965192582}
@@ -59,7 +59,7 @@ MonoBehaviour:
   GO_bullet: {fileID: 6351978325533245481, guid: 3d654e802b4075241902d60bc3e8d74b,
     type: 3}
   F_bulletSpeed: 15
-  B_shootOnStart: 0
+  B_shootOnStart: 1
 --- !u!65 &3398568554397525481
 BoxCollider:
   m_ObjectHideFlags: 0

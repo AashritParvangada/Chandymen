@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform[] Trans_Arr_spawnPoints;
     [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart;
     [SerializeField] GameObject[] GO_Arr_doorsToOpenWhenDone;
+    [SerializeField] int I_chanceOfGrunt = 50, I_chanceOfBot = 50;
     private void OnEnable()
     {
         EventManager.OnEnemyKilled += CountEnemies;
@@ -109,8 +110,8 @@ public class SpawnManager : MonoBehaviour
 
     void RandomlyInstantiate()//Randomly instantiate a grunt or police bot depending on two numbers. MUST ADD THESE TWO NUMBERS TO SER FIELD.
     {
-        int _rand = Random.Range(0, 2);
-        if (_rand == 0) Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
+        int _rand = Random.Range(0, I_chanceOfBot + I_chanceOfGrunt);
+        if (_rand <= I_chanceOfBot) Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
         else
         {
             Instantiate(GO_grunt, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();

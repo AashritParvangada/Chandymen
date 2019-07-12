@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dcf972ed2a3324fada6edfe90a7434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_enemyToSpawn: {fileID: 6052017223834718513, guid: 2cb8ad8dd31469041966dff59f495914,
+  GO_enemyToSpawn: {fileID: 3398568554397525476, guid: 97b875cf75b7c78409b7f21081498728,
     type: 3}
 --- !u!1 &195076285
 GameObject:
@@ -13283,7 +13283,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GO_enemyToSpawn
       value: 
-      objectReference: {fileID: 6052017223834718513, guid: 2cb8ad8dd31469041966dff59f495914,
+      objectReference: {fileID: 3398568554397525476, guid: 97b875cf75b7c78409b7f21081498728,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3f7a01352ab264db9520106eeb55c1, type: 3}
