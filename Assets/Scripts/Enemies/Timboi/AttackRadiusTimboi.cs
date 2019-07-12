@@ -13,7 +13,9 @@ public class AttackRadiusTimboi : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerController>() || other.GetComponent<PlasmaBullet>())
-            tim_timboi.Slash();
+        if (other.GetComponent<PlasmaBullet>())
+        {
+            tim_timboi.SlashBullet();
+        }
     }
 }

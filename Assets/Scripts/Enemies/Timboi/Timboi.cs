@@ -66,52 +66,69 @@ public class Timboi : MonoBehaviour
 
     IEnumerator Enum_MoveToPlayer()
     {
-        MoveToPlayer();
-        yield return new WaitForSeconds(CheckAttackTime());
-        Recover();
+        while (CheckDistanceFromPlayer() > 2)
+        {
+            MoveToPlayer();
+            yield return null;
+        }
 
+        SlashPlayer(CheckAttackTime());
+
+
+    }
+
+    float CheckDistanceFromPlayer()
+    {
+        return Vector3.Distance(transform.position, playcont_player.transform.position);
     }
 
     void MoveToPlayer()
     {
         navMesAg_agent.speed = 10;
         navMesAg_agent.acceleration = 20;
-        //transform.LookAt(playcont_player.transform);
         navMesAg_agent.SetDestination(playcont_player.transform.position);
     }
 
-    public void Slash()
+    void SlashPlayer(float _attackDelay)
+    {
+        StopAllCoroutines();
+        navMesAg_agent.SetDestination(transform.position);
+        StartCoroutine(Enum_Slash(_attackDelay));
+    }
+
+    public void SlashBullet()
+    {
+        StopAllCoroutines();
+        navMesAg_agent.SetDestination(transform.position);
+        StartCoroutine(Enum_Slash(0));
+    }
+
+    IEnumerator Enum_Slash(float _attackDelay)
     {
         b_lookAtPlayer = false;
-        navMesAg_agent.speed = 0;
-        navMesAg_agent.enabled = false;
+        navMesAg_agent.isStopped = true;
+
+        yield return new WaitForSeconds(_attackDelay);
 
         foreach (GameObject _go in GO_tempArray)
         {
             _go.SetActive(true);
         }
+        yield return new WaitForSeconds(F_recoverTime);
 
         Recover();
-    }
-
-    IEnumerator Enum_RecoverTime()
-    {
-        yield return new WaitForSeconds(F_recoverTime);
-        b_lookAtPlayer = true;
-        navMesAg_agent.enabled = true;
-        navMesAg_agent.speed = 10;
-
-        foreach (GameObject _go in GO_tempArray)
-        {
-            _go.SetActive(false);
-        }
-
         StartCoroutine(Enum_MoveToZonePoint());
     }
 
     void Recover()
     {
-        StartCoroutine(Enum_RecoverTime());
+        b_lookAtPlayer = true;
+        navMesAg_agent.isStopped = false;
+
+        foreach (GameObject _go in GO_tempArray)
+        {
+            _go.SetActive(false);
+        }
     }
 
     //Checks which zone the player is closest to.
@@ -141,6 +158,10 @@ public class Timboi : MonoBehaviour
 
     public void DamageHealth(int _Damage)//Called in Plasma Bullet.
     {
+        Recover();
+        StopAllCoroutines();
+        StartCoroutine(Enum_MoveToZonePoint());
+
         I_health -= _Damage;
 
         if (I_health <= 300)
@@ -165,7 +186,7 @@ public class Timboi : MonoBehaviour
         return _movementTime;
     }
 
-    float CheckAttackTime()//Randomizes shoot time
+    public float CheckAttackTime()//Randomizes shoot time
     {
         float _attackTime = Random.Range(F_minAttackTime, F_maxAttackTime);
         return _attackTime;
@@ -176,6 +197,7 @@ public class Timboi : MonoBehaviour
         if (other.GetComponent<PlasmaBullet>())
         {
             DamageHealth(50);
+            Debug.Log(I_health);
         }
     }
 }
