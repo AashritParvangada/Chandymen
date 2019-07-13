@@ -99,4 +99,17 @@ public class CleanerBot : MonoBehaviour
         yield return new WaitForSeconds(_time);
         Patrol();
     }
+
+    void EjectPlayer()
+    {
+        plctrl_playa.transform.SetParent(null);
+        plctrl_playa.enabled = true;
+        plctrl_playa.B_AboveAcid = false;
+
+    }
+
+    private void OnDestroy()
+    {
+        EjectPlayer();
+    }
 }

@@ -13,7 +13,7 @@ public class DestroyerHole : MonoBehaviour
     {
         if (other.GetComponent<CleanerBot>())
         {
-                Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

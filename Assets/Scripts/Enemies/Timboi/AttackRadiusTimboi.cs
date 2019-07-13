@@ -15,6 +15,7 @@ public class AttackRadiusTimboi : MonoBehaviour
     {
         if (other.GetComponent<PlasmaBullet>())
         {
+            Debug.Log("Triggering through raduis");
             tim_timboi.SlashBullet();
         }
     }
