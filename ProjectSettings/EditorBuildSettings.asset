@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Chandy_House.unity
+    guid: 34c55e9f54ad5a243a78ed63e3ee50ab
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 8bcae02e93ed9db4b9aabe34260e32c4
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 265de4aea75d708468095e490107f309
+  - enabled: 1
+    path: Assets/Scenes/Token1.unity
+    guid: ede74ff0a2ba6704fb647d5c97db130d
+  - enabled: 1
+    path: Assets/Scenes/Token2.unity
+    guid: b087fca384cb4b64a9038067eff82461
+  - enabled: 1
+    path: Assets/Scenes/Timboi.unity
+    guid: 89c528d2d45e65243ba7d3867eb8ca72
   m_configObjects: {}

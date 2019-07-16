@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager gamMan_instance;
     public Vector3 V3_LastCheckpointPos;
+
+    public bool B_Token1, B_Token2;
     // Start is called before the first frame update
     private void Awake()
     {
