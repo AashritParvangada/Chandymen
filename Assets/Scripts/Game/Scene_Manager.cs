@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class Scene_Manager : MonoBehaviour
 {
     bool b_loadedGame;
+    GameManager GmMan_Manager;
+
+    private void Start()
+    {
+        GetVariables();
+    }
 
     private void Update()
     {
@@ -29,7 +35,13 @@ public class Scene_Manager : MonoBehaviour
     public void LoadPlayer()
     {
         PlayerData _data = SaveGame.LoadPlayer();
+        GmMan_Manager.B_Token1 = _data.B_Token1; GmMan_Manager.B_Token2 = _data.B_Token2;
         SceneChange(_data.I_SceneNumber);
+    }
+
+    void GetVariables()
+    {
+        GmMan_Manager = FindObjectOfType<GameManager>();
     }
 
     public void SceneChange(int _SceneName)//Isn't being used yet. Use when shifting levels.
@@ -48,5 +60,10 @@ public class Scene_Manager : MonoBehaviour
         return SceneManager.GetActiveScene().buildIndex;
     }
 
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }

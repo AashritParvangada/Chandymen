@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: ce11ae4582948ac4ea86e068e60e08f9
+  - enabled: 1
     path: Assets/Scenes/Chandy_House.unity
     guid: 34c55e9f54ad5a243a78ed63e3ee50ab
   - enabled: 1
