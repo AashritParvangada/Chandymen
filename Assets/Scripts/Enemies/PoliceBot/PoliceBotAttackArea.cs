@@ -17,7 +17,7 @@ public class PoliceBotAttackArea : MonoBehaviour
             playCont_playa = other.GetComponent<PlayerController>();
             foreach (PoliceBot _pb in PB_Arr_botsTriggeredByThis)
             {
-                _pb.SetTarget(playCont_playa);
+                _pb.StartAttacking();
             }
         }
     }

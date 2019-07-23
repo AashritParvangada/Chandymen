@@ -8847,7 +8847,7 @@ PrefabInstance:
     - target: {fileID: 6442457011345966688, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
@@ -16570,12 +16570,12 @@ Transform:
   - {fileID: 1333326750}
   - {fileID: 924173652}
   - {fileID: 1338615293}
-  - {fileID: 1673491814}
+  - {fileID: 601066441}
   - {fileID: 1686937042}
   - {fileID: 160067084}
+  - {fileID: 1673491814}
   - {fileID: 376848205}
   - {fileID: 58282369}
-  - {fileID: 601066441}
   - {fileID: 640318971}
   - {fileID: 2039178526}
   - {fileID: 595300518}
@@ -18888,6 +18888,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187584410327153374, guid: c1e3e3cc09840c8498b342fb15c25a84,
+        type: 3}
+      propertyPath: V3_LastCheckpointPos.x
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187584410327153374, guid: c1e3e3cc09840c8498b342fb15c25a84,
+        type: 3}
+      propertyPath: V3_LastCheckpointPos.z
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1e3e3cc09840c8498b342fb15c25a84, type: 3}
 --- !u!1001 &5257035442595757902
@@ -19165,10 +19175,25 @@ PrefabInstance:
       propertyPath: b_AttackOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7069868995964897297, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+      propertyPath: F_stopDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069868995964897297, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+      propertyPath: F_cooldownTimer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7069868995964897296, guid: d1f446d56ddf6ad4886cbb61d770332a,
         type: 3}
       propertyPath: m_Speed
-      value: 5
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069868995964897296, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7069868995715874326, guid: d1f446d56ddf6ad4886cbb61d770332a,
         type: 3}
