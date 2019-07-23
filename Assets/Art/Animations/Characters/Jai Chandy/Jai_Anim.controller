@@ -286,7 +286,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Shot
+    m_ConditionEvent: Dash
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: LeftRightMovement
