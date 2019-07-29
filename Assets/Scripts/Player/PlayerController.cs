@@ -167,9 +167,29 @@ public class PlayerController : MonoBehaviour
 
     void ChangeHealth(int _healthChange)
     {
-        Mathf.Clamp(I_health += _healthChange, 0, I_maxHealth);
+        I_health += _healthChange;
+        if (I_health >= I_maxHealth)
+        {
+            I_health = I_maxHealth;
+            HlthBr_Script.SwitchRightCap(true);
+        }
+        else
+        {
+            HlthBr_Script.SwitchRightCap(false);
+        }
+
+        if (I_health <= 0)
+        {
+            I_health = 0;
+            HlthBr_Script.SwitchLeftCap(false);
+        }
+        else
+        {
+            HlthBr_Script.SwitchLeftCap(true);
+        }
 
         HlthBr_Script.ScalePurpleBar((float)I_health / I_maxHealth);
+        HlthBr_Script.ScaleYellowBar((float)I_health / I_maxHealth);
 
         if (I_health <= 0)
         {
