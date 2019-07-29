@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     GameCamera gameCam_PlayerCamera;
     AudioSource AudSrc_ThisSource;
 
+    HealthBar HlthBr_Script;
+
     // Use this for initialization
     void Start()
     {
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
         anmtr_anim = GetComponent<Animator>();
         gameCam_PlayerCamera = FindObjectOfType<GameCamera>();
         AudSrc_ThisSource = GetComponent<AudioSource>();
+        HlthBr_Script = FindObjectOfType<HealthBar>();
     }
 
     void CheckForShot()//On input, shoot.
@@ -165,6 +168,8 @@ public class PlayerController : MonoBehaviour
     void ChangeHealth(int _healthChange)
     {
         Mathf.Clamp(I_health += _healthChange, 0, I_maxHealth);
+
+        HlthBr_Script.ScalePurpleBar((float)I_health / I_maxHealth);
 
         if (I_health <= 0)
         {
