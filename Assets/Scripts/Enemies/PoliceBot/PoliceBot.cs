@@ -43,8 +43,16 @@ public class PoliceBot : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             navMeshAg_agent.SetDestination(_target.transform.position);
         }
-        navMeshAg_agent.SetDestination(transform.position);
+
+        navMeshAg_agent.SetDestination(SlightForwardMove());
+        //navMeshAg_agent.SetDestination(transform.position);
+
         StartCoroutine(IEnum_CooldownState(F_cooldownTimer));
+    }
+
+    Vector3 SlightForwardMove()
+    {
+        return transform.position + transform.forward * F_stopDistance;
     }
 
     //Sets the bot to target the player and loops a coroutine that retargets the player's location every .3 seconds.
