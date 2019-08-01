@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab5d74eb1e86945aa3fa08f382b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  I_damage: 40
 --- !u!1 &1209585793377495024
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab5d74eb1e86945aa3fa08f382b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  I_damage: 40
 --- !u!1 &2524391026029995307
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab5d74eb1e86945aa3fa08f382b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  I_damage: 40
 --- !u!1 &5487462948655068230
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +328,7 @@ GameObject:
   - component: {fileID: 6124040486827966684}
   - component: {fileID: 4552409225311969851}
   - component: {fileID: 2995695229745006142}
-  - component: {fileID: 1533637321533959801}
+  - component: {fileID: 2315106773541635937}
   m_Layer: 0
   m_Name: PoliceBot2.0
   m_TagString: Untagged
@@ -430,7 +433,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1533637321533959801
+--- !u!114 &2315106773541635937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,7 +442,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5487462948655068230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657737ce446710048bc430f726e20530, type: 3}
+  m_Script: {fileID: 11500000, guid: c4eee18368b38464ca398df8b27ad775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_health: 100
+  I_health: 100
+  B_attackOnStart: 0

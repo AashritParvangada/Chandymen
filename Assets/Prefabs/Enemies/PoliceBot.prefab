@@ -108,8 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657737ce446710048bc430f726e20530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_health: 100
-  b_AttackOnStart: 1
+  I_health: 100
+  B_attackOnStart: 0
+  F_chargeCountdownTimer: 2
+  F_cooldownTimer: 2
+  F_stopDistance: 2
 --- !u!195 &7069868995964897296
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -236,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab5d74eb1e86945aa3fa08f382b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  I_damage: 10
 --- !u!1 &7069868996035202655
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab5d74eb1e86945aa3fa08f382b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  I_damage: 10
 --- !u!1 &7069868996213448433
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,3 +449,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab5d74eb1e86945aa3fa08f382b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  I_damage: 10
