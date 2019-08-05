@@ -48,12 +48,12 @@ public class SpawnManager : MonoBehaviour
         if (B_isActive)//If this has been activated by OnTriggerEnter.
         {
             int _totalEnemies = 0;
-            foreach (Grunt _grunt in FindObjectsOfType<Grunt>())
+            foreach (Grunt _grunt in GetComponentsInChildren<Grunt>())
             {
                 _totalEnemies++;
             }
 
-            foreach (PoliceBot _PB in FindObjectsOfType<PoliceBot>())
+            foreach (PoliceBot _PB in GetComponentsInChildren<PoliceBot>())
             {
                 _totalEnemies++;
             }
