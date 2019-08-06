@@ -11,13 +11,13 @@ public class EventManager : MonoBehaviour
 
     public void CountEnemyKilled()//When this function is called, it runs the OnEnemyKilled event.
     {
-        if(OnEnemyKilled!=null)
-        OnEnemyKilled();
+        if (OnEnemyKilled != null)
+            OnEnemyKilled();
     }
 
     public void FinishDialogueEvent()
     {
-        if(OnDialogueComplete!=null)
-        OnDialogueComplete();
+        if (OnDialogueComplete != null)
+            OnDialogueComplete();
     }
 }

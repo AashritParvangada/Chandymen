@@ -64,6 +64,10 @@ public class Scene_Manager : MonoBehaviour
     {
         return SceneManager.GetActiveScene().buildIndex;
     }
+    public string GetActiveSceneString()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 
 
     public void QuitGame()
