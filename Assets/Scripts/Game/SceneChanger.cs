@@ -45,6 +45,10 @@ public class SceneChanger : MonoBehaviour
         {
             boxCollider.enabled = true;
         }
+        else if (scnMan.GetActiveSceneString() == "Chandy_Office")
+        {
+            boxCollider.enabled = true;
+        }
     }
 
     void CheckToActivateOnStart()
@@ -53,6 +57,7 @@ public class SceneChanger : MonoBehaviour
         {
             boxCollider.enabled = true;
         }
+
     }
 
 }
