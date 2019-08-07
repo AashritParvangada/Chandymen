@@ -6,19 +6,30 @@ public class Centrifuge : MonoBehaviour
 {
     [SerializeField] int I_chargesNeeded;
     [SerializeField] GameObject GO_door;
+
+    [SerializeField] bool B_isLastinLevel = false;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlasmaBullet>())
         {
-            Debug.Log("Entered Trigger");
             PlasmaBullet thisBullet = other.GetComponent<PlasmaBullet>();
-            if (thisBullet.I_BulletCharge == I_chargesNeeded)
+            if (thisBullet.I_BulletCharge >= I_chargesNeeded)
             {
                 //Should put animation here.
-                Destroy(GO_door);
-                Destroy(thisBullet);
+                ActivateFuge(thisBullet);
             }
+        }
+    }
+
+    void ActivateFuge(PlasmaBullet _plsbull)
+    {
+        GO_door.SetActive(false);
+        Destroy(_plsbull.gameObject);
+
+        if (B_isLastinLevel)
+        {
+            FindObjectOfType<EventManager>().LastFugeHitEvent();
         }
     }
 

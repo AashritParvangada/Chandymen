@@ -9,6 +9,9 @@ public class EventManager : MonoBehaviour
     public delegate void DialogueDone();
     public static event DialogueDone OnDialogueComplete;
 
+    public delegate void LastFugeHit();
+    public static event LastFugeHit OnLastFugeHit;
+
     public void CountEnemyKilled()//When this function is called, it runs the OnEnemyKilled event.
     {
         if (OnEnemyKilled != null)
@@ -19,5 +22,10 @@ public class EventManager : MonoBehaviour
     {
         if (OnDialogueComplete != null)
             OnDialogueComplete();
+    }
+
+    public void LastFugeHitEvent()
+    {
+        if (OnLastFugeHit != null) OnLastFugeHit();
     }
 }

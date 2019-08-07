@@ -8,6 +8,7 @@ public class SpawnTrigger : MonoBehaviour
     int i_numberOfSpawnersWithin = 0;
     int i_enemiesKilled = 0;
     [SerializeField] GameObject GO_doorToOpen;
+    public SceneChanger ScnChngr;
 
     private void Start()
     {
@@ -64,6 +65,8 @@ public class SpawnTrigger : MonoBehaviour
             if (i_enemiesKilled >= i_numberOfSpawnersWithin)
             {
                 OpenDoor();
+
+                if (ScnChngr) ActivateSceneChanger();
             }
         }
     }
@@ -73,6 +76,11 @@ public class SpawnTrigger : MonoBehaviour
         if (GO_doorToOpen)
             GO_doorToOpen.SetActive(false);
         b_isActive = false;
+    }
+
+    void ActivateSceneChanger()
+    {
+        ScnChngr.Level3EnemyKilled();
     }
 
 

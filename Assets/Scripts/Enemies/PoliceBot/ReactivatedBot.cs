@@ -7,10 +7,22 @@ public class ReactivatedBot : MonoBehaviour
 {
     [SerializeField] int I_health = 100;
     NavMeshAgent navMeshAg_agent;
-    [SerializeField] bool B_attackOnStart = false;
+    public bool B_AttackOnStart, B_ActivateOnDialogue;
     EventManager evMan_eventManager;
+    PlayerController plCont_playa;
 
-    private void Awake() {
+    private void OnEnable()
+    {
+        EventManager.OnDialogueComplete += DialogueEventEnded;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnDialogueComplete -= DialogueEventEnded;
+    }
+
+    private void Awake()
+    {
         GetVariables();
     }
     void Start()
@@ -18,18 +30,23 @@ public class ReactivatedBot : MonoBehaviour
         CheckAttackOnStart();
     }
 
+    private void Update()
+    {
+        transform.LookAt(plCont_playa.transform);
+    }
+
     void GetVariables()
     {
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
+        plCont_playa = FindObjectOfType<PlayerController>();
     }
 
-    void CheckAttackOnStart()
+    public void CheckAttackOnStart()
     {
-        if (B_attackOnStart)
+        if (B_AttackOnStart)
         {
-            PlayerController _playa = FindObjectOfType<PlayerController>();
-            SetTarget(_playa);
+            SetTarget(plCont_playa);
         }
     }
 
@@ -69,5 +86,12 @@ public class ReactivatedBot : MonoBehaviour
     {
         if (evMan_eventManager)
             evMan_eventManager.CountEnemyKilled();
+    }
+    void DialogueEventEnded()
+    {
+        if (B_ActivateOnDialogue)
+        {
+            SetTarget(plCont_playa);
+        }
     }
 }

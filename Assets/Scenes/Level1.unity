@@ -43672,8 +43672,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PB_Arr_botsTriggeredByThis:
   - {fileID: 7069868995702029554}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &1814851864
 PrefabInstance:
   m_ObjectHideFlags: 0
