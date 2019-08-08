@@ -68,5 +68,13 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
+    public void Level2AllEnemiesKilled()
+    {
+        if (scnMan.GetActiveSceneString() == "Level2")
+        {
+            boxCollider.enabled = true;
+        }
+    }
+
 
 }
