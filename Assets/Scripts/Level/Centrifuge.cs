@@ -24,7 +24,7 @@ public class Centrifuge : MonoBehaviour
 
     void ActivateFuge(PlasmaBullet _plsbull)
     {
-        GO_door.SetActive(false);
+        if (GO_door) GO_door.SetActive(false);
         Destroy(_plsbull.gameObject);
 
         if (B_isLastinLevel)

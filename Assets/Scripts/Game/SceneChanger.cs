@@ -8,14 +8,18 @@ public class SceneChanger : MonoBehaviour
     BoxCollider boxCollider;
     [SerializeField] string S_loadSceneName;
 
+    int i_token1FugesLit = 0;
+
     private void OnEnable()
     {
         EventManager.OnDialogueComplete += CheckOnDialogueFinished;
+        EventManager.OnLastFugeHit += Token1FugesAdd;
     }
 
     private void OnDisable()
     {
         EventManager.OnDialogueComplete -= CheckOnDialogueFinished;
+        EventManager.OnLastFugeHit -= Token1FugesAdd;
 
     }
     void GetVariables()
@@ -76,5 +80,21 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
+    void Token1FugesAdd()
+    {
+
+        i_token1FugesLit++;
+
+        if (i_token1FugesLit >= 2)
+            Token1AllFugesLit();
+    }
+
+    void Token1AllFugesLit()
+    {
+        if (scnMan.GetActiveSceneString() == "Token1")
+        {
+            boxCollider.enabled = true;
+        }
+    }
 
 }
