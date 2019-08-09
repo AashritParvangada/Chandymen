@@ -7,10 +7,16 @@ public class Scene_Manager : MonoBehaviour
 {
     bool b_loadedGame;
     GameManager GmMan_Manager;
-
+    [SerializeField] SceneChanger ScnChng_Token1, ScnChng_Token2;
     private void Start()
     {
         GetVariables();
+    }
+
+    void CheckGameManagerTokens()
+    {
+        if (GmMan_Manager.B_Token1 && ScnChng_Token1) ScnChng_Token1.boxCollider.enabled = false;
+        if (GmMan_Manager.B_Token2 && ScnChng_Token2) ScnChng_Token2.boxCollider.enabled = false;
     }
 
     private void Update()

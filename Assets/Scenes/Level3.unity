@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 3
   GO_door: {fileID: 1021528592}
-  B_isLastinLevel: 0
+  B_countFugeInEvent: 0
 --- !u!1001 &431810603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3159,7 +3159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 5
   GO_door: {fileID: 1073307995}
-  B_isLastinLevel: 0
+  B_countFugeInEvent: 0
 --- !u!1 &631660666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,7 +4247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 2
   GO_door: {fileID: 1470732617}
-  B_isLastinLevel: 0
+  B_countFugeInEvent: 0
 --- !u!1 &892194003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,7 +4624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 7
   GO_door: {fileID: 943554593}
-  B_isLastinLevel: 0
+  B_countFugeInEvent: 0
 --- !u!1001 &943554591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5748,6 +5748,11 @@ PrefabInstance:
       propertyPath: ScnChngr
       value: 
       objectReference: {fileID: 574634224}
+    - target: {fileID: 1178217786302378021, guid: dd3f7a01352ab264db9520106eeb55c1,
+        type: 3}
+      propertyPath: B_isLastTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5945,7 +5950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 10
   GO_door: {fileID: 1269224379}
-  B_isLastinLevel: 1
+  B_countFugeInEvent: 0
 --- !u!1 &1151518239
 GameObject:
   m_ObjectHideFlags: 0

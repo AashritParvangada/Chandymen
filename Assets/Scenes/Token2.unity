@@ -1221,6 +1221,11 @@ PrefabInstance:
       propertyPath: I_MaxSimultanEnemies
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
+        type: 3}
+      propertyPath: B_triggerLastEnemyKilledEvent
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5567376658706703470, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1495,6 +1500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GO_enemyToSpawn: {fileID: 3398568554397525476, guid: 97b875cf75b7c78409b7f21081498728,
     type: 3}
+  B_activateOnStart: 1
+  B_activateOnDialogue: 0
 --- !u!1 &195076285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +1799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GO_enemyToSpawn: {fileID: 0}
+  B_activateOnStart: 1
+  B_activateOnDialogue: 0
 --- !u!1 &228970057
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,7 +4529,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 1.68e-43, w: 0}
+  m_BoundingSphereOverride: {x: 8.587e-42, y: 1.02e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -8904,6 +8913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GO_enemyToSpawn: {fileID: 0}
+  B_activateOnStart: 1
+  B_activateOnDialogue: 0
 --- !u!4 &1385481765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1616805485007031586, guid: 1e979857d4a1ccc41ade5cbeedf2a6d4,

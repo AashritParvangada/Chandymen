@@ -7,7 +7,7 @@ public class Centrifuge : MonoBehaviour
     [SerializeField] int I_chargesNeeded;
     [SerializeField] GameObject GO_door;
 
-    [SerializeField] bool B_isLastinLevel = false;
+    [SerializeField] bool B_countFugeInEvent = false;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -27,9 +27,9 @@ public class Centrifuge : MonoBehaviour
         if (GO_door) GO_door.SetActive(false);
         Destroy(_plsbull.gameObject);
 
-        if (B_isLastinLevel)
+        if (B_countFugeInEvent)
         {
-            FindObjectOfType<EventManager>().LastFugeHitEvent();
+            FindObjectOfType<EventManager>().FugeHitEvent();
         }
     }
 

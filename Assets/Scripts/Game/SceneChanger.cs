@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneChanger : MonoBehaviour
 {
     Scene_Manager scnMan;
-    BoxCollider boxCollider;
+    public BoxCollider boxCollider;
     [SerializeField] string S_loadSceneName;
 
     int i_token1FugesLit = 0;
@@ -13,13 +13,18 @@ public class SceneChanger : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnDialogueComplete += CheckOnDialogueFinished;
-        EventManager.OnLastFugeHit += Token1FugesAdd;
+        EventManager.OnToken1FugeHit += Token1AllFugesLit;
+        EventManager.OnLastEnemyKilledLevel2 += Level2AllEnemiesKilled;
+        EventManager.OnLastEnemyKilledLevel3 += Level3AllEnemiesKilled;
+
     }
 
     private void OnDisable()
     {
         EventManager.OnDialogueComplete -= CheckOnDialogueFinished;
-        EventManager.OnLastFugeHit -= Token1FugesAdd;
+        EventManager.OnToken1FugeHit -= Token1AllFugesLit;
+        EventManager.OnLastEnemyKilledLevel2 -= Level2AllEnemiesKilled;
+        EventManager.OnLastEnemyKilledLevel3 -= Level3AllEnemiesKilled;
 
     }
     void GetVariables()
@@ -64,37 +69,19 @@ public class SceneChanger : MonoBehaviour
 
     }
 
-    public void Level3EnemyKilled()
+    public void Level3AllEnemiesKilled()
     {
-        if (scnMan.GetActiveSceneString() == "Level3")
-        {
-            boxCollider.enabled = true;
-        }
+        boxCollider.enabled = true;
     }
 
     public void Level2AllEnemiesKilled()
     {
-        if (scnMan.GetActiveSceneString() == "Level2")
-        {
-            boxCollider.enabled = true;
-        }
-    }
-
-    void Token1FugesAdd()
-    {
-
-        i_token1FugesLit++;
-
-        if (i_token1FugesLit >= 2)
-            Token1AllFugesLit();
+        boxCollider.enabled = true;
     }
 
     void Token1AllFugesLit()
     {
-        if (scnMan.GetActiveSceneString() == "Token1")
-        {
-            boxCollider.enabled = true;
-        }
+        boxCollider.enabled = true;
     }
 
 }

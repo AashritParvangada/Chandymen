@@ -10,7 +10,24 @@ public class EventManager : MonoBehaviour
     public static event DialogueDone OnDialogueComplete;
 
     public delegate void LastFugeHit();
-    public static event LastFugeHit OnLastFugeHit;
+    public static event LastFugeHit OnFugeHit;
+
+    public delegate void Token1FugeHit();
+    public static event Token1FugeHit OnToken1FugeHit;
+
+    public delegate void LastEnemyKilledLevel2();
+    public static event LastEnemyKilledLevel2 OnLastEnemyKilledLevel2;
+    public delegate void LastEnemyKilledLevel3();
+    public static event LastEnemyKilledLevel3 OnLastEnemyKilledLevel3;
+    public delegate void LastEnemyKilledToken2();
+    public static event LastEnemyKilledToken2 OnLastEnemyKilledToken2;
+    int i_markedFugeHit = 0;
+
+    Scene_Manager ScnMan;
+    private void Start()
+    {
+        ScnMan = FindObjectOfType<Scene_Manager>();
+    }
 
     public void CountEnemyKilled()//When this function is called, it runs the OnEnemyKilled event.
     {
@@ -24,8 +41,21 @@ public class EventManager : MonoBehaviour
             OnDialogueComplete();
     }
 
-    public void LastFugeHitEvent()
+    public void FugeHitEvent()
     {
-        if (OnLastFugeHit != null) OnLastFugeHit();
+        i_markedFugeHit++;
+        if (OnFugeHit != null) OnFugeHit();
+
+        if (i_markedFugeHit >= 2 && ScnMan.GetActiveSceneString() == "Token1")
+        {
+            if (OnToken1FugeHit != null) OnToken1FugeHit();
+        }
+    }
+
+    public void LastEnemyKilledEvent()
+    {
+        if (ScnMan.GetActiveSceneString() == "Level2") OnLastEnemyKilledLevel2();
+        else if (ScnMan.GetActiveSceneString() == "Level3") OnLastEnemyKilledLevel3();
+        else if (ScnMan.GetActiveSceneString() == "Token2") OnLastEnemyKilledToken2();
     }
 }

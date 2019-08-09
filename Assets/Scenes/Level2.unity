@@ -44105,6 +44105,11 @@ PrefabInstance:
       propertyPath: ScnChng_sceneChanger
       value: 
       objectReference: {fileID: 8971279037400513791}
+    - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
+        type: 3}
+      propertyPath: B_triggerLastEnemyKilledEvent
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5567376658706703470, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -9,6 +9,7 @@ public class SpawnTrigger : MonoBehaviour
     int i_enemiesKilled = 0;
     [SerializeField] GameObject GO_doorToOpen;
     public SceneChanger ScnChngr;
+    [SerializeField] bool B_isLastTrigger;
 
     private void Start()
     {
@@ -66,7 +67,7 @@ public class SpawnTrigger : MonoBehaviour
             {
                 OpenDoor();
 
-                if (ScnChngr) ActivateSceneChanger();
+                if (B_isLastTrigger) FindObjectOfType<EventManager>().LastEnemyKilledEvent();
             }
         }
     }
@@ -77,11 +78,5 @@ public class SpawnTrigger : MonoBehaviour
             GO_doorToOpen.SetActive(false);
         b_isActive = false;
     }
-
-    void ActivateSceneChanger()
-    {
-        ScnChngr.Level3EnemyKilled();
-    }
-
 
 }

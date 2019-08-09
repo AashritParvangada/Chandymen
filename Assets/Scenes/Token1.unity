@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 2
   GO_door: {fileID: 0}
-  B_isLastinLevel: 1
+  B_countFugeInEvent: 1
 --- !u!1 &453988846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3632318155120951438, guid: 8902ec4c83fa17c43ba634e3339d976e,
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_chargesNeeded: 4
   GO_door: {fileID: 0}
-  B_isLastinLevel: 1
+  B_countFugeInEvent: 1
 --- !u!1 &1128945871
 GameObject:
   m_ObjectHideFlags: 0

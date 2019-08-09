@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart;
     [SerializeField] GameObject[] GO_Arr_doorsToOpenWhenDone;
     [SerializeField] int I_chanceOfGrunt = 50, I_chanceOfBot = 50;
-    [SerializeField] SceneChanger ScnChng_sceneChanger;
+    [SerializeField] bool B_triggerLastEnemyKilledEvent;
     private void OnEnable()
     {
         EventManager.OnEnemyKilled += CountEnemies;
@@ -77,7 +77,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (i_enemiesKilled >= I_totalEnemiesToKill)
         {
-            if (ScnChng_sceneChanger) ScnChng_sceneChanger.Level2AllEnemiesKilled();
+            if (B_triggerLastEnemyKilledEvent) FindObjectOfType<EventManager>().LastEnemyKilledEvent();
             OpenDoors();
             gameObject.SetActive(false);
         }
