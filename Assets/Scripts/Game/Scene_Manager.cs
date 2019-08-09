@@ -57,6 +57,7 @@ public class Scene_Manager : MonoBehaviour
 
     public void SceneChangeString(string _SceneName)//Isn't being used yet. Use when shifting levels.
     {
+        FindObjectOfType<GameManager>().SetCameFromSceneName(GetActiveSceneString());
         SceneManager.LoadScene(_SceneName);
     }
 

@@ -6,7 +6,7 @@ public class SceneChanger : MonoBehaviour
 {
     Scene_Manager scnMan;
     public BoxCollider boxCollider;
-    [SerializeField] string S_loadSceneName;
+    public string S_LoadSceneName;
 
     int i_token1FugesLit = 0;
 
@@ -43,7 +43,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>() && Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
-            scnMan.SceneChangeString(S_loadSceneName);
+            scnMan.SceneChangeString(S_LoadSceneName);
         }
     }
 

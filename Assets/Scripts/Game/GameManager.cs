@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager gamMan_instance;
     public Vector3 V3_LastCheckpointPos;
-
+    public string S_CameFromSceneName;
     public bool B_Token1, B_Token2;
     // Start is called before the first frame update
 
@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         EventManager.OnToken1FugeHit -= SetToken1;
     }
 
+    public void SetCameFromSceneName(string _sceneName)
+    {
+        S_CameFromSceneName = _sceneName;
+    }
+
     private void Awake()
     {
         if (gamMan_instance == null)
@@ -30,8 +35,32 @@ public class GameManager : MonoBehaviour
 
         else
         {
+            SetOtherGMLocation();
             Destroy(this.gameObject);
         }
+    }
+
+    public void SetOtherGMLocation()
+    {
+        GameManager _GM = null;
+        foreach (GameManager _gm in FindObjectsOfType<GameManager>())
+            if (_gm != this) _GM = _gm;
+
+        if (_GM != null)
+        {
+
+            foreach (SceneChanger _scnChng in FindObjectsOfType<SceneChanger>())
+                if (_scnChng.S_LoadSceneName == _GM.S_CameFromSceneName) _GM.V3_LastCheckpointPos = _scnChng.transform.position;
+
+            SpawnPlayer();
+        }
+
+    }
+
+    void SpawnPlayer()
+    {
+        PlayerRespawn _PlRspwn = FindObjectOfType<PlayerRespawn>();
+        _PlRspwn.SpawnPlayer();
     }
 
     public void SetLastCheckpoint(Checkpoint _Checkpoint)//Called from Checkpoint Script. When the player dies, they respawn here.
