@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneChanger : MonoBehaviour
 {
-    Scene_Manager scnMan;
+    Scene_Manager scnMan; GameManager gameManager;
     public BoxCollider boxCollider;
     public string S_LoadSceneName;
 
@@ -16,6 +16,7 @@ public class SceneChanger : MonoBehaviour
         EventManager.OnToken1FugeHit += Token1AllFugesLit;
         EventManager.OnLastEnemyKilledLevel2 += Level2AllEnemiesKilled;
         EventManager.OnLastEnemyKilledLevel3 += Level3AllEnemiesKilled;
+        EventManager.OnLastEnemyKilledToken2 += Token2AllEnemiesKilled;
 
     }
 
@@ -25,18 +26,21 @@ public class SceneChanger : MonoBehaviour
         EventManager.OnToken1FugeHit -= Token1AllFugesLit;
         EventManager.OnLastEnemyKilledLevel2 -= Level2AllEnemiesKilled;
         EventManager.OnLastEnemyKilledLevel3 -= Level3AllEnemiesKilled;
+        EventManager.OnLastEnemyKilledToken2 -= Token2AllEnemiesKilled;
 
     }
     void GetVariables()
     {
         scnMan = FindObjectOfType<Scene_Manager>();
         boxCollider = GetComponent<BoxCollider>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void Start()
     {
         GetVariables();
         boxCollider.enabled = false;
-        CheckToActivateOnStart();
+        CheckToActivateChandyOffice();
+        CheckLevel4Activate();
     }
 
     private void OnTriggerStay(Collider other)
@@ -60,13 +64,26 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
-    void CheckToActivateOnStart()
+    void CheckToActivateChandyOffice()
     {
-        if (scnMan.GetActiveSceneString() == "Level1")
+        if (scnMan.GetActiveSceneString() == "Level1" && S_LoadSceneName == "Chandy_Office")
         {
             boxCollider.enabled = true;
         }
+    }
 
+    void CheckLevel4Activate()
+    {
+        if (scnMan.GetActiveSceneString() == "Level4")
+        {
+            if (S_LoadSceneName == "Token1") boxCollider.enabled = !gameManager.B_Token1;
+            if (S_LoadSceneName == "Token2") boxCollider.enabled = !gameManager.B_Token2;
+            if (S_LoadSceneName == "Timboi" && gameManager.B_Token1 && gameManager.B_Token2) boxCollider.enabled = true;
+        }
+    }
+    public void Token2AllEnemiesKilled()
+    {
+        boxCollider.enabled = true;
     }
 
     public void Level3AllEnemiesKilled()

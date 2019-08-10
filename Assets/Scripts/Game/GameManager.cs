@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnToken1FugeHit += SetToken1;
+        EventManager.OnLastEnemyKilledToken2 += SetToken2;
     }
 
     private void OnDisable()
     {
         EventManager.OnToken1FugeHit -= SetToken1;
+        EventManager.OnLastEnemyKilledToken2 -= SetToken2;
     }
 
     public void SetCameFromSceneName(string _sceneName)
@@ -46,14 +48,17 @@ public class GameManager : MonoBehaviour
         foreach (GameManager _gm in FindObjectsOfType<GameManager>())
             if (_gm != this) _GM = _gm;
 
-        if (_GM != null)
+        if (FindObjectOfType<Scene_Manager>().GetActiveSceneString() != _GM.S_CameFromSceneName)
         {
+            if (_GM != null)
+            {
+                _GM.V3_LastCheckpointPos = V3_LastCheckpointPos;
 
-            foreach (SceneChanger _scnChng in FindObjectsOfType<SceneChanger>())
-                if (_scnChng.S_LoadSceneName == _GM.S_CameFromSceneName) _GM.V3_LastCheckpointPos = _scnChng.transform.position;
-
-            SpawnPlayer();
+                foreach (SceneChanger _scnChng in FindObjectsOfType<SceneChanger>())
+                    if (_scnChng.S_LoadSceneName == _GM.S_CameFromSceneName) _GM.V3_LastCheckpointPos = _scnChng.transform.position;
+            }
         }
+        SpawnPlayer();
 
     }
 

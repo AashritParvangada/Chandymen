@@ -64,6 +64,7 @@ public class Scene_Manager : MonoBehaviour
     public void ReloadScene()//Is being used on player death.
     {
         Scene scene = SceneManager.GetActiveScene();
+        FindObjectOfType<GameManager>().S_CameFromSceneName = scene.name;
         SceneManager.LoadScene(scene.name);
     }
 
