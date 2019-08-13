@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   I_health: 100
-  B_attackOnStart: 0
+  B_attackOnStart: 1
   F_chargeCountdownTimer: 2
   F_cooldownTimer: 2
   F_stopDistance: 2
@@ -123,8 +123,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 0.5
-  m_Speed: 6
-  m_Acceleration: 12
+  m_Speed: 12
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 300
   m_StoppingDistance: 0

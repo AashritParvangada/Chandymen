@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Chandy_Office.unity
+    guid: e0985bdb61546534aa5868cf7a897a2e
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 3d1a70d598e996d47ac70ce918003bc3
+  - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 8bcae02e93ed9db4b9aabe34260e32c4
   - enabled: 1

@@ -7,10 +7,16 @@ public class Scene_Manager : MonoBehaviour
 {
     bool b_loadedGame;
     GameManager GmMan_Manager;
-
+    [SerializeField] SceneChanger ScnChng_Token1, ScnChng_Token2;
     private void Start()
     {
         GetVariables();
+    }
+
+    void CheckGameManagerTokens()
+    {
+        if (GmMan_Manager.B_Token1 && ScnChng_Token1) ScnChng_Token1.boxCollider.enabled = false;
+        if (GmMan_Manager.B_Token2 && ScnChng_Token2) ScnChng_Token2.boxCollider.enabled = false;
     }
 
     private void Update()
@@ -36,7 +42,7 @@ public class Scene_Manager : MonoBehaviour
     {
         PlayerData _data = SaveGame.LoadPlayer();
         GmMan_Manager.B_Token1 = _data.B_Token1; GmMan_Manager.B_Token2 = _data.B_Token2;
-        SceneChange(_data.I_SceneNumber);
+        SceneChangeInt(_data.I_SceneNumber);
     }
 
     void GetVariables()
@@ -44,20 +50,31 @@ public class Scene_Manager : MonoBehaviour
         GmMan_Manager = FindObjectOfType<GameManager>();
     }
 
-    public void SceneChange(int _SceneName)//Isn't being used yet. Use when shifting levels.
+    public void SceneChangeInt(int _SceneIndex)//Isn't being used yet. Use when shifting levels.
     {
+        SceneManager.LoadScene(_SceneIndex);
+    }
+
+    public void SceneChangeString(string _SceneName)//Isn't being used yet. Use when shifting levels.
+    {
+        FindObjectOfType<GameManager>().SetCameFromSceneName(GetActiveSceneString());
         SceneManager.LoadScene(_SceneName);
     }
 
     public void ReloadScene()//Is being used on player death.
     {
         Scene scene = SceneManager.GetActiveScene();
+        FindObjectOfType<GameManager>().S_CameFromSceneName = scene.name;
         SceneManager.LoadScene(scene.name);
     }
 
     public int GetActiveSceneInt()
     {
         return SceneManager.GetActiveScene().buildIndex;
+    }
+    public string GetActiveSceneString()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 
 

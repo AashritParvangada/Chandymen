@@ -8,6 +8,8 @@ public class SpawnTrigger : MonoBehaviour
     int i_numberOfSpawnersWithin = 0;
     int i_enemiesKilled = 0;
     [SerializeField] GameObject GO_doorToOpen;
+    public SceneChanger ScnChngr;
+    [SerializeField] bool B_isLastTrigger;
 
     private void Start()
     {
@@ -64,6 +66,8 @@ public class SpawnTrigger : MonoBehaviour
             if (i_enemiesKilled >= i_numberOfSpawnersWithin)
             {
                 OpenDoor();
+
+                if (B_isLastTrigger) FindObjectOfType<EventManager>().LastEnemyKilledEvent();
             }
         }
     }
@@ -74,6 +78,5 @@ public class SpawnTrigger : MonoBehaviour
             GO_doorToOpen.SetActive(false);
         b_isActive = false;
     }
-
 
 }

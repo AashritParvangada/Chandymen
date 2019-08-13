@@ -18,7 +18,7 @@ public class Grunt : MonoBehaviour
     [SerializeField] Transform Trans_gruntGun;
     [SerializeField] GameObject GO_bullet;
     [SerializeField] float F_bulletSpeed;
-    [SerializeField] bool B_shootOnStart = true;
+    public bool B_ShootOnStart = true, B_ShootOnDialogue = false;
     EventManager evMan_eventManager;
     Animator anim_Controller;
     Rigidbody rb_RB;
@@ -31,16 +31,20 @@ public class Grunt : MonoBehaviour
     //If the player is found, set a destination depending on which zone the player is in.
     private void OnEnable()
     {
-        EventManager.OnDialogueComplete += StartCombat;
+        EventManager.OnDialogueComplete += DialogueEventEnded;
     }
     private void OnDisable()
     {
-        EventManager.OnDialogueComplete -= StartCombat;
+        EventManager.OnDialogueComplete -= DialogueEventEnded;
     }
     private void Start()//Get variables.
     {
         GetVariables();
-        if (B_shootOnStart == true)
+    }
+
+    public void CheckAttackOnStart()
+    {
+        if (B_ShootOnStart)
         {
             StartCombat();
         }
@@ -50,6 +54,14 @@ public class Grunt : MonoBehaviour
     {
         StartCoroutine(CheckToMove());//Start the movement. Will delay this later during the cutscene.
         StartCoroutine(CheckToShoot());//Start shooting. Will delay this later.
+    }
+
+    void DialogueEventEnded()
+    {
+        if (B_ShootOnDialogue)
+        {
+            StartCombat();
+        }
     }
 
     void GetVariables()//Get event manager, nav msh agent, player cont, gun, and make zone list.

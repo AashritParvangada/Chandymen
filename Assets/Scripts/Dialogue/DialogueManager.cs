@@ -16,6 +16,11 @@ public class DialogueManager : MonoBehaviour
     bool b_textAvailable = true, b_active = false;
     private void Start()
     {
+        GetVariables();
+    }
+
+    void GetVariables()
+    {
         plCont_playa = FindObjectOfType<PlayerController>();
     }
 

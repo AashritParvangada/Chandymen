@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 5567376658824621643}
   - component: {fileID: 5567376658824621644}
   - component: {fileID: 5567376658824621645}
+  - component: {fileID: 3313753269427212253}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -150,11 +151,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23819071b1a2edc40a4d40d908a22d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  I_MaxNumberOfEnemies: 1
-  I_KilledThresehold_1: 1
-  I_KilledThresehold_2: 5
-  I_KilledThresehold_3: 0
-  Trans_SpawnPoints: []
+  B_isActive: 0
+  I_maxSimultanEnemies: 0
+  I_killedThresehold_1: 0
+  I_killedThresehold_2: 0
+  I_killedThresehold_3: 0
+  I_totalEnemiesToKill: 0
+  Trans_Arr_spawnPoints: []
+  GO_grunt: {fileID: 0}
+  GO_policeBot: {fileID: 0}
+  GO_doorToCloseOnStart: {fileID: 0}
+  GO_Arr_doorsToOpenWhenDone: []
+  I_chanceOfGrunt: 50
+  I_chanceOfBot: 50
+--- !u!65 &3313753269427212253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5567376658824621642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5567376659009736740
 GameObject:
   m_ObjectHideFlags: 0

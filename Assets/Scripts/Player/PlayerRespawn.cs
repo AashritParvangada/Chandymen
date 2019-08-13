@@ -5,10 +5,17 @@ using UnityEngine;
 public class PlayerRespawn : MonoBehaviour
 {
     GameManager GM;
-    void Start()//This finds the game manager's location and spawns there at the beginning of the game.
+
+    public void SpawnPlayer()
     {
-        GM = FindObjectOfType<GameManager>();
-        transform.position = GM.V3_LastCheckpointPos;
+        StartCoroutine(WaitForFrameThenSpawn());
     }
 
+    IEnumerator WaitForFrameThenSpawn()
+    {
+        yield return new WaitForEndOfFrame();
+        GM = FindObjectOfType<GameManager>();
+        Debug.Log(GM.V3_LastCheckpointPos);
+        transform.position = GM.V3_LastCheckpointPos;
+    }
 }

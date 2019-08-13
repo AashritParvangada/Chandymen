@@ -7,12 +7,22 @@ public class PoliceBot : MonoBehaviour
 {
     [SerializeField] int I_health = 100;
     NavMeshAgent navMeshAg_agent;
-    [SerializeField] bool B_attackOnStart = false;
+    public bool B_AttackOnStart = false, B_AttackOnDialogue = false;
     EventManager evMan_eventManager;
     [SerializeField] float F_chargeCountdownTimer = 2;
     [SerializeField] float F_cooldownTimer = 2, F_stopDistance = 2;
 
     PlayerController playCont_Controller;
+
+    private void OnEnable()
+    {
+        EventManager.OnDialogueComplete += DialogueEventEnded;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnDialogueComplete -= DialogueEventEnded;
+    }
     void Start()
     {
         GetVariables();
@@ -26,11 +36,11 @@ public class PoliceBot : MonoBehaviour
         evMan_eventManager = FindObjectOfType<EventManager>();
     }
 
-    void CheckAttackOnStart()
+    public void CheckAttackOnStart()
     {
-        if (B_attackOnStart)
+        if (B_AttackOnStart)
         {
-            StartCoroutine(IEnum_ChargeCharge(F_chargeCountdownTimer));
+            StartAttacking();
         }
     }
 
@@ -105,5 +115,13 @@ public class PoliceBot : MonoBehaviour
         }
 
         StartCoroutine(IEnum_ChargeTowardsPlayer(playCont_Controller));
+    }
+
+    void DialogueEventEnded()
+    {
+        if (B_AttackOnDialogue)
+        {
+            StartAttacking();
+        }
     }
 }

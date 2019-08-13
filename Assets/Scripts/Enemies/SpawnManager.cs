@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart;
     [SerializeField] GameObject[] GO_Arr_doorsToOpenWhenDone;
     [SerializeField] int I_chanceOfGrunt = 50, I_chanceOfBot = 50;
+    [SerializeField] bool B_triggerLastEnemyKilledEvent;
     private void OnEnable()
     {
         EventManager.OnEnemyKilled += CountEnemies;
@@ -48,12 +49,12 @@ public class SpawnManager : MonoBehaviour
         if (B_isActive)//If this has been activated by OnTriggerEnter.
         {
             int _totalEnemies = 0;
-            foreach (Grunt _grunt in FindObjectsOfType<Grunt>())
+            foreach (Grunt _grunt in GetComponentsInChildren<Grunt>())
             {
                 _totalEnemies++;
             }
 
-            foreach (PoliceBot _PB in FindObjectsOfType<PoliceBot>())
+            foreach (PoliceBot _PB in GetComponentsInChildren<PoliceBot>())
             {
                 _totalEnemies++;
             }
@@ -76,6 +77,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (i_enemiesKilled >= I_totalEnemiesToKill)
         {
+            if (B_triggerLastEnemyKilledEvent) FindObjectOfType<EventManager>().LastEnemyKilledEvent();
             OpenDoors();
             gameObject.SetActive(false);
         }
@@ -96,6 +98,8 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy(int _totalEnemies)//Spawn enemies until total enemies = max simultaneous, but not if there's only a few enemies left until goal.
     {
+        Debug.Log(_totalEnemies + "is less than " + I_maxSimultanEnemies);
+        Debug.Log(i_enemiesSpawned + "is less than " + I_totalEnemiesToKill);
 
         while (_totalEnemies < I_maxSimultanEnemies && i_enemiesSpawned < I_totalEnemiesToKill)
         {
