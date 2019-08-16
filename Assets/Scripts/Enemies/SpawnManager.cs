@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     int i_enemiesKilled = 0, i_enemiesSpawned = 0;
-    [SerializeField] bool B_isActive = false;
+    [SerializeField] bool B_isActive = false, B_activateEnemy = true;
 
     [SerializeField] int I_maxSimultanEnemies, I_killedThresehold_1, I_killedThresehold_2, I_killedThresehold_3, I_totalEnemiesToKill;
     [SerializeField] Transform[] Trans_Arr_spawnPoints;
@@ -115,10 +115,15 @@ public class SpawnManager : MonoBehaviour
     void RandomlyInstantiate()//Randomly instantiate a grunt or police bot depending on two numbers. MUST ADD THESE TWO NUMBERS TO SER FIELD.
     {
         int _rand = Random.Range(0, I_chanceOfBot + I_chanceOfGrunt);
-        if (_rand <= I_chanceOfBot) Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
+        if (_rand <= I_chanceOfBot)
+        {
+            PoliceBot _pb = Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
+            if (B_activateEnemy) _pb.StartAttacking();
+        }
         else
         {
-            Instantiate(GO_grunt, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
+            Grunt _grnt = Instantiate(GO_grunt, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<Grunt>();
+            if (B_activateEnemy) _grnt.StartCombat();
         }
 
         i_enemiesSpawned++;

@@ -1178,7 +1178,7 @@ PrefabInstance:
         type: 3}
       propertyPath: GO_policeBot
       value: 
-      objectReference: {fileID: 1242102285249958181, guid: 2d30f3898bde7024da74931782a57990,
+      objectReference: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
         type: 3}
     - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
@@ -4066,7 +4066,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.5951e-41, y: 6e-44, z: 8.25e-43, w: 1e-45}
+  m_BoundingSphereOverride: {x: 1.1754945e-38, y: 0, z: 0, w: 9.1837e-41}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
