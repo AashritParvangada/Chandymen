@@ -87,4 +87,5 @@ public class GameManager : MonoBehaviour
         B_Token2 = true;
     }
 
+
 }

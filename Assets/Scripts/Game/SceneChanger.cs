@@ -66,7 +66,7 @@ public class SceneChanger : MonoBehaviour
 
     void CheckToActivateChandyOffice()
     {
-        if (scnMan.GetActiveSceneString() == "Level1" && S_LoadSceneName == "Chandy_Office")
+        if (scnMan.GetActiveSceneString() == "Level1" && S_LoadSceneName == "Chandy_Office" && !gameManager.B_ChandyOfficeDone)
         {
             boxCollider.enabled = true;
         }

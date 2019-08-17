@@ -54,7 +54,7 @@ public class EventManager : MonoBehaviour
 
     public void LastEnemyKilledEvent()
     {
-        if (ScnMan.GetActiveSceneString() == "Level2") OnLastEnemyKilledLevel2();
+        if (ScnMan.GetActiveSceneString() == "Level1" && FindObjectOfType<GameManager>().B_ChandyOfficeDone) OnLastEnemyKilledLevel2();
         else if (ScnMan.GetActiveSceneString() == "Level3") OnLastEnemyKilledLevel3();
         else if (ScnMan.GetActiveSceneString() == "Token2") OnLastEnemyKilledToken2();
     }

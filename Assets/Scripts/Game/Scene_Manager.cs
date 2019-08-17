@@ -58,6 +58,7 @@ public class Scene_Manager : MonoBehaviour
     public void SceneChangeString(string _SceneName)//Isn't being used yet. Use when shifting levels.
     {
         FindObjectOfType<GameManager>().SetCameFromSceneName(GetActiveSceneString());
+        CheckChandyOfficeDone();
         SceneManager.LoadScene(_SceneName);
     }
 
@@ -81,6 +82,14 @@ public class Scene_Manager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    void CheckChandyOfficeDone()
+    {
+        if (GetActiveSceneString() == "Chandy_Office")
+        {
+            FindObjectOfType<GameManager>().B_ChandyOfficeDone = true;
+        }
     }
 
 }

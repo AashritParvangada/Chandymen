@@ -12,7 +12,7 @@ public class OnlyInScene : MonoBehaviour
         gamMan = FindObjectOfType<GameManager>();
         if (gamMan.B_ChandyOfficeDone != B_chandyOfficeDone)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
