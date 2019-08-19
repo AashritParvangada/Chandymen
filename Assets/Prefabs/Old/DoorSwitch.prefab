@@ -105,4 +105,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   G_door: {fileID: 0}
-  F_holdTime: 3
