@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Vector3 V3_LastCheckpointPos;
     public string S_CameFromSceneName;
     public bool B_Token1, B_Token2;
+
+    public bool B_ChandyOfficeDone = false;
     // Start is called before the first frame update
 
     private void OnEnable()
@@ -84,5 +86,6 @@ public class GameManager : MonoBehaviour
     {
         B_Token2 = true;
     }
+
 
 }

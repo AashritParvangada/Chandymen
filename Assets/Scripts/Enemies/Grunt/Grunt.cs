@@ -50,7 +50,7 @@ public class Grunt : MonoBehaviour
         }
     }
 
-    void StartCombat()
+    public void StartCombat()
     {
         StartCoroutine(CheckToMove());//Start the movement. Will delay this later during the cutscene.
         StartCoroutine(CheckToShoot());//Start shooting. Will delay this later.

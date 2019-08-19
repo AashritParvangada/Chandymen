@@ -23,9 +23,14 @@ public class PoliceBot : MonoBehaviour
     {
         EventManager.OnDialogueComplete -= DialogueEventEnded;
     }
-    void Start()
+
+    private void Awake()
     {
         GetVariables();
+    }
+
+    void Start()
+    {
         CheckAttackOnStart();
     }
 
