@@ -11,6 +11,7 @@ public class Scene_Manager : MonoBehaviour
     private void Start()
     {
         GetVariables();
+        SavePlayer();
     }
 
     void CheckGameManagerTokens()
@@ -42,6 +43,8 @@ public class Scene_Manager : MonoBehaviour
     {
         PlayerData _data = SaveGame.LoadPlayer();
         GmMan_Manager.B_Token1 = _data.B_Token1; GmMan_Manager.B_Token2 = _data.B_Token2;
+        GmMan_Manager.B_ChandyOfficeDone = _data.B_ChandyOfficeDone; 
+        GmMan_Manager.S_CameFromSceneName = _data.S_CameFromScene;
         SceneChangeInt(_data.I_SceneNumber);
     }
 
