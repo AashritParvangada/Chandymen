@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 4ef60bef42d3f4b069255e71c96ef0f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5118146302180731755
+    second: UI_SS_diagBox_Player_0
+  - first:
+      213: -9142419940359936506
+    second: UI_SS_diagBox_Player_1
+  - first:
+      213: 931560874982128208
+    second: UI_SS_diagBox_Player_2
+  - first:
+      213: -5704945962686759882
+    second: UI_SS_diagBox_Player_3
+  - first:
+      213: 4820909462765029869
+    second: UI_SS_diagBox_Player_4
+  - first:
+      213: 7893757401824043625
+    second: UI_SS_diagBox_Player_5
+  - first:
+      213: -6238395034796107352
+    second: UI_SS_diagBox_Player_6
+  - first:
+      213: -4421754665039173426
+    second: UI_SS_diagBox_Player_7
+  - first:
+      213: 4541600515449306005
+    second: UI_SS_diagBox_Player_8
+  - first:
+      213: -8050438449118179794
+    second: UI_SS_diagBox_Player_9
+  - first:
+      213: 4175826287106442078
+    second: UI_SS_diagBox_Player_10
+  - first:
+      213: 5704091266734927791
+    second: UI_SS_diagBox_Player_11
+  - first:
+      213: -9190244030268221193
+    second: UI_SS_diagBox_Player_12
+  - first:
+      213: -3982245821539317835
+    second: UI_SS_diagBox_Player_13
+  - first:
+      213: -6151106983878707818
+    second: UI_SS_diagBox_Player_14
+  - first:
+      213: 8335141330003806747
+    second: UI_SS_diagBox_Player_15
+  - first:
+      213: 4556512704665349713
+    second: UI_SS_diagBox_Player_16
+  - first:
+      213: 6094702827093547651
+    second: UI_SS_diagBox_Player_17
+  - first:
+      213: -843519965010146615
+    second: UI_SS_diagBox_Player_18
+  - first:
+      213: 1725309008903004061
+    second: UI_SS_diagBox_Player_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 736
+        width: 589
+        height: 149
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -294.5, y: 87.5}
+        - {x: -294.5, y: -46.68081}
+        - {x: -280.6953, y: -60.490955}
+        - {x: 105.83594, y: -60.490955}
+        - {x: 233.5293, y: 67.25288}
+        - {x: 233.5293, y: 74.15794}
+        - {x: 232.3789, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed72565efa7f1409fab3f996e26ca3a5
+      internalID: 5118146302180731755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_1
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 736
+        width: 530
+        height: 149
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -278.39453, y: 87.5}
+        - {x: -293.3496, y: 74.15794}
+        - {x: -294.5, y: 69.554565}
+        - {x: -294.5, y: -43.228275}
+        - {x: -279.54492, y: -60.490955}
+        - {x: 106.98633, y: -60.490955}
+        - {x: 234.67969, y: 67.25288}
+        - {x: 234.67969, y: 74.15794}
+        - {x: 219.72461, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac98b92a286e4810a19657423b2396f
+      internalID: -9142419940359936506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_2
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 736
+        width: 529
+        height: 149
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 223.17578, y: 87.5}
+        - {x: -276.09375, y: 87.5}
+        - {x: -292.19922, y: 73.0071}
+        - {x: -293.3496, y: 69.554565}
+        - {x: -293.3496, y: -43.228275}
+        - {x: -276.09375, y: -60.490955}
+        - {x: 108.13672, y: -60.490955}
+        - {x: 220.875, y: 51.141037}
+        - {x: 236.98047, y: 69.554565}
+        - {x: 236.98047, y: 74.15794}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8972932d2c48498eaa7284a01cdcf2a
+      internalID: 931560874982128208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_3
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 736
+        width: 586
+        height: 149
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -292.19922, y: 87.5}
+        - {x: -292.19922, y: -43.228275}
+        - {x: -286.44727, y: -60.490955}
+        - {x: 110.4375, y: -60.490955}
+        - {x: 136.89648, y: -59.34011}
+        - {x: 238.13086, y: 68.40372}
+        - {x: 238.13086, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cc50c5dc14f4605ad9dca76981b11e
+      internalID: -5704945962686759882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 559
+        width: 529
+        height: 150
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -279.54492, y: 87.5}
+        - {x: -294.5, y: 75.23732}
+        - {x: -294.5, y: -61.713272}
+        - {x: -279.54492, y: -62.864117}
+        - {x: 139.19727, y: -62.864117}
+        - {x: 233.5293, y: 55.672947}
+        - {x: 233.5293, y: 71.78478}
+        - {x: 224.32617, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1837f30064c4e28ac163a0b5a1ac86
+      internalID: 4820909462765029869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 559
+        width: 530
+        height: 150
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -294.5, y: 87.5}
+        - {x: -294.5, y: -60.713272}
+        - {x: -293.3496, y: -64.16581}
+        - {x: 120.791016, y: -64.16581}
+        - {x: 235.83008, y: 64.72887}
+        - {x: 235.83008, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86312d3a45b642c1b9e7b29f9a4d249
+      internalID: 7893757401824043625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_6
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 558
+        width: 536
+        height: 151
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -282.9961, y: 87.5}
+        - {x: -293.3496, y: 87.5}
+        - {x: -293.3496, y: -64.01496}
+        - {x: 163.35547, y: -64.01496}
+        - {x: 243.88281, y: 59.125484}
+        - {x: 243.88281, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bdfa1124ffb4093978616f9a937362
+      internalID: -6238395034796107352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_7
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 556
+        width: 586
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -292.19922, y: 87.5}
+        - {x: -292.19922, y: -65.16581}
+        - {x: 173.70898, y: -65.16581}
+        - {x: 255.38672, y: 59.125484}
+        - {x: 255.38672, y: 82.14239}
+        - {x: 250.78516, y: 87.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fb7281543e54b19b91eed4c606633e
+      internalID: -4421754665039173426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 379
+        width: 589
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -294.5, y: 86.67423}
+        - {x: -294.5, y: -67.53904}
+        - {x: 178.31055, y: -67.53904}
+        - {x: 262.28906, y: 57.9031}
+        - {x: 262.28906, y: 64.80817}
+        - {x: 245.0332, y: 86.67423}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e438e08379a8744979a586d76d484bcb
+      internalID: 4541600515449306005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_9
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 379
+        width: 569
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -278.39453, y: 86.67423}
+        - {x: -294.5, y: 69.41155}
+        - {x: -294.5, y: -54.87974}
+        - {x: -266.89062, y: -67.53904}
+        - {x: 147.25, y: -67.53904}
+        - {x: 273.79297, y: 52.148872}
+        - {x: 273.79297, y: 67.10986}
+        - {x: 259.98828, y: 86.67423}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1062a63fe22743f681560359fceffa6
+      internalID: -8050438449118179794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_10
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 379
+        width: 549
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -294.5, y: 86.67423}
+        - {x: -294.5, y: -67.53904}
+        - {x: 177.16016, y: -67.53904}
+        - {x: 256.5371, y: 53.299717}
+        - {x: 256.5371, y: 79.76916}
+        - {x: 251.93555, y: 86.67423}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50702afa697347448a8d57aa2ac094c
+      internalID: 4175826287106442078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_11
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 379
+        width: 586
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -281.8457, y: 86.67423}
+        - {x: -292.19922, y: 85.523384}
+        - {x: -292.19922, y: -67.53904}
+        - {x: 166.80664, y: -67.53904}
+        - {x: 249.63477, y: 57.9031}
+        - {x: 249.63477, y: 76.31662}
+        - {x: 245.0332, y: 86.67423}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1b300555cd64fedb6aaf27325afcee
+      internalID: 5704091266734927791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 202
+        width: 539
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -286.44727, y: 84.30103}
+        - {x: -294.5, y: 83.150185}
+        - {x: -294.5, y: -69.91224}
+        - {x: 163.35547, y: -69.91224}
+        - {x: 245.0332, y: 54.379055}
+        - {x: 245.0332, y: 77.39596}
+        - {x: 241.58203, y: 84.30103}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07e9401906b84b5dbb730166a6b30a6
+      internalID: -9190244030268221193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_13
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 202
+        width: 540
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -285.29688, y: 84.30103}
+        - {x: -294.5, y: 83.150185}
+        - {x: -294.5, y: -69.91224}
+        - {x: 166.80664, y: -69.91224}
+        - {x: 247.33398, y: 54.379055}
+        - {x: 247.33398, y: 73.94343}
+        - {x: 242.73242, y: 84.30103}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d940b835b65436da33cdabc63ada57
+      internalID: -3982245821539317835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_14
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 202
+        width: 540
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -285.29688, y: 84.30103}
+        - {x: -294.5, y: 83.150185}
+        - {x: -294.5, y: -69.91224}
+        - {x: 166.80664, y: -69.91224}
+        - {x: 247.33398, y: 54.379055}
+        - {x: 247.33398, y: 73.94343}
+        - {x: 242.73242, y: 84.30103}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddb0cd0fa7e445fda83dd103a48a6da
+      internalID: -6151106983878707818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_15
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 202
+        width: 587
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -284.14648, y: 84.30103}
+        - {x: -293.3496, y: 83.150185}
+        - {x: -293.3496, y: -69.91224}
+        - {x: 167.95703, y: -69.91224}
+        - {x: 248.48438, y: 54.379055}
+        - {x: 248.48438, y: 73.94343}
+        - {x: 243.88281, y: 84.30103}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b100a48478aeb4de48c307b4273ea957
+      internalID: 8335141330003806747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 539
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -294.5, y: 81.927826}
+        - {x: -294.5, y: -72.28544}
+        - {x: 163.35547, y: -72.28544}
+        - {x: 245.0332, y: 52.00585}
+        - {x: 245.0332, y: 75.02276}
+        - {x: 241.58203, y: 81.927826}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc38a3b5104bd4ed5a002ea3f806057a
+      internalID: 4556512704665349713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_17
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 25
+        width: 540
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -285.29688, y: 81.927826}
+        - {x: -294.5, y: 80.776985}
+        - {x: -294.5, y: -72.28544}
+        - {x: 167.95703, y: -72.28544}
+        - {x: 247.33398, y: 52.00585}
+        - {x: 247.33398, y: 75.02276}
+        - {x: 243.88281, y: 81.927826}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da5ec30cd7e447238d4d3298e9bdc81
+      internalID: 6094702827093547651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_18
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 25
+        width: 540
+        height: 153
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -285.29688, y: 81.927826}
+        - {x: -294.5, y: 80.776985}
+        - {x: -294.5, y: -72.28544}
+        - {x: 167.95703, y: -72.28544}
+        - {x: 247.33398, y: 52.00585}
+        - {x: 247.33398, y: 76.1736}
+        - {x: 245.0332, y: 81.927826}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6f9c836cebd472da0d5d1ce4881fb9
+      internalID: -843519965010146615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SS_diagBox_Player_19
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 10
+        width: 589
+        height: 175
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5556377eb0234e95917fe8d207b9982
+      internalID: 1725309008903004061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 67b2c8b8a62874226b2ac0989e26e86d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
