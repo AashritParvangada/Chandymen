@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 2035041148678894972}
   - component: {fileID: 2132719433807026799}
   - component: {fileID: 6937674258329801793}
+  - component: {fileID: 8014486879892407596}
   m_Layer: 0
   m_Name: Jai Chandy
   m_TagString: Player
@@ -398,6 +399,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &8014486879892407596
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538410981370121411}
+  m_Enabled: 1
 --- !u!1 &6825079273625923940
 GameObject:
   m_ObjectHideFlags: 0
