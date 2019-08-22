@@ -12,7 +12,7 @@ public class CleanerBot : MonoBehaviour
     public float F_ResetTimeInterval = 1;
     PlayerController plctrl_playa;
     Animator animor_anim;
-
+    AudioSource audioSource; public AudioClip AudClp_PlayerLand;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,8 @@ public class CleanerBot : MonoBehaviour
     void PlayerLanded(Collider other)
     {
         animor_anim.SetTrigger("Land");
+        audioSource.clip = AudClp_PlayerLand;
+        audioSource.Play();
         other.transform.SetParent(transform);
         plctrl_playa.B_AboveAcid = true;
     }
@@ -65,6 +67,7 @@ public class CleanerBot : MonoBehaviour
         plctrl_playa = GameObject.FindObjectOfType<PlayerController>();
         navmesh_agent = GetComponent<NavMeshAgent>();
         animor_anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     //If there is an array that is greater than 1 point in length, start patrolling.

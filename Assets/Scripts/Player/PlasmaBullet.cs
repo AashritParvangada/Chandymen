@@ -11,6 +11,7 @@ public class PlasmaBullet : MonoBehaviour
     [SerializeField] float F_bulletDestroyTime = 10;
     Rigidbody rb_rb;
     public Vector3 V3_Dir;
+    public AudioClip AudClp_ReflectorBump;
     private void Start()
     {
         rb_rb = GetComponent<Rigidbody>();
@@ -22,6 +23,8 @@ public class PlasmaBullet : MonoBehaviour
         if (other.tag == "Reflector")
         {
             Reflect(V3_Dir);
+            GetComponent<AudioSource>().clip = (AudClp_ReflectorBump);
+            GetComponent<AudioSource>().Play();
         }
 
         else if (other.GetComponent<Grunt>())

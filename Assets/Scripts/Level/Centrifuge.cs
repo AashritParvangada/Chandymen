@@ -6,8 +6,16 @@ public class Centrifuge : MonoBehaviour
 {
     [SerializeField] int I_chargesNeeded;
     [SerializeField] GameObject GO_door;
+    AudioSource audioSource;
+    public AudioClip AudClp_FugeFail;
+    public AudioClip AudClp_FugeOn;
 
     [SerializeField] bool B_countFugeInEvent = false;
+
+    private void Start()
+    {
+        GetVariables();
+    }
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -16,14 +24,23 @@ public class Centrifuge : MonoBehaviour
             PlasmaBullet thisBullet = other.GetComponent<PlasmaBullet>();
             if (thisBullet.I_BulletCharge >= I_chargesNeeded)
             {
-                //Should put animation here.
                 ActivateFuge(thisBullet);
+            }
+
+            else
+            {
+                Debug.Log("lkajsdhalkjs");
+                audioSource.clip = AudClp_FugeFail;
+                audioSource.Play();
+                Destroy(thisBullet.gameObject);
             }
         }
     }
 
     void ActivateFuge(PlasmaBullet _plsbull)
     {
+        audioSource.clip = AudClp_FugeOn;
+        audioSource.Play();
         if (GO_door) GO_door.SetActive(false);
         Destroy(_plsbull.gameObject);
 
@@ -33,5 +50,8 @@ public class Centrifuge : MonoBehaviour
         }
     }
 
-
+    void GetVariables()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 }
