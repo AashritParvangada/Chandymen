@@ -35,3 +35,69 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/EffectExamples.meta
+Assets/EffectExamples/Blood.meta
+Assets/EffectExamples/Blood/Materials.meta
+Assets/EffectExamples/Blood/Prefabs.meta
+Assets/EffectExamples/Blood/Textures.meta
+Assets/EffectExamples/Editor.meta
+Assets/EffectExamples/Editor/PackageManagerAssembly.meta
+Assets/EffectExamples/FireExplosionEffects.meta
+Assets/EffectExamples/FireExplosionEffects/Materials.meta
+Assets/EffectExamples/FireExplosionEffects/Prefabs.meta
+Assets/EffectExamples/FireExplosionEffects/Textures.meta
+Assets/EffectExamples/Misc Effects.meta
+Assets/EffectExamples/Misc Effects/Materials.meta
+Assets/EffectExamples/Misc Effects/Prefabs.meta
+Assets/EffectExamples/Misc Effects/Textures.meta
+Assets/EffectExamples/Profiles.meta
+Assets/EffectExamples/Scenes.meta
+Assets/EffectExamples/Scenes/Menu.meta
+Assets/EffectExamples/Shared.meta
+Assets/EffectExamples/Shared/Animation.meta
+Assets/EffectExamples/Shared/Animation/Animations.meta
+Assets/EffectExamples/Shared/Animation/Controllers.meta
+Assets/EffectExamples/Shared/Fonts.meta
+Assets/EffectExamples/Shared/Materials.meta
+Assets/EffectExamples/Shared/Models.meta
+Assets/EffectExamples/Shared/Models/Materials.meta
+Assets/EffectExamples/Shared/PhysicsMaterials.meta
+Assets/EffectExamples/Shared/Prefabs.meta
+Assets/EffectExamples/Shared/Scripts.meta
+Assets/EffectExamples/Shared/Shaders.meta
+Assets/EffectExamples/Shared/Sprites.meta
+Assets/EffectExamples/Shared/Textures.meta
+Assets/EffectExamples/TutorialInfo.meta
+Assets/EffectExamples/TutorialInfo/Icons.meta
+Assets/EffectExamples/TutorialInfo/Scripts.meta
+Assets/EffectExamples/TutorialInfo/Scripts/Editor.meta
+Assets/EffectExamples/WaterEffects.meta
+Assets/EffectExamples/WaterEffects/Materials.meta
+Assets/EffectExamples/WaterEffects/Models.meta
+Assets/EffectExamples/WaterEffects/Prefabs.meta
+Assets/EffectExamples/WaterEffects/Textures.meta
+Assets/EffectExamples/WeaponEffects.meta
+Assets/EffectExamples/WeaponEffects/Materials.meta
+Assets/EffectExamples/WeaponEffects/Models.meta
+Assets/EffectExamples/WeaponEffects/Models/Materials.meta
+Assets/EffectExamples/WeaponEffects/Prefabs.meta
+Assets/EffectExamples/WeaponEffects/Textures.meta
+Assets/PostProcessing/Editor Resources/Monitors.meta
+Assets/PostProcessing/Editor Resources/UI.meta
+Assets/PostProcessing/Editor/Attributes.meta
+Assets/PostProcessing/Editor/Models.meta
+Assets/PostProcessing/Editor/Monitors.meta
+Assets/PostProcessing/Editor/PropertyDrawers.meta
+Assets/PostProcessing/Editor/Utils.meta
+Assets/PostProcessing/Resources/Bluenoise64.meta
+Assets/PostProcessing/Resources/Shaders.meta
+Assets/PostProcessing/Runtime/Attributes.meta
+Assets/PostProcessing/Runtime/Components.meta
+Assets/PostProcessing/Runtime/Models.meta
+Assets/PostProcessing/Runtime/Utils.meta
+Assets/PostProcessing/Utilities/CustomMotionTexture/Materials.meta
+Assets/PostProcessing/Utilities/CustomMotionTexture/Models.meta
+Assets/PostProcessing/Utilities/CustomMotionTexture/Shaders.meta
+Assets/PostProcessing/Utilities/CustomMotionTexture/Textures.meta
+Assets/Scenes/Level1_Profiles.meta
+Assets/Art/Particle Effects/Particle_Prefabs.meta
