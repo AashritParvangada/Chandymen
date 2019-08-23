@@ -26741,7 +26741,7 @@ PrefabInstance:
     - target: {fileID: 6906685088401212259, guid: 09729da671ba68b4f9419b005abe4fdf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6906685088401212259, guid: 09729da671ba68b4f9419b005abe4fdf,
         type: 3}
@@ -27258,7 +27258,7 @@ PrefabInstance:
     - target: {fileID: 6442457011345966688, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
@@ -27308,7 +27308,7 @@ PrefabInstance:
     - target: {fileID: 6442457011345966716, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6442457011345966716, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
@@ -27380,8 +27380,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: police_bot
       objectReference: {fileID: 0}
+    - target: {fileID: 8262665068467552212, guid: 9e0043256fff1334ab6f83a727b8b222,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e0043256fff1334ab6f83a727b8b222, type: 3}
+--- !u!95 &1097746087 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4683625234377415694, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 1097746086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1102513001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30717,6 +30728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   G_door: {fileID: 1640916919}
   F_holdTime: 0
+  AudClp_Hacking: {fileID: 0}
 --- !u!65 &1221473180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44655,7 +44667,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &1799430002
 MonoBehaviour:
@@ -45330,12 +45342,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8753277411898493740, guid: d2a5fdd2cd64e4c4ea0c3c06b1e1791b,
     type: 3}
   m_PrefabInstance: {fileID: 1834736687}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1837465039 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6442457011894441399, guid: 9e0043256fff1334ab6f83a727b8b222,
-    type: 3}
-  m_PrefabInstance: {fileID: 1097746086}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1839270803
 PrefabInstance:
@@ -50986,6 +50992,110 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2011374032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2012959014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7335523850216819025, guid: e31a0a5a54e944737afc78a05e6c2a03,
+    type: 3}
+  m_PrefabInstance: {fileID: 7335523850167816928}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012959017}
+  - component: {fileID: 2012959016}
+  - component: {fileID: 2012959015}
+  m_Layer: 0
+  m_Name: DialogueBox_Anim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &2012959015
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7335523850216819026, guid: e31a0a5a54e944737afc78a05e6c2a03,
+    type: 3}
+  m_PrefabInstance: {fileID: 7335523850167816928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012959014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17ef191a64f3141308751bcdbbf9f4aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &2012959016
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7335523850216819027, guid: e31a0a5a54e944737afc78a05e6c2a03,
+    type: 3}
+  m_PrefabInstance: {fileID: 7335523850167816928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012959014}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 5118146302180731755, guid: 4ef60bef42d3f4b069255e71c96ef0f6,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.892328, y: 1.75}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 1
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 1
+--- !u!4 &2012959017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7335523850216819028, guid: e31a0a5a54e944737afc78a05e6c2a03,
+    type: 3}
+  m_PrefabInstance: {fileID: 7335523850167816928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012959014}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2014851877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51625,7 +51735,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Anim_DialogBox
       value: 
-      objectReference: {fileID: 1837465039}
+      objectReference: {fileID: 1097746087}
     - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: GO_Arr_Characters.Array.data[0]

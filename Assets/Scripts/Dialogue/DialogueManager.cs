@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         GetVariables();
+        Txt_NameText.enabled = false; Txt_SentenceText.enabled = false;
     }
 
     void GetVariables()
@@ -30,6 +31,7 @@ public class DialogueManager : MonoBehaviour
         if (b_textAvailable)
         {
             b_active = true;
+            Txt_NameText.enabled = true; Txt_SentenceText.enabled = true;
             EnableOrDisableCont(false);
             ClearQueues();
             QueueSentences(_dialogue);
@@ -110,7 +112,7 @@ public class DialogueManager : MonoBehaviour
             _GO.SetActive(false);
         }
         b_textAvailable = false;
-
+        Txt_NameText.enabled = false; Txt_SentenceText.enabled = false;
         FindObjectOfType<EventManager>().FinishDialogueEvent();
     }
 
