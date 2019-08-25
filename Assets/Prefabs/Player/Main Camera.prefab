@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 805952498823211427}
   - component: {fileID: 805952498823211428}
   - component: {fileID: 805952498823211426}
-  - component: {fileID: 1907351624847466527}
   - component: {fileID: 8371393217996242183}
   - component: {fileID: 1239809644401660455}
+  - component: {fileID: 4676688524562018978}
   m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -96,20 +96,6 @@ MonoBehaviour:
   F_camShakeTime: 0
   F_camShakeMagnitude: 0
   B_PuzzleMode: 0
---- !u!114 &1907351624847466527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805952498823211430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Resolution: 0
-  DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
 --- !u!114 &8371393217996242183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +173,17 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &4676688524562018978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805952498823211430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 0
+  DefaultSpotCookie: {fileID: 0}
