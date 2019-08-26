@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     Animator anmtr_anim;
     GameCamera gameCam_PlayerCamera;
     AudioSource AudSrc_ThisSource;
+    public GameObject[] GO_Arr_DashParticles;
+
 
     HealthBar HlthBr_Script;
 
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GetVariables();
+
     }
 
     // Update is called once per frame
@@ -114,8 +117,10 @@ public class PlayerController : MonoBehaviour
         F_WalkSpeed = F_DashSpeed;
         B_AboveAcid = true;
 
+
         //Check Jai's movement since creating the object and dash in the right direction.
         yield return new WaitForSeconds(0.1f);
+        SwitchDashParticles(true);
         directionCalc.transform.SetParent(transform);
         anmtr_anim.SetFloat("LeftRightMovement", -directionCalc.transform.localPosition.x);
         anmtr_anim.SetFloat("ForwardBackMovement", -directionCalc.transform.localPosition.z);
@@ -124,6 +129,7 @@ public class PlayerController : MonoBehaviour
 
 
         yield return new WaitForSeconds(F_DashTime);
+        SwitchDashParticles(false);
         F_WalkSpeed = F_DefaultWalkSpeed;
         B_AboveAcid = false;
         yield return new WaitForSeconds(F_DashCooldownTime);
@@ -228,5 +234,17 @@ public class PlayerController : MonoBehaviour
 
         AudSrc_ThisSource.clip = Resources.Load<AudioClip>("Sounds/Jai/" + _soundName);
         AudSrc_ThisSource.Play();
+    }
+
+    void SwitchDashParticles(bool _onOff)
+    {
+        foreach (GameObject _go in GO_Arr_DashParticles)
+        {
+            if (_go.GetComponent<ParticleSystem>() && _onOff) _go.GetComponent<ParticleSystem>().Play();
+            if (_go.GetComponent<ParticleSystem>() && !_onOff) _go.GetComponent<ParticleSystem>().Stop();
+
+            if (_go.GetComponent<TrailRenderer>()) _go.GetComponent<TrailRenderer>().enabled = _onOff;
+
+        }
     }
 }
