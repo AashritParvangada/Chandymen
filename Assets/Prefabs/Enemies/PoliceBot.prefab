@@ -9099,12 +9099,12 @@ ParticleSystem:
     light: {fileID: 565296944433840094}
     randomDistribution: 1
     color: 1
-    range: 1
-    intensity: 1
+    range: 0
+    intensity: 0
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9157,7 +9157,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -18603,12 +18603,12 @@ ParticleSystem:
     light: {fileID: 565296944433840094}
     randomDistribution: 1
     color: 1
-    range: 1
-    intensity: 1
+    range: 0
+    intensity: 0
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -18661,7 +18661,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
