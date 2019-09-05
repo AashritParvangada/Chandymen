@@ -7,7 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     Queue<string> s_Queue_names = new Queue<string>();
     Queue<string> s_Queue_sentences = new Queue<string>();
-
+    DialogueTrigger dTrig_shutDownOnEnd;
     public Text Txt_NameText;
     public Text Txt_SentenceText;
     PlayerController plCont_playa;
@@ -25,18 +25,16 @@ public class DialogueManager : MonoBehaviour
         plCont_playa = FindObjectOfType<PlayerController>();
     }
 
-    public void StartDialogue(Dialogue _dialogue)
+    public void StartDialogue(Dialogue _dialogue, DialogueTrigger _dtrig)
     {
-
-        if (b_textAvailable)
-        {
-            b_active = true;
-            Txt_NameText.enabled = true; Txt_SentenceText.enabled = true;
-            EnableOrDisableCont(false);
-            ClearQueues();
-            QueueSentences(_dialogue);
-            CheckNextSentence();
-        }
+        Debug.Log("Entered Start Dialogue");
+        dTrig_shutDownOnEnd = _dtrig;
+        b_active = true;
+        Txt_NameText.enabled = true; Txt_SentenceText.enabled = true;
+        EnableOrDisableCont(false);
+        ClearQueues();
+        QueueSentences(_dialogue);
+        CheckNextSentence();
     }
 
     void EnableOrDisableCont(bool _enabled)
@@ -111,7 +109,7 @@ public class DialogueManager : MonoBehaviour
         {
             _GO.SetActive(false);
         }
-        b_textAvailable = false;
+        dTrig_shutDownOnEnd.gameObject.SetActive(false);
         Txt_NameText.enabled = false; Txt_SentenceText.enabled = false;
         FindObjectOfType<EventManager>().FinishDialogueEvent();
     }

@@ -8,7 +8,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(Dia_Dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(Dia_Dialogue, this);
+
     }
 
     private void OnTriggerEnter(Collider other)
