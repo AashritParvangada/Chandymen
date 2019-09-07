@@ -58,8 +58,9 @@ MonoBehaviour:
   Trans_gruntGun: {fileID: 1722108894473775598}
   GO_bullet: {fileID: 6351978325533245481, guid: 3d654e802b4075241902d60bc3e8d74b,
     type: 3}
-  F_bulletSpeed: 15
-  B_shootOnStart: 1
+  F_bulletSpeed: 10
+  B_ShootOnStart: 1
+  B_ShootOnDialogue: 0
 --- !u!65 &3398568554397525481
 BoxCollider:
   m_ObjectHideFlags: 0

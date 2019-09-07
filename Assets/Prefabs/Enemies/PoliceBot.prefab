@@ -208,7 +208,7 @@ MonoBehaviour:
   B_AttackOnDialogue: 0
   F_chargeCountdownTimer: 2
   F_cooldownTimer: 2
-  F_stopDistance: 2
+  F_stopDistance: 2.2
 --- !u!195 &7069868995964897296
 NavMeshAgent:
   m_ObjectHideFlags: 0

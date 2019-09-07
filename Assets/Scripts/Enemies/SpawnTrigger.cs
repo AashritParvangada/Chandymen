@@ -7,7 +7,8 @@ public class SpawnTrigger : MonoBehaviour
     bool b_isActive = false;
     int i_numberOfSpawnersWithin = 0;
     int i_enemiesKilled = 0;
-    [SerializeField] GameObject GO_doorToOpen;
+    [SerializeField] GameObject GO_doorToOpen, GO_doorToClose;
+    [SerializeField] GameObject GO_spwnManToActivate;
     public SceneChanger ScnChngr;
     [SerializeField] bool B_isLastTrigger;
 
@@ -33,7 +34,7 @@ public class SpawnTrigger : MonoBehaviour
             SpawnEnemies();
             SetActive();
             GetComponent<BoxCollider>().enabled = false;
-
+            GO_doorToClose.SetActive(true);
         }
     }
 
@@ -65,11 +66,17 @@ public class SpawnTrigger : MonoBehaviour
             i_enemiesKilled++;//Add another enemy killed. If all enemies have been killed, open the next door.
             if (i_enemiesKilled >= i_numberOfSpawnersWithin)
             {
-                OpenDoor();
+                EndTriggerAction();
 
                 if (B_isLastTrigger) FindObjectOfType<EventManager>().LastEnemyKilledEvent();
             }
         }
+    }
+
+    void EndTriggerAction()
+    {
+        OpenDoor();
+        if (GO_spwnManToActivate) GO_spwnManToActivate.SetActive(true);
     }
 
     void OpenDoor()

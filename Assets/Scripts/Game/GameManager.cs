@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         {
             gamMan_instance = this;
             DontDestroyOnLoad(this);
+            SpawnPlayer();
         }
 
         else
