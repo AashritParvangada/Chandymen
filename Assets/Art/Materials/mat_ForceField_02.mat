@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_ForceField
-  m_Shader: {fileID: -6465566751694194690, guid: be7696df98ebd47b6bb2e1cb69fbb4ee,
+  m_Name: mat_ForceField_02
+  m_Shader: {fileID: -6465566751694194690, guid: e9cc178e199a44ed68be554bb6552b98,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,12 +19,13 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - Texture2D_BE7D1B9D:
+        m_Texture: {fileID: 2800000, guid: 1d2640bdcf5c64bb4965171248e64733, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_4731A77C: 0.05
-    - Vector1_764FED13: 3.67
-    - Vector1_CC2F5D11: 15
+    - Vector1_1279438F: 0.08
+    - Vector1_B931F91C: 3.25
     m_Colors:
-    - Color_536CD3ED: {r: 0, g: 0, b: 0, a: 0}
-    - Color_AE0A0F1: {r: 0, g: 5.615686, b: 6.368628, a: 0}
-    - Color_E00018E6: {r: 0, g: 2.854902, b: 4, a: 0}
+    - Color_83E98C5C: {r: 0, g: 3.403922, b: 4, a: 0}
