@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: d45bc18e9af8a4941b836dc0e22fe0fe,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7630,12 +7630,12 @@ PrefabInstance:
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: I_health
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: I_maxHealth
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6743829330739559679, guid: 07523acf795f54f49b863df3592ec9e1, type: 3}
@@ -7961,7 +7961,7 @@ PrefabInstance:
     - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
       propertyPath: I_killedThresehold_3
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
@@ -13616,7 +13616,7 @@ PrefabInstance:
     - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
       propertyPath: I_killedThresehold_3
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5567376658824621645, guid: 2850bf427824f5e43b9dca60cae3bf29,
         type: 3}
