@@ -33,12 +33,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_4731A77C: -0.1
-    - Vector1_764FED13: 10
+    - Vector1_4731A77C: -0.06
+    - Vector1_764FED13: 11.8
     - Vector1_B15186D7: 0
     - Vector1_CC2F5D11: 20.32
     m_Colors:
-    - Color_536CD3ED: {r: 0, g: 40.857845, b: 41.73181, a: 0}
+    - Color_536CD3ED: {r: 0, g: 11.733334, b: 11.984314, a: 0}
     - Color_AE0A0F1: {r: 0, g: 6.9890637, b: 8.502619, a: 0}
     - Color_E00018E6: {r: 0, g: 7.664921, b: 10.680627, a: 0}
     - Vector2_B97CB43D: {r: 0.5, g: 5, b: 0, a: 0}
