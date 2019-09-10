@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1452ac62ea942de4b821bbcc5580b5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F_bulletSpeed: 20
+  F_bulletSpeed: 15
   GO_Projectile: {fileID: 8953453763912395388, guid: 115ca7644ca33406faef760c0634bdbd,
     type: 3}
 --- !u!1001 &253196978568526770
