@@ -36,5 +36,12 @@ public class EnemySpawner : MonoBehaviour
             _grnt.B_ShootOnDialogue = B_activateOnDialogue; _grnt.B_ShootOnStart = B_activateOnStart;
             _grnt.CheckAttackOnStart();
         }
+
+        if (_go.GetComponent<Timboi>())
+        {
+            Timboi _timboi = _go.GetComponent<Timboi>();
+            _timboi.B_AttackOnDialogue = B_activateOnDialogue;
+            _timboi.CheckAttackOnStart();
+        }
     }
 }

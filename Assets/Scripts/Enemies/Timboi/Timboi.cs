@@ -16,18 +16,46 @@ public class Timboi : MonoBehaviour
     [SerializeField] int I_health = 100, I_damage = 30;
     [SerializeField] float F_minAttackTime, F_maxAttackTime, F_minMovementCheckTime, F_maxMovementCheckTime, F_recoverTime;
     bool b_lookAtPlayer = true;
-
+    public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
 
     private void Start()//Get variables.
     {
         GetVariables();
-        StartCombat();
+    }
+
+
+    private void OnEnable()
+    {
+        EventManager.OnDialogueComplete += DialogueEventEnded;
+
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnDialogueComplete -= DialogueEventEnded;
+
     }
 
     private void Update()
     {
         if (b_lookAtPlayer) transform.LookAt(playcont_player.transform);
+    }
+
+    public void CheckAttackOnStart()
+    {
+        if(!B_AttackOnDialogue)
+        {
+            StartCombat();
+        }
+    }
+
+    void DialogueEventEnded()
+    {
+        if (B_AttackOnDialogue)
+        {
+            StartCombat();
+        }
     }
 
     void StartCombat()
