@@ -44,7 +44,7 @@ public class Timboi : MonoBehaviour
 
     public void CheckAttackOnStart()
     {
-        if(!B_AttackOnDialogue)
+        if (!B_AttackOnDialogue)
         {
             StartCombat();
         }
@@ -126,6 +126,7 @@ public class Timboi : MonoBehaviour
 
     public void SlashBullet()
     {
+        Debug.Log("Slashing Bullet");
         StopAllCoroutines();
         navMesAg_agent.SetDestination(transform.position);
         StartCoroutine(Enum_Slash(0));
@@ -224,6 +225,7 @@ public class Timboi : MonoBehaviour
     {
         if (other.GetComponent<PlasmaBullet>())
         {
+            Debug.Log("Bullet Entered");
             DamageHealth(50);
             Debug.Log(I_health);
         }

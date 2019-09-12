@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: d45bc18e9af8a4941b836dc0e22fe0fe,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3601,6 +3601,136 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501016947}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &508501835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5370326488360817114, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueTrigger (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 161.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744851294933530241, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[0]
+      value: police_bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[1]
+      value: jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[0]
+      value: what are you doing out so late? go home to your mother
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[1]
+      value: i ain't got no mother, punk. although you could say katoot is pretty
+        close
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
+--- !u!1 &508501836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5370326488360817114, guid: 119dcb885e6b54543879c76d3fc74e27,
+    type: 3}
+  m_PrefabInstance: {fileID: 508501835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &508501837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508501836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &517596163
 GameObject:
   m_ObjectHideFlags: 0
@@ -8839,7 +8969,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.1
+      value: 20.2
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -8849,7 +8979,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 97.9
+      value: 138.3
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -10675,12 +10805,12 @@ PrefabInstance:
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.400002
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.0999985
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}

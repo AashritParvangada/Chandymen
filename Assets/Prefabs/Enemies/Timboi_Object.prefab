@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8544761517999472267}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.5, y: 1, z: 0}
+  m_LocalPosition: {x: -1.5, y: 1, z: 1.5}
   m_LocalScale: {x: 2, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8544761519475791030}
@@ -109,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8544761518043804955
 Transform:
   m_ObjectHideFlags: 0
@@ -177,9 +177,9 @@ GameObject:
   - component: {fileID: 8544761518390400770}
   - component: {fileID: 8544761518390400769}
   - component: {fileID: 8544761518390400768}
-  - component: {fileID: 8544761518390400771}
   - component: {fileID: 8544761518390400774}
   - component: {fileID: 8544761518390400775}
+  - component: {fileID: 7398548253122902176}
   m_Layer: 0
   m_Name: Timboi_Model
   m_TagString: Untagged
@@ -246,19 +246,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8544761518390400771
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8544761518390400781}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8544761518390400774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +274,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7398548253122902176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544761518390400781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 1.6}
+  m_Center: {x: 0, y: 0, z: 0.8}
 --- !u!1 &8544761518947777492
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8544761518947777492}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.5, y: 1, z: 0}
+  m_LocalPosition: {x: 1.5, y: 1, z: 1.5}
   m_LocalScale: {x: 2, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8544761519475791030}
@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8544761519433391637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.5}
+  m_LocalPosition: {x: 0, y: 1, z: 2.9}
   m_LocalScale: {x: 2, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8544761519475791030}
@@ -498,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8544761519475791025}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 22.3, y: 0, z: 7.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8544761518390400770}
@@ -523,11 +523,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   I_health: 500
   I_damage: 30
-  F_minAttackTime: 2
-  F_maxAttackTime: 2
+  F_minAttackTime: 0.3
+  F_maxAttackTime: 0.3
   F_minMovementCheckTime: 1
   F_maxMovementCheckTime: 1
-  F_recoverTime: 1
+  F_recoverTime: 1.5
+  B_AttackOnDialogue: 1
   GO_tempArray:
   - {fileID: 8544761518947777492}
   - {fileID: 8544761519433391637}
@@ -678,5 +679,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
