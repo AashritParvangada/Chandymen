@@ -249,6 +249,7 @@ MonoBehaviour:
   - {fileID: 1713151849981658031}
   - {fileID: 1417974733778233404}
   - {fileID: 7781632746702611767}
+  Prtcl_muzzleShot: {fileID: 5990297606079966632}
 --- !u!65 &8296172668473961869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -925,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
         type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
         type: 3}
@@ -1069,7 +1070,7 @@ PrefabInstance:
     - target: {fileID: 6785055291696872898, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
         type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6785055291696872898, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
         type: 3}
@@ -1109,7 +1110,13 @@ PrefabInstance:
     - target: {fileID: 198515452120210940, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
         type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+--- !u!1 &5990297606079966632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5992037563555728486}
+  m_PrefabAsset: {fileID: 0}
