@@ -58,8 +58,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 6
+  orthographic: 0
   orthographic size: 6
   m_Depth: 0
   m_CullingMask:
@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2729ea1f73a600a46b92beadbe4c06fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  v3_distanceFromPlayer: {x: 0, y: 10, z: -10}
+  v3_distanceFromPlayer: {x: 0, y: 90, z: -90}
   v3_viewingAngle: {x: 45, y: 0, z: 0}
-  F_camSize: 0
+  F_camSize: 6
   F_camShakeTime: 0
   F_camShakeMagnitude: 0
   B_PuzzleMode: 0
