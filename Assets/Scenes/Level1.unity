@@ -54247,6 +54247,21 @@ PrefabInstance:
       propertyPath: m_Depth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
+        type: 3}
+      propertyPath: v3_distanceFromPlayer.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
+        type: 3}
+      propertyPath: v3_distanceFromPlayer.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
+        type: 3}
+      propertyPath: F_camSize
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 500263822304440007, guid: 0161d37342e89a246b4225f216e79943, type: 3}
     - {fileID: 1907351624847466527, guid: 0161d37342e89a246b4225f216e79943, type: 3}

@@ -3265,21 +3265,15 @@ PrefabInstance:
       propertyPath: GO_spwnManToActivate
       value: 
       objectReference: {fileID: 1172260943}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: GO_enemyToSpawn
-      value: 
-      objectReference: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
-        type: 3}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
-        type: 3}
-      propertyPath: B_activateOnDialogue
-      value: 1
+      propertyPath: m_Size.x
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: B_activateOnStart
-      value: 0
+      propertyPath: m_Size.z
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -3316,15 +3310,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.00002
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.x
-      value: 5
+      propertyPath: GO_enemyToSpawn
+      value: 
+      objectReference: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+        type: 3}
+      propertyPath: B_activateOnDialogue
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.z
-      value: 20
+      propertyPath: B_activateOnStart
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3f7a01352ab264db9520106eeb55c1, type: 3}
@@ -5174,21 +5174,10 @@ PrefabInstance:
       propertyPath: GO_doorToOpen
       value: 
       objectReference: {fileID: 105388558}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: GO_enemyToSpawn
-      value: 
-      objectReference: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
-        type: 3}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
-        type: 3}
-      propertyPath: B_activateOnDialogue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
-        type: 3}
-      propertyPath: B_activateOnStart
-      value: 0
+      propertyPath: m_Size.x
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -5225,10 +5214,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.00002
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.x
-      value: 15
+      propertyPath: GO_enemyToSpawn
+      value: 
+      objectReference: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
+        type: 3}
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+        type: 3}
+      propertyPath: B_activateOnDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+        type: 3}
+      propertyPath: B_activateOnStart
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3f7a01352ab264db9520106eeb55c1, type: 3}
@@ -6637,21 +6637,15 @@ PrefabInstance:
       propertyPath: GO_doorToClose
       value: 
       objectReference: {fileID: 1855576324}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: GO_enemyToSpawn
-      value: 
-      objectReference: {fileID: 1242102285249958181, guid: 2d30f3898bde7024da74931782a57990,
-        type: 3}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
-        type: 3}
-      propertyPath: B_activateOnDialogue
-      value: 1
+      propertyPath: m_Size.x
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: B_activateOnStart
-      value: 0
+      propertyPath: m_Size.z
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -6688,15 +6682,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.00002
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.x
-      value: 5
+      propertyPath: GO_enemyToSpawn
+      value: 
+      objectReference: {fileID: 1242102285249958181, guid: 2d30f3898bde7024da74931782a57990,
+        type: 3}
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+        type: 3}
+      propertyPath: B_activateOnDialogue
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.z
-      value: 20
+      propertyPath: B_activateOnStart
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3f7a01352ab264db9520106eeb55c1, type: 3}
@@ -10791,21 +10791,15 @@ PrefabInstance:
       propertyPath: GO_doorToClose
       value: 
       objectReference: {fileID: 633683138}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: GO_enemyToSpawn
-      value: 
-      objectReference: {fileID: 8544761519475791025, guid: f68f9f07d578bd349951e355e65804fa,
-        type: 3}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
-        type: 3}
-      propertyPath: B_activateOnDialogue
-      value: 1
+      propertyPath: m_Size.x
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: B_activateOnStart
-      value: 0
+      propertyPath: m_Size.z
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -10842,15 +10836,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.x
-      value: 5
+      propertyPath: GO_enemyToSpawn
+      value: 
+      objectReference: {fileID: 8544761519475791025, guid: f68f9f07d578bd349951e355e65804fa,
+        type: 3}
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
+        type: 3}
+      propertyPath: B_activateOnDialogue
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1178217786302378023, guid: dd3f7a01352ab264db9520106eeb55c1,
+    - target: {fileID: 1178217786660893713, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
-      propertyPath: m_Size.z
-      value: 20
+      propertyPath: B_activateOnStart
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3f7a01352ab264db9520106eeb55c1, type: 3}
@@ -12209,17 +12209,17 @@ PrefabInstance:
     - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
         type: 3}
       propertyPath: v3_distanceFromPlayer.y
-      value: 15
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
         type: 3}
       propertyPath: v3_distanceFromPlayer.z
-      value: -10
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
         type: 3}
       propertyPath: v3_viewingAngle.x
-      value: 60
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 500263822304440007, guid: 0161d37342e89a246b4225f216e79943, type: 3}
