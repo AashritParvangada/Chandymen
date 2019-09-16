@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtCamera : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     //Made so that text looks at the camera.
     Camera Cam;
@@ -13,6 +13,7 @@ public class LookAtCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - Cam.transform.position);
+        //transform.rotation = Quaternion.LookRotation(transform.position - Cam.transform.position);
+        transform.LookAt(Cam.transform);
     }
 }
