@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class Grunt : MonoBehaviour
 {
-    [SerializeField] int I_health = 100;
+    [SerializeField] int I_totalHealth = 100;
+    int i_currentHealth;
 
     PlayerController playcont_player; Gun gun_playaGun;
     [SerializeField] float F_rayDistance = 50;
@@ -17,6 +18,7 @@ public class Grunt : MonoBehaviour
 
     [SerializeField] Transform Trans_gruntGun;
     [SerializeField] GameObject GO_bullet;
+    [SerializeField] GameObject GO_healthBarAnchor;
     [SerializeField] float F_bulletSpeed;
     public bool B_ShootOnStart = true, B_ShootOnDialogue = false;
     EventManager evMan_eventManager;
@@ -66,6 +68,7 @@ public class Grunt : MonoBehaviour
 
     void GetVariables()//Get event manager, nav msh agent, player cont, gun, and make zone list.
     {
+        i_currentHealth = I_totalHealth;
         evMan_eventManager = FindObjectOfType<EventManager>();
         navMesAg_agent = GetComponent<NavMeshAgent>();
         playcont_player = FindObjectOfType<PlayerController>();
@@ -199,8 +202,10 @@ public class Grunt : MonoBehaviour
 
     public void DamageHealth(int _Damage)//Called in Plasma Bullet.
     {
-        I_health -= _Damage;
-        if (I_health <= 0)
+        i_currentHealth -= _Damage;
+
+        GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth/I_totalHealth, 1, 1);
+        if (i_currentHealth <= 0)
         {
             Destroy(gameObject);
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class LookAtCamera : MonoBehaviour
 {
     //Made so that text looks at the camera.
     Camera Cam;
