@@ -5,12 +5,15 @@ using UnityEngine.AI;
 
 public class PoliceBot : MonoBehaviour
 {
-    [SerializeField] int I_health = 100;
+    [SerializeField] int I_totalHealth = 100;
+
+    int i_currentHealth;
     NavMeshAgent navMeshAg_agent;
     public bool B_AttackOnStart = false, B_AttackOnDialogue = false;
     EventManager evMan_eventManager;
     [SerializeField] float F_chargeCountdownTimer = 2;
     [SerializeField] float F_cooldownTimer = 2, F_stopDistance = 2;
+    [SerializeField] GameObject GO_healthBarAnchor;
 
     PlayerController playCont_Controller;
 
@@ -36,6 +39,7 @@ public class PoliceBot : MonoBehaviour
 
     void GetVariables()
     {
+        i_currentHealth = I_totalHealth;
         playCont_Controller = FindObjectOfType<PlayerController>();
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
@@ -90,8 +94,10 @@ public class PoliceBot : MonoBehaviour
 
     void DecreaseHealth(int _DecreaseBy)//To damage this Police Bot's health.
     {
-        I_health -= _DecreaseBy;
-        if (I_health <= 0)
+        i_currentHealth -= _DecreaseBy;
+        GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
+
+        if (i_currentHealth <= 0)
         {
             Destroy(gameObject);
         }

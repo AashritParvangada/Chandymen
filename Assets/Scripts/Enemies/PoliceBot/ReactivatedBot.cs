@@ -5,7 +5,9 @@ using UnityEngine.AI;
 
 public class ReactivatedBot : MonoBehaviour
 {
-    [SerializeField] int I_health = 100;
+    [SerializeField] int I_totalHealth = 100;
+    [SerializeField] GameObject GO_healthBarAnchor;
+    int i_currentHealth;
     NavMeshAgent navMeshAg_agent;
     public bool B_AttackOnStart, B_ActivateOnDialogue;
     EventManager evMan_eventManager;
@@ -37,6 +39,8 @@ public class ReactivatedBot : MonoBehaviour
 
     void GetVariables()
     {
+        i_currentHealth = I_totalHealth;
+
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
         plCont_playa = FindObjectOfType<PlayerController>();
@@ -75,8 +79,11 @@ public class ReactivatedBot : MonoBehaviour
 
     void DecreaseHealth(int _DecreaseBy)//To damage this Police Bot's health.
     {
-        I_health -= _DecreaseBy;
-        if (I_health <= 0)
+        i_currentHealth -= _DecreaseBy;
+
+        GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
+
+        if (i_currentHealth <= 0)
         {
             Destroy(gameObject);
         }
