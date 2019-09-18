@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     void SpawnPlayer()
     {
         PlayerRespawn _PlRspwn = FindObjectOfType<PlayerRespawn>();
-        _PlRspwn.SpawnPlayer();
+        if (_PlRspwn) _PlRspwn.SpawnPlayer();
     }
 
     public void SetLastCheckpoint(Checkpoint _Checkpoint)//Called from Checkpoint Script. When the player dies, they respawn here.
