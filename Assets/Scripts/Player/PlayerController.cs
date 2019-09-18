@@ -44,9 +44,9 @@ public class PlayerController : MonoBehaviour
 
         //Get the left and right controller's input based on some select axes.
         Vector3 left_Input =
-        new Vector3(Input.GetAxisRaw("Left_Horizontal"), 0, -Input.GetAxisRaw("Left_Vertical"));
+        new Vector3(Input.GetAxisRaw("Left_Horizontal"), 0, Input.GetAxisRaw("Left_Vertical"));
         Vector3 right_Input =
-        new Vector3(Input.GetAxisRaw("Right_Horizontal"), 0, -Input.GetAxisRaw("Right_Vertical"));
+        new Vector3(Input.GetAxisRaw("Right_Horizontal"), 0, Input.GetAxisRaw("Right_Vertical"));
         Vector3 motion = left_Input;
 
         //Only face the direction of right input if the player is pressing something.
