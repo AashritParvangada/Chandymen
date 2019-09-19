@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        ScnMan_SceneManager.LoadPlayer();
+        ScnMan_SceneManager.SceneChangeInt(1);
     }
 
     public void QuitButton()
