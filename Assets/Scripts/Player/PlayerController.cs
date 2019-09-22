@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int I_maxHealth = 100;
     Rigidbody rb;
     public float F_DefaultWalkSpeed = 5;
-    bool b_canDash = true;
+    bool b_canDash = true, b_controllerActive = true;
     public float F_WalkSpeed = 5;
     public float F_DashSpeed = 10;
     public float F_DashTime = 0.3f;
@@ -35,37 +35,42 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ///Use these to test the player inputs to see if everything is working.
-        //Debug.Log("Left Hor is " +Input.GetAxis("Left_Horizontal"));
-        //Log("Left Ver is " +Input.GetAxis("Left_Vertical"));
-        //Debug.Log("Right Hor is " +Input.GetAxis("Right_Horizontal"));
-        //Debug.Log("Right Ver is " +Input.GetAxis("Right_Vertical"));
-        //Debug.Log("Mouse Pos is " + Input.GetAxis("MousePos"));
-
-        //Get the left and right controller's input based on some select axes.
-        Vector3 left_Input =
-        new Vector3(Input.GetAxisRaw("Left_Horizontal"), 0, Input.GetAxisRaw("Left_Vertical"));
-        Vector3 right_Input =
-        new Vector3(Input.GetAxisRaw("Right_Horizontal"), 0, -Input.GetAxisRaw("Right_Vertical"));
-        Vector3 motion = left_Input;
-
-        //Only face the direction of right input if the player is pressing something.
-        if (right_Input != Vector3.zero)
+        if (b_controllerActive)
         {
-            transform.rotation = Quaternion.LookRotation(right_Input);
 
+
+            ///Use these to test the player inputs to see if everything is working.
+            //Debug.Log("Left Hor is " +Input.GetAxis("Left_Horizontal"));
+            //Log("Left Ver is " +Input.GetAxis("Left_Vertical"));
+            //Debug.Log("Right Hor is " +Input.GetAxis("Right_Horizontal"));
+            //Debug.Log("Right Ver is " +Input.GetAxis("Right_Vertical"));
+            //Debug.Log("Mouse Pos is " + Input.GetAxis("MousePos"));
+
+            //Get the left and right controller's input based on some select axes.
+            Vector3 left_Input =
+            new Vector3(Input.GetAxisRaw("Left_Horizontal"), 0, Input.GetAxisRaw("Left_Vertical"));
+            Vector3 right_Input =
+            new Vector3(Input.GetAxisRaw("Right_Horizontal"), 0, -Input.GetAxisRaw("Right_Vertical"));
+            Vector3 motion = left_Input;
+
+            //Only face the direction of right input if the player is pressing something.
+            if (right_Input != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(right_Input);
+
+            }
+
+            //This makes sure that if both inputs are down at the same time then the player doesn't move around at a higher speed.
+            motion *= (Mathf.Abs(left_Input.x) == 1 && Mathf.Abs(left_Input.z) == 1) ? .7f : 1;
+            motion *= F_WalkSpeed;
+
+            rb.velocity = motion;
+            anmtr_anim.SetFloat("Speed", rb.velocity.magnitude);
+            motion += Vector3.up * -8;
+            CheckForShot();
+            CheckDash(motion.x, motion.z);
+            CheckMousePoint();
         }
-
-        //This makes sure that if both inputs are down at the same time then the player doesn't move around at a higher speed.
-        motion *= (Mathf.Abs(left_Input.x) == 1 && Mathf.Abs(left_Input.z) == 1) ? .7f : 1;
-        motion *= F_WalkSpeed;
-
-        rb.velocity = motion;
-        anmtr_anim.SetFloat("Speed", rb.velocity.magnitude);
-        motion += Vector3.up * -8;
-        CheckForShot();
-        CheckDash(motion.x, motion.z);
-        CheckMousePoint();
     }
 
     void GetVariables()
@@ -251,5 +256,17 @@ public class PlayerController : MonoBehaviour
             if (_go.GetComponent<TrailRenderer>()) _go.GetComponent<TrailRenderer>().enabled = _onOff;
 
         }
+    }
+
+    IEnumerator IEnum_TempDisableController(float _disableTime)
+    {
+        b_controllerActive = false;
+        yield return new WaitForSeconds(_disableTime);
+        b_controllerActive = true;
+    }
+
+    public void TempDisableController(float _disableTime)
+    {
+        StartCoroutine(IEnum_TempDisableController(_disableTime));
     }
 }

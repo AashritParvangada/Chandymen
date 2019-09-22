@@ -25,18 +25,15 @@ public class PoliceShield : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
-            StartCoroutine(ShockPlayer(other.GetComponent<PlayerController>()));
+            ShockPlayer(other.GetComponent<PlayerController>());
         }
     }
 
-    IEnumerator ShockPlayer(PlayerController _playa)
+    void ShockPlayer(PlayerController _playa)
     {
-        _playa.enabled = false;
+        _playa.TempDisableController(0.3f);
         _playa.DamageHealth(I_damage);
         _playa.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.3f);
-        _playa.enabled = true;
-
     }
 
 
@@ -44,7 +41,7 @@ public class PoliceShield : MonoBehaviour
     {
         if (other.GetComponent<Gun>())
         {
-            StartCoroutine(ShockPlayer(other.GetComponentInParent<PlayerController>()));
+            ShockPlayer(other.GetComponentInParent<PlayerController>());
         }
     }
 }
