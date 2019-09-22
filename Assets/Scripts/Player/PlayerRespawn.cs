@@ -15,7 +15,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         GM = FindObjectOfType<GameManager>();
-        Debug.Log(GM.V3_LastCheckpointPos);
+//        Debug.Log(GM.V3_LastCheckpointPos);
         transform.position = GM.V3_LastCheckpointPos;
     }
 }
