@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     AudioSource AudSrc_ThisSource;
     public GameObject[] GO_Arr_DashParticles;
 
-    [SerializeField] GameObject Prtcl_muzzleShot;
+    [SerializeField] GameObject Go_muzzleShot;
     HealthBar HlthBr_Script;
 
     // Use this for initialization
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         PlaySound("SFX_Jai_Jgun_2x");
         gun_playerGun.ShootProjectile(gun_playerGun.transform);
 
-        foreach (ParticleSystem _prtcl in Prtcl_muzzleShot.GetComponentsInChildren<ParticleSystem>())
+        foreach (ParticleSystem _prtcl in Go_muzzleShot.GetComponentsInChildren<ParticleSystem>())
         {
             _prtcl.Play();
         }

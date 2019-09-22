@@ -13,7 +13,7 @@ public class PoliceBot : MonoBehaviour
     EventManager evMan_eventManager;
     [SerializeField] float F_chargeCountdownTimer = 2;
     [SerializeField] float F_cooldownTimer = 2, F_stopDistance = 2;
-    [SerializeField] GameObject GO_healthBarAnchor;
+    [SerializeField] GameObject GO_healthBarAnchor, GO_chargeParticle, GO_dashParticle;
 
     PlayerController playCont_Controller;
 
@@ -55,7 +55,9 @@ public class PoliceBot : MonoBehaviour
 
     IEnumerator IEnum_ChargeTowardsPlayer(PlayerController _target)//Loops with Set Target
     {
-        Debug.Log("entered charge state");
+        StopAllParticles();
+        foreach (ParticleSystem _prtcl in GO_dashParticle.GetComponentsInChildren<ParticleSystem>()) _prtcl.Play();
+
         while (Vector3.Distance(transform.position, _target.transform.position) > F_stopDistance)
         {
             Debug.Log(Vector3.Distance(transform.position, _target.transform.position));
@@ -77,8 +79,8 @@ public class PoliceBot : MonoBehaviour
     //Sets the bot to target the player and loops a coroutine that retargets the player's location every .3 seconds.
     IEnumerator IEnum_CooldownState(float _cooldownTime)
     {
-        Debug.Log("entered cool state");
         StopCoroutine(IEnum_ChargeTowardsPlayer(playCont_Controller));
+        StopAllParticles();
         yield return new WaitForSeconds(_cooldownTime);
         StartCoroutine(IEnum_ChargeCharge(F_chargeCountdownTimer));
     }
@@ -115,8 +117,8 @@ public class PoliceBot : MonoBehaviour
     }
     IEnumerator IEnum_ChargeCharge(float _timer)
     {
-        Debug.Log("Charging Charge");
         float _countingDownTime = _timer;
+        foreach (ParticleSystem _prtcl in GO_chargeParticle.GetComponentsInChildren<ParticleSystem>()) _prtcl.Play();
 
         while (_countingDownTime > 0)
         {
@@ -134,5 +136,10 @@ public class PoliceBot : MonoBehaviour
         {
             StartAttacking();
         }
+    }
+
+    void StopAllParticles()
+    {
+        foreach (ParticleSystem _prtcl in GetComponentsInChildren<ParticleSystem>()) _prtcl.Stop();
     }
 }

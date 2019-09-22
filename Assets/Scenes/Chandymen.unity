@@ -9037,12 +9037,12 @@ PrefabInstance:
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: I_health
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4772438038734280728, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: I_maxHealth
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6743829330739559679, guid: 07523acf795f54f49b863df3592ec9e1, type: 3}
@@ -15573,13 +15573,13 @@ Transform:
   - {fileID: 1406828341}
   - {fileID: 880738948}
   - {fileID: 780978080}
+  - {fileID: 438089368}
   - {fileID: 1820214567}
   - {fileID: 1384390342}
-  - {fileID: 438089368}
   - {fileID: 19511182}
   - {fileID: 1635247905}
-  - {fileID: 1859442177}
   - {fileID: 633683137}
+  - {fileID: 1859442177}
   - {fileID: 27695353}
   - {fileID: 1336783758}
   m_Father: {fileID: 267108744}

@@ -249,7 +249,7 @@ MonoBehaviour:
   - {fileID: 1713151849981658031}
   - {fileID: 1417974733778233404}
   - {fileID: 7781632746702611767}
-  Prtcl_muzzleShot: {fileID: 5990297606079966632}
+  Go_muzzleShot: {fileID: 5990297606079966632}
 --- !u!65 &8296172668473961869
 BoxCollider:
   m_ObjectHideFlags: 0
