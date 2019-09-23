@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text Txt_NameText;
     public Text Txt_SentenceText;
     PlayerController plCont_playa;
-    public Animator Anim_DialogBox;
+    public Animator Anim_DialogBox, Anim_Name, Anim_Sentence;
     public GameObject[] GO_Arr_Characters;
     bool b_textAvailable = true, b_active = false;
     private void Start()
@@ -87,11 +87,24 @@ public class DialogueManager : MonoBehaviour
         if (_name == "jai")
         {
             Anim_DialogBox.SetTrigger("Open_Left");
+
+            Anim_Name.SetTrigger("Place_Left");
+            Anim_Name.GetComponentInParent<Text>().alignment = TextAnchor.UpperLeft;
+
+            Anim_Sentence.SetTrigger("Place_Left");
+            Anim_Sentence.GetComponentInParent<Text>().alignment = TextAnchor.UpperLeft;
         }
 
         else
         {
             Anim_DialogBox.SetTrigger("Open_Right");
+
+            Anim_Name.SetTrigger("Place_Right");
+            Anim_Name.GetComponentInParent<Text>().alignment = TextAnchor.UpperRight;
+
+            Anim_Sentence.SetTrigger("Place_Right");
+            Anim_Sentence.GetComponentInParent<Text>().alignment = TextAnchor.UpperRight;
+
         }
 
         foreach (GameObject _GO in GO_Arr_Characters)

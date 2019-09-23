@@ -108,8 +108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: -105}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -174.4, y: -42.4}
+  m_SizeDelta: {x: 28.35, y: 56.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6715540795989575077
 CanvasRenderer:
@@ -139,7 +139,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7f61a694054ee7244ba96dd26f424171, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4090f8d09111d4b8793e8cba5f64e963, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 6442457011969056841}
   - component: {fileID: 6442457011969056843}
   - component: {fileID: 6442457011969056842}
+  - component: {fileID: 1894607779660925991}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -286,7 +287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60.600006, y: -50.800007}
+  m_AnchoredPosition: {x: -56.9, y: -47.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6442457011969056843
@@ -331,6 +332,25 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: name
+--- !u!95 &1894607779660925991
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442457011969056840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e9076730b9b9cae4aa710da4c249e93d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6442457012773981878
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +362,7 @@ GameObject:
   - component: {fileID: 6442457012773981879}
   - component: {fileID: 6442457012773981873}
   - component: {fileID: 6442457012773981872}
+  - component: {fileID: 4905958740244028583}
   m_Layer: 5
   m_Name: Sentence
   m_TagString: Untagged
@@ -365,8 +386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.7000103, y: -72.2}
-  m_SizeDelta: {x: 272.7, y: 30}
+  m_AnchoredPosition: {x: -42.7, y: -56.7}
+  m_SizeDelta: {x: 193.3, y: 12.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6442457012773981873
 CanvasRenderer:
@@ -410,6 +431,25 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: asdljascsljndwsoiuthkjnasldkansclaksnfasdasasdasascas
+--- !u!95 &4905958740244028583
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442457012773981878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f2a2878b428acf41b44a47306622588, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7260023538543703368
 GameObject:
   m_ObjectHideFlags: 0

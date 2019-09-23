@@ -8468,6 +8468,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1228004411}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1228004418 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4905958740244028583, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228004411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1228004419 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1894607779660925991, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228004411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1235920910
 GameObject:
   m_ObjectHideFlags: 0
@@ -13457,6 +13469,16 @@ PrefabInstance:
       propertyPath: GO_Arr_Characters.Array.data[2]
       value: 
       objectReference: {fileID: 1228004415}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_Name
+      value: 
+      objectReference: {fileID: 1228004419}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_Sentence
+      value: 
+      objectReference: {fileID: 1228004418}
     - target: {fileID: 7638603273446681852, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: m_LocalPosition.x
