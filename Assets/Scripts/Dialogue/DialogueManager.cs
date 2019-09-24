@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     void DialogBoxAnimations(string _name)
     {
-        if (_name == "jai")
+        if (_name == "Jai")
         {
             Anim_DialogBox.SetTrigger("Open_Left");
 
@@ -104,7 +104,6 @@ public class DialogueManager : MonoBehaviour
 
             Anim_Sentence.SetTrigger("Place_Right");
             Anim_Sentence.GetComponentInParent<Text>().alignment = TextAnchor.UpperRight;
-
         }
 
         foreach (GameObject _GO in GO_Arr_Characters)
