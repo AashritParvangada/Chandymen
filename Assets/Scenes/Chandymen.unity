@@ -3507,33 +3507,53 @@ PrefabInstance:
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[0]
-      value: police_bot
+      value: Jai
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[1]
-      value: jai
+      value: Timboi
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[0]
-      value: what are you doing out so late? go home to your mother
+      value: My my mamasita. You wouldn't happen to be the pharma lady would ya'?
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[1]
-      value: i ain't got no mother, punk. although you could say katoot is pretty
-        close
+      value: Don't know what sick game you're playing, but I've got your medicine
+        right here in my sword.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[2]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[3]
+      value: Timboi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[2]
+      value: I think that's just the medicine I've been looking for.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[3]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
@@ -3545,28 +3565,19 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8289702126191874112, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289702126191874112, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
---- !u!1 &508501836 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5370326488360817114, guid: 119dcb885e6b54543879c76d3fc74e27,
-    type: 3}
-  m_PrefabInstance: {fileID: 508501835}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &508501837
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508501836}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &517596163
 GameObject:
   m_ObjectHideFlags: 0
@@ -5053,33 +5064,73 @@ PrefabInstance:
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[0]
-      value: police_bot
+      value: Jai
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[1]
-      value: jai
+      value: Police Bot
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[0]
-      value: what are you doing out so late? go home to your mother
+      value: Do you bots know where I can find the pharma?
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[1]
-      value: i ain't got no mother, punk. although you could say katoot is pretty
-        close
+      value: This area is not safe. Step no further, citizen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[2]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[3]
+      value: Police Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[4]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[5]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[2]
+      value: I get it, the plebs can't step over a little acid. Look, tell me where
+        to get meds and I'll be on my way.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[3]
+      value: You are a pleb. Cease your activities else we will put you to sleep.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[4]
+      value: How dare you call me a pleb... how dare you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[5]
+      value: I'm going to have to teach y'all some respect.
       objectReference: {fileID: 0}
     - target: {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
@@ -5091,28 +5142,19 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8289702126191874112, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289702126191874112, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
---- !u!1 &740282951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5370326488360817114, guid: 119dcb885e6b54543879c76d3fc74e27,
-    type: 3}
-  m_PrefabInstance: {fileID: 740282950}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &740282952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740282951}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &758516667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5183,33 +5225,63 @@ PrefabInstance:
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[0]
-      value: Timboi
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
-        type: 3}
-      propertyPath: Dia_Dialogue.S_Names.Array.data[1]
       value: Jai
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[1]
+      value: Police Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[0]
-      value: what are you doing out so late? go home to your mother
+      value: Where could that store be- Hello officer! Didn't see you there.
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[1]
-      value: i ain't got no mother, punk. although you could say katoot is pretty
-        close
+      value: It is past curfue. Go home to your mother.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[2]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[3]
+      value: Police Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[4]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[2]
+      value: I ain't got no mother... although Katoot is pretty close. Can't help
+        you, bub.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[3]
+      value: 'I must put you to sleep, citizen. Apology protocol: Sorry not sorry.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[4]
+      value: Oh boy...
       objectReference: {fileID: 0}
     - target: {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
@@ -12658,33 +12730,65 @@ PrefabInstance:
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[0]
-      value: police_bot
+      value: Jai
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[1]
-      value: jai
+      value: Police Bot
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[0]
-      value: what are you doing out so late? go home to your mother
+      value: Look bub, I don't have time for this.
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Sentences.Array.data[1]
-      value: i ain't got no mother, punk. although you could say katoot is pretty
-        close
+      value: Please... don't leave me. I'm not like the others.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[2]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[3]
+      value: Police Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Names.Array.data[4]
+      value: Jai
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[2]
+      value: If I had a quarter for every time someone said that to me, I'd be broke.
+        No one's ever said that to me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[3]
+      value: So, you'll stay?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: Dia_Dialogue.S_Sentences.Array.data[4]
+      value: 'Er...
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
@@ -12696,28 +12800,19 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8289702126191874112, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289702126191874112, guid: 119dcb885e6b54543879c76d3fc74e27,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5275726741981566361, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 119dcb885e6b54543879c76d3fc74e27, type: 3}
---- !u!1 &1639782207 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5370326488360817114, guid: 119dcb885e6b54543879c76d3fc74e27,
-    type: 3}
-  m_PrefabInstance: {fileID: 1639782206}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1639782208
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639782207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1645701064
 GameObject:
   m_ObjectHideFlags: 0

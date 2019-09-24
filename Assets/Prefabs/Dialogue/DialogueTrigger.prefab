@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4744851294933530241}
   - component: {fileID: 8736755080708357704}
-  - component: {fileID: 5275726741981566361}
+  - component: {fileID: 8289702126191874112}
   m_Layer: 0
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -47,8 +47,8 @@ MonoBehaviour:
   Dia_Dialogue:
     S_Names: []
     S_Sentences: []
---- !u!135 &5275726741981566361
-SphereCollider:
+--- !u!65 &8289702126191874112
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -58,5 +58,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
