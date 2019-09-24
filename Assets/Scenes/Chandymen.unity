@@ -5193,12 +5193,12 @@ PrefabInstance:
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[0]
-      value: police_bot
+      value: Timboi
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
       propertyPath: Dia_Dialogue.S_Names.Array.data[1]
-      value: jai
+      value: Jai
       objectReference: {fileID: 0}
     - target: {fileID: 8736755080708357704, guid: 119dcb885e6b54543879c76d3fc74e27,
         type: 3}
@@ -8251,12 +8251,12 @@ PrefabInstance:
     - target: {fileID: 7260023538543703368, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_Name
-      value: katoot
+      value: Katoot
       objectReference: {fileID: 0}
     - target: {fileID: 4948163563120362633, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_Name
-      value: jai
+      value: Jai
       objectReference: {fileID: 0}
     - target: {fileID: 6442457011345966716, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
@@ -8366,7 +8366,7 @@ PrefabInstance:
     - target: {fileID: 2752496056391356146, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
       propertyPath: m_Name
-      value: police_bot
+      value: Police Bot
       objectReference: {fileID: 0}
     - target: {fileID: 8398309615333877893, guid: 9e0043256fff1334ab6f83a727b8b222,
         type: 3}
@@ -8477,6 +8477,12 @@ Animator:
 --- !u!95 &1228004419 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1894607779660925991, guid: 9e0043256fff1334ab6f83a727b8b222,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228004411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1228004420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7520653288642386864, guid: 9e0043256fff1334ab6f83a727b8b222,
     type: 3}
   m_PrefabInstance: {fileID: 1228004411}
   m_PrefabAsset: {fileID: 0}
@@ -13437,7 +13443,7 @@ PrefabInstance:
     - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: GO_Arr_Characters.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
@@ -13479,6 +13485,11 @@ PrefabInstance:
       propertyPath: Anim_Sentence
       value: 
       objectReference: {fileID: 1228004418}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[3]
+      value: 
+      objectReference: {fileID: 1228004420}
     - target: {fileID: 7638603273446681852, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: m_LocalPosition.x
