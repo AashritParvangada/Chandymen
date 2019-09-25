@@ -6747,12 +6747,12 @@ PrefabInstance:
         type: 3}
       propertyPath: GO_doorToOpen
       value: 
-      objectReference: {fileID: 461728520}
+      objectReference: {fileID: 1695006085}
     - target: {fileID: 1178217786302378021, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: GO_doorToClose
       value: 
-      objectReference: {fileID: 633683138}
+      objectReference: {fileID: 1009567969}
     - target: {fileID: 1178217786302378021, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: GO_spwnManToActivate
