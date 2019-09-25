@@ -114,7 +114,7 @@ public class SpawnManager : MonoBehaviour
 
     void RandomlyInstantiate()//Randomly instantiate a grunt or police bot depending on two numbers. MUST ADD THESE TWO NUMBERS TO SER FIELD.
     {
-        int _rand = Random.Range(0, I_chanceOfBot + I_chanceOfGrunt);
+        int _rand = Random.Range(1, I_chanceOfBot + I_chanceOfGrunt);
         if (_rand <= I_chanceOfBot)
         {
             PoliceBot _pb = Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
