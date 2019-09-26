@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3266780462979976360}
   - component: {fileID: -4121159970036172323}
   - component: {fileID: 4875278465206183930}
+  - component: {fileID: -4452423640189048576}
   m_Layer: 0
   m_Name: Acid_Plane_02
   m_TagString: Untagged
@@ -208,6 +209,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.2
   m_Center: {x: 0.54, y: 0, z: 0.64}
+--- !u!114 &-4452423640189048576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270935525679183473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: 00000000
 --- !u!1001 &7919677615192929742
 PrefabInstance:
   m_ObjectHideFlags: 0
