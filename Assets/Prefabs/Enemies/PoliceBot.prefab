@@ -211,7 +211,7 @@ MonoBehaviour:
   B_AttackOnDialogue: 0
   F_chargeCountdownTimer: 2
   F_cooldownTimer: 2
-  F_stopDistance: 2.8
+  F_stopDistance: 3
   GO_healthBarAnchor: {fileID: 7378853546960894788}
   GO_chargeParticle: {fileID: 6660812259057867382}
   GO_dashParticle: {fileID: 2625459535340026270}
