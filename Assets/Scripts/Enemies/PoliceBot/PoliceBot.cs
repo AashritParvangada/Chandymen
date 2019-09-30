@@ -14,7 +14,7 @@ public class PoliceBot : MonoBehaviour
     [SerializeField] float F_chargeCountdownTimer = 2;
     [SerializeField] float F_cooldownTimer = 2, F_stopDistance = 2;
     [SerializeField] GameObject GO_healthBarAnchor, GO_chargeParticle, GO_dashParticle, GO_deathParticle;
-
+    Animator animator;
     PlayerController playCont_Controller;
 
     private void OnEnable()
@@ -43,6 +43,7 @@ public class PoliceBot : MonoBehaviour
         playCont_Controller = FindObjectOfType<PlayerController>();
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void CheckAttackOnStart()
@@ -53,8 +54,15 @@ public class PoliceBot : MonoBehaviour
         }
     }
 
+    public void AnimTrigger(string _trigger)
+    {
+        animator.SetTrigger(_trigger);
+    }
+
     IEnumerator IEnum_ChargeTowardsPlayer(PlayerController _target)//Loops with Set Target
     {
+        AnimTrigger("Dash");
+
         StopAllParticles();
         foreach (ParticleSystem _prtcl in GO_dashParticle.GetComponentsInChildren<ParticleSystem>()) _prtcl.Play();
 
@@ -79,6 +87,7 @@ public class PoliceBot : MonoBehaviour
     //Sets the bot to target the player and loops a coroutine that retargets the player's location every .3 seconds.
     IEnumerator IEnum_CooldownState(float _cooldownTime)
     {
+        AnimTrigger("Look");
         StopCoroutine(IEnum_ChargeTowardsPlayer(playCont_Controller));
         StopAllParticles();
         yield return new WaitForSeconds(_cooldownTime);
@@ -101,7 +110,8 @@ public class PoliceBot : MonoBehaviour
 
         if (i_currentHealth <= 0)
         {
-            Destroy(gameObject);
+            AnimTrigger("Die");
+            Destroy(gameObject, 0.2f);
         }
     }
 
@@ -117,6 +127,8 @@ public class PoliceBot : MonoBehaviour
     }
     IEnumerator IEnum_ChargeCharge(float _timer)
     {
+        AnimTrigger("Charge");
+
         float _countingDownTime = _timer;
         foreach (ParticleSystem _prtcl in GO_chargeParticle.GetComponentsInChildren<ParticleSystem>()) _prtcl.Play();
 
