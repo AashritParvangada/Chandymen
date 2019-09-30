@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6982a4a134250142a586fbbc9d3ecba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_DoorToOpen: {fileID: 0}
+  GO_doorToOpen: {fileID: 0}
+  GO_doorToClose: {fileID: 0}
+  GO_spwnManToActivate: {fileID: 0}
+  ScnChngr: {fileID: 0}
+  B_isLastTrigger: 0
 --- !u!65 &1178217786302378023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102,5 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dcf972ed2a3324fada6edfe90a7434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO_EnemyToSpawn: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
+  GO_enemyToSpawn: {fileID: 0}
+  GO_spawnFX: {fileID: 9111133678007111650, guid: f9961ad8471e8ed4b845f8c0fbc47bec,
     type: 3}
+  B_activateOnStart: 1
+  B_activateOnDialogue: 0

@@ -5454,7 +5454,7 @@ PrefabInstance:
     - target: {fileID: 1178217786302378022, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.8
+      value: 14.86
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786302378022, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -5464,7 +5464,7 @@ PrefabInstance:
     - target: {fileID: 1178217786302378022, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -48.5
+      value: -47.44
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786302378022, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -5540,7 +5540,7 @@ PrefabInstance:
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.4
+      value: 7.11
       objectReference: {fileID: 0}
     - target: {fileID: 1178217786660893712, guid: dd3f7a01352ab264db9520106eeb55c1,
         type: 3}
@@ -18254,6 +18254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GO_enemyToSpawn: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
     type: 3}
+  GO_spawnFX: {fileID: 0}
   B_activateOnStart: 0
   B_activateOnDialogue: 1
 --- !u!1 &2132520821

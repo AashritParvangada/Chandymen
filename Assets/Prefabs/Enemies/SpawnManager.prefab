@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   B_isActive: 0
+  B_activateEnemy: 1
   I_maxSimultanEnemies: 0
   I_killedThresehold_1: 0
   I_killedThresehold_2: 0
@@ -161,9 +162,12 @@ MonoBehaviour:
   GO_grunt: {fileID: 0}
   GO_policeBot: {fileID: 0}
   GO_doorToCloseOnStart: {fileID: 0}
+  GO_spawnFX: {fileID: 9111133678007111650, guid: f9961ad8471e8ed4b845f8c0fbc47bec,
+    type: 3}
   GO_Arr_doorsToOpenWhenDone: []
   I_chanceOfGrunt: 50
   I_chanceOfBot: 50
+  B_triggerLastEnemyKilledEvent: 0
 --- !u!65 &3313753269427212253
 BoxCollider:
   m_ObjectHideFlags: 0

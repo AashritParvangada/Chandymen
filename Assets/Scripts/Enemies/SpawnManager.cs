@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] int I_maxSimultanEnemies, I_killedThresehold_1, I_killedThresehold_2, I_killedThresehold_3, I_totalEnemiesToKill;
     [SerializeField] Transform[] Trans_Arr_spawnPoints;
-    [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart;
+    [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart, GO_spawnFX;
     [SerializeField] GameObject[] GO_Arr_doorsToOpenWhenDone;
     [SerializeField] int I_chanceOfGrunt = 50, I_chanceOfBot = 50;
     [SerializeField] bool B_triggerLastEnemyKilledEvent;
@@ -117,12 +117,16 @@ public class SpawnManager : MonoBehaviour
         int _rand = Random.Range(1, I_chanceOfBot + I_chanceOfGrunt);
         if (_rand <= I_chanceOfBot)
         {
-            PoliceBot _pb = Instantiate(GO_policeBot, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<PoliceBot>();
+            Transform _trans = Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)];
+            Instantiate(GO_spawnFX, _trans);
+            PoliceBot _pb = Instantiate(GO_policeBot, _trans).GetComponent<PoliceBot>();
             if (B_activateEnemy) _pb.StartAttacking();
         }
         else
         {
-            Grunt _grnt = Instantiate(GO_grunt, Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)]).GetComponent<Grunt>();
+            Transform _trans = Trans_Arr_spawnPoints[Random.Range(0, Trans_Arr_spawnPoints.Length)];
+            Instantiate(GO_spawnFX, _trans);
+            Grunt _grnt = Instantiate(GO_grunt, _trans).GetComponent<Grunt>();
             if (B_activateEnemy) _grnt.StartCombat();
         }
 

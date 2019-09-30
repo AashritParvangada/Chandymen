@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject GO_enemyToSpawn;
+    [SerializeField] GameObject GO_enemyToSpawn, GO_spawnFX;
     public bool B_activateOnStart = true, B_activateOnDialogue = false;
 
     public void SpawnEnemy()//Called from within Spawn Trigger.
     {
+        SpawnParticles();
         GameObject _spawnedEnemy = Instantiate(GO_enemyToSpawn, transform);
         EnemyTypeActions(_spawnedEnemy);
+    }
+
+    void SpawnParticles()
+    {
+        GameObject _spawnFX = Instantiate(GO_spawnFX, transform);
     }
 
     void EnemyTypeActions(GameObject _go)
