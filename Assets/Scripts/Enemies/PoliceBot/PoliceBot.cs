@@ -13,7 +13,7 @@ public class PoliceBot : MonoBehaviour
     EventManager evMan_eventManager;
     [SerializeField] float F_chargeCountdownTimer = 2;
     [SerializeField] float F_cooldownTimer = 2, F_stopDistance = 2;
-    [SerializeField] GameObject GO_healthBarAnchor, GO_chargeParticle, GO_dashParticle;
+    [SerializeField] GameObject GO_healthBarAnchor, GO_chargeParticle, GO_dashParticle, GO_deathParticle;
 
     PlayerController playCont_Controller;
 
