@@ -12,7 +12,7 @@ public class Timboi : MonoBehaviour
     Rigidbody rb_RB;
     AudioSource audSrc_thisSource;
     NavMeshAgent navMesAg_agent;
-
+    Animator animator;
     [SerializeField] int I_health = 100, I_damage = 30;
     [SerializeField] float F_minAttackTime, F_maxAttackTime, F_minMovementCheckTime, F_maxMovementCheckTime, F_recoverTime;
     bool b_lookAtPlayer = true;
@@ -72,15 +72,19 @@ public class Timboi : MonoBehaviour
         rb_RB = GetComponent<Rigidbody>();
         audSrc_thisSource = GetComponent<AudioSource>();
         GetZones();
+        animator = GetComponentInChildren<Animator>();
+    }
 
+    void SetAnimTrigger(string _trigger)
+    {
+        animator.SetTrigger(_trigger);
     }
 
     void MoveToPointInPlayerZone()//Moves to a random point among the zone's points.
     {
         int pointToMoveTo = Random.Range(0, CheckPlayerZone().Trans_List_NavDestinations.Count);
-
         SetNavDestination(CheckPlayerZone().Trans_List_NavDestinations[pointToMoveTo].transform.position);
-
+        SetAnimTrigger("Walk");
     }
 
 
@@ -94,6 +98,7 @@ public class Timboi : MonoBehaviour
 
     IEnumerator Enum_MoveToPlayer()
     {
+
         while (CheckDistanceFromPlayer() > 2)
         {
             MoveToPlayer();
@@ -115,6 +120,7 @@ public class Timboi : MonoBehaviour
         navMesAg_agent.speed = 10;
         navMesAg_agent.acceleration = 20;
         navMesAg_agent.SetDestination(playcont_player.transform.position);
+
     }
 
     void SlashPlayer(float _attackDelay)
@@ -136,13 +142,17 @@ public class Timboi : MonoBehaviour
     {
         b_lookAtPlayer = false;
         navMesAg_agent.isStopped = true;
+        SetAnimTrigger("Charge");
 
         yield return new WaitForSeconds(_attackDelay);
+
+        SetAnimTrigger("Attack");
 
         foreach (GameObject _go in GO_tempArray)
         {
             _go.SetActive(true);
         }
+
         yield return new WaitForSeconds(F_recoverTime);
 
         Recover();
