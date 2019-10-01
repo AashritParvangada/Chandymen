@@ -13270,6 +13270,16 @@ PrefabInstance:
       propertyPath: v3_viewingAngle.x
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
+        type: 3}
+      propertyPath: F_camShakeTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 805952498823211426, guid: 0161d37342e89a246b4225f216e79943,
+        type: 3}
+      propertyPath: F_camShakeMagnitude
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 500263822304440007, guid: 0161d37342e89a246b4225f216e79943, type: 3}
     - {fileID: 1907351624847466527, guid: 0161d37342e89a246b4225f216e79943, type: 3}
@@ -18254,7 +18264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GO_enemyToSpawn: {fileID: 1242102285249958181, guid: d1f446d56ddf6ad4886cbb61d770332a,
     type: 3}
-  GO_spawnFX: {fileID: 0}
+  GO_spawnFX: {fileID: 9111133678007111650, guid: f9961ad8471e8ed4b845f8c0fbc47bec,
+    type: 3}
   B_activateOnStart: 0
   B_activateOnDialogue: 1
 --- !u!1 &2132520821
