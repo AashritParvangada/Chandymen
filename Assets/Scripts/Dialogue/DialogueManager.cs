@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator Anim_DialogBox, Anim_Name, Anim_Sentence;
     public GameObject[] GO_Arr_Characters;
     bool b_textAvailable = true, b_active = false;
+    [SerializeField] AudioClip[] AudClp_CharacterVoices; AudioSource audioSource;
     private void Start()
     {
         GetVariables();
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     void GetVariables()
     {
         plCont_playa = FindObjectOfType<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void StartDialogue(Dialogue _dialogue, DialogueTrigger _dtrig)
@@ -81,6 +83,10 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = s_Queue_sentences.Dequeue();
         Txt_SentenceText.text = sentence;
+
+
+        audioSource.clip = AudClp_SelectSound(name);
+        audioSource.Play();
     }
 
     void DialogBoxAnimations(string _name)
@@ -111,8 +117,26 @@ public class DialogueManager : MonoBehaviour
         {
             _GO.SetActive(_GO.name == _name ? true : false);
         }
+
+        //Sounds
+
+
     }
 
+    AudioClip AudClp_SelectSound(string _name)
+    {
+        List<AudioClip> _audClpsList = new List<AudioClip>();
+        foreach (AudioClip _audClp in AudClp_CharacterVoices)
+        {
+            if (_audClp.name.Contains(_name))
+            {
+                _audClpsList.Add(_audClp);
+            }
+        }
+
+        return _audClpsList[Random.Range(0, _audClpsList.Count-1)];
+
+    }
 
     void EndDialogue()
     {
