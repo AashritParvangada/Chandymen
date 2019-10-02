@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     void EnableOrDisableCont(bool _enabled)
     {
+        plCont_playa.GetComponent<Rigidbody>().velocity = Vector3.zero;
         plCont_playa.enabled = _enabled;
     }
 
