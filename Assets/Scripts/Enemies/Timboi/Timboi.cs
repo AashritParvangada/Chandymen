@@ -18,7 +18,7 @@ public class Timboi : MonoBehaviour
     bool b_lookAtPlayer = true;
     public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
-
+    public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
     private void Start()//Get variables.
     {
         GetVariables();
@@ -203,9 +203,9 @@ public class Timboi : MonoBehaviour
 
         I_health -= _Damage;
 
-        if (I_health <= 300)
+        if (I_health <= F_thresehold1)
         {
-            evMan_eventManager.CountEnemyKilled();
+            SpwnMan_OnTimboiHealth.Activate();
         }
 
         if (I_health <= 0)

@@ -44,6 +44,17 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    public void Activate()
+    {
+        if (!B_isActive)
+        {
+            SetActive();
+            RandomlyInstantiate();
+            GetComponent<BoxCollider>().enabled = false;
+            CloseDoor();
+        }
+    }
+
     void CountEnemies()//Called on enemy killed event.
     {
         if (B_isActive)//If this has been activated by OnTriggerEnter.

@@ -59,7 +59,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8544761518043804955
 Transform:
   m_ObjectHideFlags: 0
@@ -334,11 +334,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimBoi@Allanims
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 93c7c41836e3b4cc68f3d4e8498b0393,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2c3e87c029fb7a49816e95322361fea, type: 2}
     - target: {fileID: -4216859302048453862, guid: 93c7c41836e3b4cc68f3d4e8498b0393,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,6 +404,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 93c7c41836e3b4cc68f3d4e8498b0393,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2c3e87c029fb7a49816e95322361fea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c7c41836e3b4cc68f3d4e8498b0393, type: 3}
 --- !u!1 &1529151662814429694 stripped
