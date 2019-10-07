@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GetVariables();
-
+        SwitchDashParticles(false);
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             new Vector3(Input.GetAxisRaw("Left_Horizontal"), 0, Input.GetAxisRaw("Left_Vertical"));
             Vector3 right_Input =
             new Vector3(Input.GetAxisRaw("Right_Horizontal"), 0, -Input.GetAxisRaw("Right_Vertical"));
-            
+
             Vector3 motion = left_Input;
 
             //Only face the direction of right input if the player is pressing something.
@@ -127,11 +127,11 @@ public class PlayerController : MonoBehaviour
         b_canDash = false;
         F_WalkSpeed = F_DashSpeed;
         B_AboveAcid = true;
+        SwitchDashParticles(true);
 
 
         //Check Jai's movement since creating the object and dash in the right direction.
         yield return new WaitForSeconds(0.1f);
-        SwitchDashParticles(true);
         directionCalc.transform.SetParent(transform);
         anmtr_anim.SetFloat("LeftRightMovement", -directionCalc.transform.localPosition.x);
         anmtr_anim.SetFloat("ForwardBackMovement", -directionCalc.transform.localPosition.z);
