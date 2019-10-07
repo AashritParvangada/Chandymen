@@ -7,7 +7,7 @@ public class SpawnTrigger : MonoBehaviour
     bool b_isActive = false;
     int i_numberOfSpawnersWithin = 0;
     int i_enemiesKilled = 0;
-    [SerializeField] GameObject GO_doorToOpen, GO_doorToClose;
+    [SerializeField] ElectricDoor ElecDoor_doorToOpen, ElecDoor_doorToClose;
     [SerializeField] GameObject GO_spwnManToActivate;
     [SerializeField] SpawnManager SpwnMan_timboiSpawnMan;
     public SceneChanger ScnChngr;
@@ -35,7 +35,7 @@ public class SpawnTrigger : MonoBehaviour
             SpawnEnemies();
             SetActive();
             GetComponent<BoxCollider>().enabled = false;
-            GO_doorToClose.SetActive(true);
+            SwitchDoor(true, ElecDoor_doorToClose);
         }
     }
 
@@ -80,15 +80,14 @@ public class SpawnTrigger : MonoBehaviour
 
     void EndTriggerAction()
     {
-        OpenDoor();
+        SwitchDoor(false, ElecDoor_doorToOpen);
         if (GO_spwnManToActivate) GO_spwnManToActivate.SetActive(true);
     }
 
-    void OpenDoor()
+    void SwitchDoor(bool _toActivate, ElectricDoor _elecDoor)
     {
-        if (GO_doorToOpen)
-            GO_doorToOpen.SetActive(false);
-        b_isActive = false;
+        if (_elecDoor != null)
+            _elecDoor.SwitchDoor(_toActivate);
     }
 
 }

@@ -68,7 +68,6 @@ public class PoliceBot : MonoBehaviour
 
         while (Vector3.Distance(transform.position, _target.transform.position) > F_stopDistance)
         {
-            Debug.Log(Vector3.Distance(transform.position, _target.transform.position));
             yield return new WaitForSeconds(0.2f);
             navMeshAg_agent.SetDestination(_target.transform.position);
         }
