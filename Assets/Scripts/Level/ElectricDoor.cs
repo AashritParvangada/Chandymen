@@ -7,10 +7,12 @@ public class ElectricDoor : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] GameObject GO_door; Renderer rend_door; BoxCollider boxCol_Door;
     [SerializeField] float F_lerpTime;
-
+    [SerializeField] AudioClip AudClp_open, AudClp_close;
+    [SerializeField] bool B_startOpen = false;
     private void Start()
     {
         GetVariables();
+        CheckOpen();
     }
 
     private void Update()
@@ -28,9 +30,17 @@ public class ElectricDoor : MonoBehaviour
         boxCol_Door = GO_door.GetComponent<BoxCollider>();
     }
 
-    public void SwitchDoor(bool _toActivate)
+    void CheckOpen()
     {
-        StartCoroutine(IEnum_LerpClippingThresehold(_toActivate, F_lerpTime));
+        if (B_startOpen)
+        {
+            SwitchDoor(false);
+        }
+    }
+
+    public void SwitchDoor(bool _toClose)
+    {
+        StartCoroutine(IEnum_LerpClippingThresehold(_toClose, F_lerpTime));
     }
 
     IEnumerator IEnum_LerpClippingThresehold(bool _toActivate, float _time)
@@ -47,6 +57,8 @@ public class ElectricDoor : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        boxCol_Door.enabled = _toActivate;
 
     }
 

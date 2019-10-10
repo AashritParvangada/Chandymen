@@ -5,7 +5,7 @@ using UnityEngine;
 public class Centrifuge : MonoBehaviour
 {
     [SerializeField] int I_chargesNeeded;
-    [SerializeField] GameObject GO_door;
+    [SerializeField] ElectricDoor ElecDoor_door;
     AudioSource audioSource;
     public AudioClip AudClp_FugeFail;
     public AudioClip AudClp_FugeOn;
@@ -41,7 +41,7 @@ public class Centrifuge : MonoBehaviour
     {
         audioSource.clip = AudClp_FugeOn;
         audioSource.Play();
-        if (GO_door) GO_door.SetActive(false);
+        if (ElecDoor_door) ElecDoor_door.SwitchDoor(false);
         Destroy(_plsbull.gameObject);
 
         if (B_countFugeInEvent)

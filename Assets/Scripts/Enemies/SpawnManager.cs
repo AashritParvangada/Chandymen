@@ -9,8 +9,8 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] int I_maxSimultanEnemies, I_killedThresehold_1, I_killedThresehold_2, I_killedThresehold_3, I_totalEnemiesToKill;
     [SerializeField] Transform[] Trans_Arr_spawnPoints;
-    [SerializeField] GameObject GO_grunt, GO_policeBot, GO_doorToCloseOnStart, GO_spawnFX;
-    [SerializeField] GameObject[] GO_Arr_doorsToOpenWhenDone;
+    [SerializeField] GameObject GO_grunt, GO_policeBot, GO_spawnFX;
+    [SerializeField] ElectricDoor[] ElecDoor_Arr_doorsToOpenWhenDone, ElecDoor_Arr_doorsToCloseOnStart;
     [SerializeField] int I_chanceOfGrunt = 50, I_chanceOfBot = 50;
     [SerializeField] bool B_triggerLastEnemyKilledEvent;
     private void OnEnable()
@@ -96,15 +96,18 @@ public class SpawnManager : MonoBehaviour
 
     void OpenDoors()//Open all doors within this array
     {
-        foreach (GameObject _Door in GO_Arr_doorsToOpenWhenDone)
+        foreach (ElectricDoor _Door in ElecDoor_Arr_doorsToOpenWhenDone)
         {
-            _Door.SetActive(false);
+            _Door.SwitchDoor(false);
         }
     }
 
     void CloseDoor()//Close exits when player enters volume.
     {
-        GO_doorToCloseOnStart.SetActive(true);
+        foreach (ElectricDoor _Door in ElecDoor_Arr_doorsToCloseOnStart)
+        {
+            _Door.SwitchDoor(true);
+        }
     }
 
     void SpawnEnemy(int _totalEnemies)//Spawn enemies until total enemies = max simultaneous, but not if there's only a few enemies left until goal.
