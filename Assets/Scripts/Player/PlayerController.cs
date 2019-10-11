@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Check Jai's movement since creating the object and dash in the right direction.
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         directionCalc.transform.SetParent(transform);
         anmtr_anim.SetFloat("LeftRightMovement", -directionCalc.transform.localPosition.x);
         anmtr_anim.SetFloat("ForwardBackMovement", -directionCalc.transform.localPosition.z);
@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour
             if (_go.GetComponent<ParticleSystem>() && _onOff) _go.GetComponent<ParticleSystem>().Play();
             if (_go.GetComponent<ParticleSystem>() && !_onOff) _go.GetComponent<ParticleSystem>().Stop();
 
-            if (_go.GetComponent<TrailRenderer>()) _go.GetComponent<TrailRenderer>().enabled = _onOff;
+            if (_go.GetComponent<TrailRenderer>()) _go.SetActive(_onOff);
 
         }
     }
