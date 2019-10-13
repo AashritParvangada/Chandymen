@@ -65,6 +65,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GO_door: {fileID: 7556495787465242712}
   F_lerpTime: 2
+  AudClp_open: {fileID: 8300000, guid: 7d2086b5419b75042a278a3cdf67edce, type: 3}
+  AudClp_close: {fileID: 8300000, guid: 7d2086b5419b75042a278a3cdf67edce, type: 3}
+  B_startOpen: 0
 --- !u!82 &6296055628505169628
 AudioSource:
   m_ObjectHideFlags: 0

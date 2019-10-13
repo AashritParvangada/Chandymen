@@ -15,14 +15,6 @@ public class ElectricDoor : MonoBehaviour
         CheckOpen();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rend_door.material.SetFloat("Vector1_B15186D7", 1f);
-        }
-    }
-
     void GetVariables()
     {
         audioSource = GetComponent<AudioSource>();
@@ -41,6 +33,14 @@ public class ElectricDoor : MonoBehaviour
     public void SwitchDoor(bool _toClose)
     {
         StartCoroutine(IEnum_LerpClippingThresehold(_toClose, F_lerpTime));
+        PlayClip(_toClose);
+    }
+
+    void PlayClip(bool _toClose)
+    {
+        AudioClip _clip = _toClose ? AudClp_close : AudClp_open;
+        audioSource.clip = _clip;
+        audioSource.Play();
     }
 
     IEnumerator IEnum_LerpClippingThresehold(bool _toActivate, float _time)
