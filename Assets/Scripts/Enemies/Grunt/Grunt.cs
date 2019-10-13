@@ -25,6 +25,7 @@ public class Grunt : MonoBehaviour
     Animator anim_Controller;
     Rigidbody rb_RB;
     float f_currentSpeed;
+    ParticleSpawner particleSpawner;
 
     AudioSource audSrc_thisSource;
     //How this agent works:
@@ -76,6 +77,7 @@ public class Grunt : MonoBehaviour
         anim_Controller = GetComponentInChildren<Animator>();
         rb_RB = GetComponent<Rigidbody>();
         audSrc_thisSource = GetComponent<AudioSource>();
+        particleSpawner = GetComponentInChildren<ParticleSpawner>();
         GetZones();
 
     }
@@ -204,11 +206,17 @@ public class Grunt : MonoBehaviour
     {
         i_currentHealth -= _Damage;
 
-        GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth/I_totalHealth, 1, 1);
+        GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
         if (i_currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        particleSpawner.Activate();
+        Destroy(gameObject);
     }
 
     private void OnDestroy()//When this enemy is killed, trigger event count enemies killed.   
