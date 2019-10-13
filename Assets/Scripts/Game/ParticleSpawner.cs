@@ -20,7 +20,7 @@ public class ParticleSpawner : MonoBehaviour
         Destroy(gameObject, f_checkDurationOfParticleAndClip());
     }
 
-    void GetVariables()
+    public void GetVariables()
     {
         Prtcl_toPlayOnStart = GetComponentInChildren<ParticleSystem>();
         source = GetComponent<AudioSource>();

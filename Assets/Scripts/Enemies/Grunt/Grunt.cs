@@ -25,7 +25,7 @@ public class Grunt : MonoBehaviour
     Animator anim_Controller;
     Rigidbody rb_RB;
     float f_currentSpeed;
-    ParticleSpawner particleSpawner;
+    [SerializeField] ParticleSpawner ParticleSpawner_death, ParticleSpawner_hit;
 
     AudioSource audSrc_thisSource;
     //How this agent works:
@@ -77,9 +77,7 @@ public class Grunt : MonoBehaviour
         anim_Controller = GetComponentInChildren<Animator>();
         rb_RB = GetComponent<Rigidbody>();
         audSrc_thisSource = GetComponent<AudioSource>();
-        particleSpawner = GetComponentInChildren<ParticleSpawner>();
         GetZones();
-
     }
 
     private void Update()
@@ -205,7 +203,7 @@ public class Grunt : MonoBehaviour
     public void DamageHealth(int _Damage)//Called in Plasma Bullet.
     {
         i_currentHealth -= _Damage;
-
+        InstantiateParticles(ParticleSpawner_hit);
         GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
         if (i_currentHealth <= 0)
         {
@@ -213,9 +211,16 @@ public class Grunt : MonoBehaviour
         }
     }
 
+    void InstantiateParticles(ParticleSpawner _prtclSpawn)
+    {
+        ParticleSpawner prtclSpawn = Instantiate(_prtclSpawn, transform);
+        prtclSpawn.GetVariables();
+        prtclSpawn.Activate();
+    }
+
     void Die()
     {
-        particleSpawner.Activate();
+        InstantiateParticles(ParticleSpawner_death);
         Destroy(gameObject);
     }
 
