@@ -82,6 +82,7 @@ public class SpawnTrigger : MonoBehaviour
     {
         SwitchDoor(false, ElecDoor_doorToOpen);
         if (GO_spwnManToActivate) GO_spwnManToActivate.SetActive(true);
+        Destroy(gameObject);
     }
 
     void SwitchDoor(bool _toActivate, ElectricDoor _elecDoor)
