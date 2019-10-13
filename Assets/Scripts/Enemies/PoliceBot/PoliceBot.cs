@@ -13,9 +13,10 @@ public class PoliceBot : MonoBehaviour
     EventManager evMan_eventManager;
     [SerializeField] float F_chargeCountdownTimer = 2;
     [SerializeField] float F_cooldownTimer = 2, F_stopDistance = 2;
-    [SerializeField] GameObject GO_healthBarAnchor, GO_chargeParticle, GO_dashParticle, GO_deathParticle;
+    [SerializeField] GameObject GO_healthBarAnchor, GO_chargeParticle, GO_dashParticle;
     Animator animator;
     PlayerController playCont_Controller;
+    [SerializeField] ParticleSpawner ParticleSpawner_death, ParticleSpawner_hit;
 
     private void OnEnable()
     {
@@ -107,11 +108,26 @@ public class PoliceBot : MonoBehaviour
         i_currentHealth -= _DecreaseBy;
         GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
 
+        InstantiateParticles(ParticleSpawner_hit);
         if (i_currentHealth <= 0)
         {
-            AnimTrigger("Die");
-            Destroy(gameObject, 0.2f);
+            Die();
         }
+
+    }
+
+    void InstantiateParticles(ParticleSpawner _prtclSpawn)
+    {
+        ParticleSpawner prtclSpawn = Instantiate(_prtclSpawn, transform);
+        prtclSpawn.GetVariables();
+        prtclSpawn.Activate();
+    }
+
+    void Die()
+    {
+        AnimTrigger("Die");
+        InstantiateParticles(ParticleSpawner_death);
+        Destroy(gameObject, 0.2f);
     }
 
     private void OnDestroy()//Event manager destroy event.

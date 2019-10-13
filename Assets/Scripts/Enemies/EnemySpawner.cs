@@ -46,6 +46,7 @@ public class EnemySpawner : MonoBehaviour
         if (_go.GetComponent<Timboi>())
         {
             Timboi _timboi = _go.GetComponent<Timboi>();
+            _timboi.transform.SetParent(null);
             _timboi.B_AttackOnDialogue = B_activateOnDialogue;
             _timboi.CheckAttackOnStart();
         }

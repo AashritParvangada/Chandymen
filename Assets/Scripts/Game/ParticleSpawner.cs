@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleSpawner : MonoBehaviour
 {
-    ParticleSystem Prtcl_toPlayOnStart;
+    ParticleSystem[] Prtcl_Arr_toPlayOnStart;
     [SerializeField] AudioClip AudClp_toPlayOnStart;
     AudioSource source;
 
@@ -20,23 +20,40 @@ public class ParticleSpawner : MonoBehaviour
         Destroy(gameObject, f_checkDurationOfParticleAndClip());
     }
 
-    void GetVariables()
+    public void GetVariables()
     {
-        Prtcl_toPlayOnStart = GetComponentInChildren<ParticleSystem>();
+        Prtcl_Arr_toPlayOnStart = GetComponentsInChildren<ParticleSystem>();
         source = GetComponent<AudioSource>();
     }
     void PlayParticleAndAudio()
     {
-        Prtcl_toPlayOnStart.Play();
+        PlayAllParticles();
         source.clip = AudClp_toPlayOnStart;
         source.Play();
     }
 
     float f_checkDurationOfParticleAndClip()
     {
-        float toReturn = AudClp_toPlayOnStart.length > Prtcl_toPlayOnStart.main.duration / Prtcl_toPlayOnStart.main.simulationSpeed ?
-         AudClp_toPlayOnStart.length : Prtcl_toPlayOnStart.main.duration / Prtcl_toPlayOnStart.main.simulationSpeed;
+        float previousLongestDuration = 0;
+        foreach (ParticleSystem _prtcl in Prtcl_Arr_toPlayOnStart)
+        {
+            if (_prtcl.main.duration / _prtcl.main.simulationSpeed > previousLongestDuration)
+            {
+                previousLongestDuration = _prtcl.main.duration / _prtcl.main.simulationSpeed;
+            }
+        }
 
-        return toReturn;
+        previousLongestDuration = AudClp_toPlayOnStart.length > previousLongestDuration ? AudClp_toPlayOnStart.length : previousLongestDuration;
+
+        return previousLongestDuration;
     }
+
+    void PlayAllParticles()
+    {
+        foreach (ParticleSystem _prtcl in Prtcl_Arr_toPlayOnStart)
+        {
+            _prtcl.Play();
+        }
+    }
+
 }

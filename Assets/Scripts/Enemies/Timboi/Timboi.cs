@@ -19,6 +19,7 @@ public class Timboi : MonoBehaviour
     public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
     public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
+    [SerializeField] ParticleSpawner ParticleSpawn_Slash;
     private void Start()//Get variables.
     {
         GetVariables();
@@ -147,6 +148,7 @@ public class Timboi : MonoBehaviour
         yield return new WaitForSeconds(_attackDelay);
 
         SetAnimTrigger("Attack");
+        InstantiateParticles(ParticleSpawn_Slash);
 
         foreach (GameObject _go in GO_tempArray)
         {
@@ -239,5 +241,12 @@ public class Timboi : MonoBehaviour
             DamageHealth(50);
             Debug.Log(I_health);
         }
+    }
+
+    void InstantiateParticles(ParticleSpawner _prtclSpawn)
+    {
+        ParticleSpawner prtclSpawn = Instantiate(_prtclSpawn, transform);
+        prtclSpawn.GetVariables();
+        prtclSpawn.Activate();
     }
 }
