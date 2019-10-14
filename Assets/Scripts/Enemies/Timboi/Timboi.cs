@@ -19,7 +19,7 @@ public class Timboi : MonoBehaviour
     public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
     public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
-    [SerializeField] ParticleSpawner ParticleSpawn_Slash;
+    [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit;
     private void Start()//Get variables.
     {
         GetVariables();
@@ -126,6 +126,7 @@ public class Timboi : MonoBehaviour
 
     void SlashPlayer(float _attackDelay)
     {
+        transform.LookAt(playcont_player.transform);
         StopAllCoroutines();
         navMesAg_agent.SetDestination(transform.position);
         StartCoroutine(Enum_Slash(_attackDelay));
@@ -133,7 +134,7 @@ public class Timboi : MonoBehaviour
 
     public void SlashBullet()
     {
-        Debug.Log("Slashing Bullet");
+        transform.LookAt(playcont_player.transform);
         StopAllCoroutines();
         navMesAg_agent.SetDestination(transform.position);
         StartCoroutine(Enum_Slash(0));
@@ -148,7 +149,7 @@ public class Timboi : MonoBehaviour
         yield return new WaitForSeconds(_attackDelay);
 
         SetAnimTrigger("Attack");
-        InstantiateParticles(ParticleSpawn_Slash);
+        InstantiateParticles(ParticleSpawn_slash);
 
         foreach (GameObject _go in GO_tempArray)
         {
@@ -202,7 +203,7 @@ public class Timboi : MonoBehaviour
         Recover();
         StopAllCoroutines();
         StartCoroutine(Enum_MoveToZonePoint());
-
+        InstantiateParticles(ParticleSpawn_hit);
         I_health -= _Damage;
 
         if (I_health <= F_thresehold1)
