@@ -99,16 +99,12 @@ public class Timboi : MonoBehaviour
 
     IEnumerator Enum_MoveToPlayer()
     {
-
         while (CheckDistanceFromPlayer() > 2)
         {
             MoveToPlayer();
             yield return null;
         }
-
         SlashPlayer(CheckAttackTime());
-
-
     }
 
     float CheckDistanceFromPlayer()

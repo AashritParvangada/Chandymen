@@ -23,6 +23,7 @@ public class PlasmaBullet : MonoBehaviour
         if (other.tag == "Reflector")
         {
             Reflect(V3_Dir);
+            other.GetComponent<Animator>().SetTrigger("Wobble");
             GetComponent<AudioSource>().clip = (AudClp_ReflectorBump);
             GetComponent<AudioSource>().Play();
         }
