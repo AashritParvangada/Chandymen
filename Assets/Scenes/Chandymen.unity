@@ -10105,6 +10105,36 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: -4540539275945913696, guid: 5825486d33df74b36a60b201a675086e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281820009558525399, guid: 5825486d33df74b36a60b201a675086e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764543717837612879, guid: 5825486d33df74b36a60b201a675086e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647615892720479661, guid: 5825486d33df74b36a60b201a675086e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384870546303836713, guid: 5825486d33df74b36a60b201a675086e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119318673551996725, guid: 5825486d33df74b36a60b201a675086e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: -8400154560055813805, guid: 5825486d33df74b36a60b201a675086e,
         type: 3}
       propertyPath: m_Layer
@@ -10119,11 +10149,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4540539275945913696, guid: 5825486d33df74b36a60b201a675086e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5825486d33df74b36a60b201a675086e,
         type: 3}
@@ -10180,32 +10205,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2281820009558525399, guid: 5825486d33df74b36a60b201a675086e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3764543717837612879, guid: 5825486d33df74b36a60b201a675086e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5384870546303836713, guid: 5825486d33df74b36a60b201a675086e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7119318673551996725, guid: 5825486d33df74b36a60b201a675086e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 7377166308051366071, guid: 5825486d33df74b36a60b201a675086e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8647615892720479661, guid: 5825486d33df74b36a60b201a675086e,
         type: 3}
       propertyPath: m_Layer
       value: 11
@@ -87528,56 +87528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Txt_NameText
-      value: 
-      objectReference: {fileID: 1228004413}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Txt_SentenceText
-      value: 
-      objectReference: {fileID: 1228004412}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Anim_DialogBox
-      value: 
-      objectReference: {fileID: 1228004414}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[0]
-      value: 
-      objectReference: {fileID: 1228004417}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[1]
-      value: 
-      objectReference: {fileID: 1228004416}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[2]
-      value: 
-      objectReference: {fileID: 1228004415}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Anim_Name
-      value: 
-      objectReference: {fileID: 1228004419}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: Anim_Sentence
-      value: 
-      objectReference: {fileID: 1228004418}
-    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
-        type: 3}
-      propertyPath: GO_Arr_Characters.Array.data[3]
-      value: 
-      objectReference: {fileID: 1228004420}
     - target: {fileID: 7638603273446681852, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -87633,6 +87583,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Txt_NameText
+      value: 
+      objectReference: {fileID: 1228004413}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Txt_SentenceText
+      value: 
+      objectReference: {fileID: 1228004412}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_DialogBox
+      value: 
+      objectReference: {fileID: 1228004414}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[0]
+      value: 
+      objectReference: {fileID: 1228004417}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 1228004416}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[2]
+      value: 
+      objectReference: {fileID: 1228004415}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_Name
+      value: 
+      objectReference: {fileID: 1228004419}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: Anim_Sentence
+      value: 
+      objectReference: {fileID: 1228004418}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: GO_Arr_Characters.Array.data[3]
+      value: 
+      objectReference: {fileID: 1228004420}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e398d4863b75247a8d13a12ec9caa4, type: 3}
 --- !u!1001 &1728435866
