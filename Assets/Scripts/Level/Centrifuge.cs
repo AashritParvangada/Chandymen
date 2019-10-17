@@ -9,7 +9,7 @@ public class Centrifuge : MonoBehaviour
     AudioSource audioSource;
     public AudioClip AudClp_FugeFail;
     public AudioClip AudClp_FugeOn;
-
+    Animator animator;
     [SerializeField] bool B_countFugeInEvent = false;
 
     private void Start()
@@ -29,10 +29,7 @@ public class Centrifuge : MonoBehaviour
 
             else
             {
-                Debug.Log("lkajsdhalkjs");
-                audioSource.clip = AudClp_FugeFail;
-                audioSource.Play();
-                Destroy(thisBullet.gameObject);
+                FailFuge(thisBullet);
             }
         }
     }
@@ -50,8 +47,17 @@ public class Centrifuge : MonoBehaviour
         }
     }
 
+    void FailFuge(PlasmaBullet _plsBull)
+    {
+        audioSource.clip = AudClp_FugeFail;
+        audioSource.Play();
+        animator.SetTrigger("Fail");
+        Destroy(_plsBull.gameObject);
+    }
+
     void GetVariables()
     {
+        animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
 }
