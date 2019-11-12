@@ -9,7 +9,7 @@ public class SpawnTrigger : MonoBehaviour
     int i_enemiesKilled = 0;
     [SerializeField] ElectricDoor ElecDoor_doorToOpen, ElecDoor_doorToClose;
     [SerializeField] GameObject GO_spwnManToActivate;
-    [SerializeField] SpawnManager SpwnMan_timboiSpawnMan;
+    public SpawnManager SpwnMan_timboiSpawnMan;
     public SceneChanger ScnChngr;
     [SerializeField] bool B_isLastTrigger;
 
@@ -44,10 +44,7 @@ public class SpawnTrigger : MonoBehaviour
         foreach (EnemySpawner _EnSpawn in GetComponentsInChildren<EnemySpawner>())
         {
             _EnSpawn.SpawnEnemy();
-        }
-        if (GetComponentInChildren<Timboi>())
-        {
-            GetComponentInChildren<Timboi>().SpwnMan_OnTimboiHealth = SpwnMan_timboiSpawnMan;
+
         }
     }
 

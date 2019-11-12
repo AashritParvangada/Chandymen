@@ -409,6 +409,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460822033725834491, guid: 1f54df800b2b89e4cac3a403ca6bbb69,
+        type: 3}
+      propertyPath: AudClp_toPlayOnStart
+      value: 
+      objectReference: {fileID: 8300000, guid: dd403074c52c0d444a57bab925279671, type: 3}
     - target: {fileID: 7519566448471268672, guid: 1f54df800b2b89e4cac3a403ca6bbb69,
         type: 3}
       propertyPath: m_audioClip
@@ -593,21 +598,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7450310659076327182, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7450310659076327182, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
-        type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7450310659076327182, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3774194985414338068, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
         type: 3}
       propertyPath: playOnAwake
@@ -621,6 +611,21 @@ PrefabInstance:
     - target: {fileID: 3774194985414338068, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
         type: 3}
       propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450310659076327182, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450310659076327182, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450310659076327182, guid: 5a01b5a9cdcbc4b4d9cebfd1a52cb22f,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

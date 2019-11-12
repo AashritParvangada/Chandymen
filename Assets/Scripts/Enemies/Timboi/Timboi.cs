@@ -234,7 +234,6 @@ public class Timboi : MonoBehaviour
     {
         if (other.GetComponent<PlasmaBullet>())
         {
-            Debug.Log("Bullet Entered");
             DamageHealth(50);
             Debug.Log(I_health);
         }
