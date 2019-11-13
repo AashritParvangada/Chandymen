@@ -25,7 +25,6 @@ public class EnemySpawner : MonoBehaviour
         {
             PoliceBot _pb = _go.GetComponent<PoliceBot>();
             _pb.B_AttackOnDialogue = B_activateOnDialogue; _pb.B_AttackOnStart = B_activateOnStart;
-            Debug.Log("Setting Attack on Dialogue to " + B_activateOnDialogue);
             _pb.CheckAttackOnStart();
         }
 

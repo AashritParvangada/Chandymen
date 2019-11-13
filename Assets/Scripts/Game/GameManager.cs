@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void SetLastCheckpoint(Checkpoint _Checkpoint)//Called from Checkpoint Script. When the player dies, they respawn here.
     {
-        Debug.Log("Setting last checkpoint");
         V3_LastCheckpointPos = _Checkpoint.transform.position;
     }
 

@@ -5,25 +5,48 @@ using UnityEngine;
 public class ReflectorRotator : MonoBehaviour
 {
     Transform trans_reflectorTransform;
-    bool b_openToRotate = true;
+    bool b_openToRotate = false;
     [SerializeField] bool B_isHorizontal;
     [SerializeField] float F_time = 0.5f;
-    [SerializeField] float F_angleOne = 45, F_angleTwo=135;
+    [SerializeField] float F_angleOne = 45, F_angleTwo = 135;
+
+    private void OnEnable()
+    {
+        EventManager.OnRotateReflectors += CheckRotateReflector;
+    }
+    private void OnDisable()
+    {
+        EventManager.OnRotateReflectors -= CheckRotateReflector;
+    }
+
     private void Start()
     {
         trans_reflectorTransform = transform.parent;
+        b_openToRotate = false;
     }
 
-
-    //If the player is within the sphere trigger.
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
-            if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.E)) //Joystick 1 is X
-            {
-                RotateReflector();
-            }
+            b_openToRotate = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<PlayerController>())
+        {
+            b_openToRotate = false;
+        }
+    }
+
+    //If the player is within the sphere trigger.
+    public void CheckRotateReflector()
+    {
+        if (b_openToRotate == true)
+        {
+            RotateReflector();
         }
     }
 

@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject Go_muzzleShot;
     HealthBar HlthBr_Script;
+    EventManager evMan_script;
 
     // Use this for initialization
     void Start()
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
             CheckForShot();
             CheckDash(motion.x, motion.z);
             CheckMousePoint();
+            CheckRotateReflectors();
         }
     }
 
@@ -82,6 +84,7 @@ public class PlayerController : MonoBehaviour
         gameCam_PlayerCamera = FindObjectOfType<GameCamera>();
         AudSrc_ThisSource = GetComponent<AudioSource>();
         HlthBr_Script = FindObjectOfType<HealthBar>();
+        evMan_script = FindObjectOfType<EventManager>();
     }
 
     void CheckForShot()//On input, shoot.
@@ -179,6 +182,14 @@ public class PlayerController : MonoBehaviour
                 Vector3 V3_LookPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                 transform.LookAt(V3_LookPos);
             }
+        }
+    }
+
+    void CheckRotateReflectors()
+    {
+        if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.E))
+        {
+            evMan_script.RotateReflectors();
         }
     }
 

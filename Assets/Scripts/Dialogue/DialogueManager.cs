@@ -29,7 +29,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue _dialogue, DialogueTrigger _dtrig)
     {
-        Debug.Log("Entered Start Dialogue");
         dTrig_shutDownOnEnd = _dtrig;
         b_active = true;
         Txt_NameText.enabled = true; Txt_SentenceText.enabled = true;
