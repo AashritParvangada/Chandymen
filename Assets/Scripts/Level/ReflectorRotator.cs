@@ -21,8 +21,24 @@ public class ReflectorRotator : MonoBehaviour
 
     private void Start()
     {
+        GetVariables();
+        CheckAmHorOrVer();
+    }
+
+    void GetVariables()
+    {
         trans_reflectorTransform = transform.parent;
         b_openToRotate = false;
+    }
+
+    void CheckAmHorOrVer()
+    {
+        float _angleOne, _angleTwo;
+        _angleOne = trans_reflectorTransform.eulerAngles.y - F_angleOne;
+        _angleTwo = trans_reflectorTransform.eulerAngles.y - F_angleTwo;
+
+        B_isHorizontal = Mathf.Abs(_angleOne) < Mathf.Abs(_angleTwo) ? false : true;
+
     }
 
     private void OnTriggerEnter(Collider other)
