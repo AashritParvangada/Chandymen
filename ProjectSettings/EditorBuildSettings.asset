@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chandymen.unity
     guid: cc1e59b65b6aef240b39930e121b7093
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 83b484ad9bf2f824881031e928ded920
   m_configObjects: {}

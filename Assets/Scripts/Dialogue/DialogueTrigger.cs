@@ -5,11 +5,15 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue Dia_Dialogue;
+    [SerializeField] bool isEndCreditDialogue=false;
 
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(Dia_Dialogue, this);
 
+        if(isEndCreditDialogue)
+        {
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,4 +21,5 @@ public class DialogueTrigger : MonoBehaviour
         if (other.GetComponent<PlayerController>())
             TriggerDialogue();
     }
+
 }

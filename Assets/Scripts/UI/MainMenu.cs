@@ -20,6 +20,11 @@ public class MainMenu : MonoBehaviour
         ScnMan_SceneManager.SceneChangeInt(1);
     }
 
+    public void MainMenuButton()
+    {
+        ScnMan_SceneManager.SceneChangeInt(0);
+    }
+
     public void QuitButton()
     {
         ScnMan_SceneManager.QuitGame();
