@@ -8,10 +8,12 @@ public class Scene_Manager : MonoBehaviour
     bool b_loadedGame;
     GameManager GmMan_Manager;
     [SerializeField] SceneChanger ScnChng_Token1, ScnChng_Token2;
+    Animator anim_fadeScreen;
     private void Start()
     {
         GetVariables();
         SavePlayer();
+        Fade(false);
     }
 
     void CheckGameManagerTokens()
@@ -43,7 +45,7 @@ public class Scene_Manager : MonoBehaviour
     {
         PlayerData _data = SaveGame.LoadPlayer();
         GmMan_Manager.B_Token1 = _data.B_Token1; GmMan_Manager.B_Token2 = _data.B_Token2;
-        GmMan_Manager.B_ChandyOfficeDone = _data.B_ChandyOfficeDone; 
+        GmMan_Manager.B_ChandyOfficeDone = _data.B_ChandyOfficeDone;
         GmMan_Manager.S_CameFromSceneName = _data.S_CameFromScene;
         SceneChangeInt(_data.I_SceneNumber);
     }
@@ -51,10 +53,24 @@ public class Scene_Manager : MonoBehaviour
     void GetVariables()
     {
         GmMan_Manager = FindObjectOfType<GameManager>();
+        foreach (RectTransform _rectTrans in FindObjectsOfType<RectTransform>())
+        {
+            if (_rectTrans.gameObject.name == "SceneCanvas")
+            {
+                anim_fadeScreen = _rectTrans.GetComponentInChildren<Animator>();
+            }
+        }
     }
 
     public void SceneChangeInt(int _SceneIndex)//Isn't being used yet. Use when shifting levels.
     {
+        StartCoroutine(IEnum_SceneChangeInt(_SceneIndex));
+    }
+
+    IEnumerator IEnum_SceneChangeInt(int _SceneIndex)
+    {
+        Fade(true);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(_SceneIndex);
     }
 
@@ -93,6 +109,12 @@ public class Scene_Manager : MonoBehaviour
         {
             FindObjectOfType<GameManager>().B_ChandyOfficeDone = true;
         }
+    }
+
+    void Fade(bool _toBlack)
+    {
+        if (_toBlack) anim_fadeScreen.SetTrigger("FadeBlack");
+        else anim_fadeScreen.SetTrigger("FadeIn");
     }
 
 }

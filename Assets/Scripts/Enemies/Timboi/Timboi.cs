@@ -19,7 +19,7 @@ public class Timboi : MonoBehaviour
     public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
     public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
-    [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit;
+    [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit, ParticleSpawn_die;
     private void Start()//Get variables.
     {
         GetVariables();
@@ -209,7 +209,7 @@ public class Timboi : MonoBehaviour
 
         if (I_health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -244,5 +244,17 @@ public class Timboi : MonoBehaviour
         ParticleSpawner prtclSpawn = Instantiate(_prtclSpawn, transform);
         prtclSpawn.GetVariables();
         prtclSpawn.Activate();
+    }
+
+    void Die()
+    {
+        InstantiateParticles(ParticleSpawn_die);
+        SpwnMan_OnTimboiHealth.enabled = false;
+        foreach (Grunt grunt in FindObjectsOfType<Grunt>())
+        {
+            grunt.DamageHealth(1000);
+        }
+        FindObjectOfType<Scene_Manager>().SceneChangeInt(2);
+        Destroy(gameObject);
     }
 }
