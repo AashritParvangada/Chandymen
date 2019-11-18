@@ -25,8 +25,6 @@ public class GameCamera : MonoBehaviour
             FollowTarget();
         }
 
-        if (Input.GetKeyDown(KeyCode.T)) CamShake();
-
     }
 
     void FollowTarget()

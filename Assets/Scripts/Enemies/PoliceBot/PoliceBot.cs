@@ -127,6 +127,7 @@ public class PoliceBot : MonoBehaviour
     {
         AnimTrigger("Die");
         InstantiateParticles(ParticleSpawner_death);
+        FindObjectOfType<GameCamera>().CamShake();
         Destroy(gameObject, 0.2f);
     }
 
