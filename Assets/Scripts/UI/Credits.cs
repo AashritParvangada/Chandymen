@@ -27,6 +27,12 @@ public class Credits : MonoBehaviour
         yield return new WaitForSeconds(1);
         RunFlare();
         RunName(Anim_aashrit);
+        yield return new WaitForSeconds(5);
+        RunFlare();
+        RunName(Anim_vrushank);
+        yield return new WaitForSeconds(5);
+        RunFlare();
+        RunName(Anim_davin);
     }
 
 }
