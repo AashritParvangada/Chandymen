@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     PlayerController plCont_playa;
     public Animator Anim_DialogBox, Anim_Name, Anim_Sentence;
     public GameObject[] GO_Arr_Characters;
+    GameObject go_playerHealth;
     bool b_textAvailable = true, b_active = false;
     [SerializeField] AudioClip[] AudClp_CharacterVoices; AudioSource audioSource;
     private void Start()
@@ -25,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     {
         plCont_playa = FindObjectOfType<PlayerController>();
         audioSource = GetComponent<AudioSource>();
+        go_playerHealth = FindObjectOfType<HealthBar>().gameObject;
     }
 
     public void StartDialogue(Dialogue _dialogue, DialogueTrigger _dtrig)
@@ -32,6 +34,7 @@ public class DialogueManager : MonoBehaviour
         dTrig_shutDownOnEnd = _dtrig;
         b_active = true;
         Txt_NameText.enabled = true; Txt_SentenceText.enabled = true;
+        go_playerHealth.SetActive(false);
         EnableOrDisableCont(false);
         ClearQueues();
         QueueSentences(_dialogue);
@@ -133,7 +136,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        return _audClpsList[Random.Range(0, _audClpsList.Count-1)];
+        return _audClpsList[Random.Range(0, _audClpsList.Count - 1)];
 
     }
 
@@ -147,6 +150,7 @@ public class DialogueManager : MonoBehaviour
         }
         dTrig_shutDownOnEnd.gameObject.SetActive(false);
         Txt_NameText.enabled = false; Txt_SentenceText.enabled = false;
+        go_playerHealth.SetActive(true);
         FindObjectOfType<EventManager>().FinishDialogueEvent();
     }
 
