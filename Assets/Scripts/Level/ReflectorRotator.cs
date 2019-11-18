@@ -10,14 +10,9 @@ public class ReflectorRotator : MonoBehaviour
     [SerializeField] float F_time = 0.5f;
     [SerializeField] float F_angleOne = 45, F_angleTwo = 135;
 
-    private void OnEnable()
-    {
-        EventManager.OnRotateReflectors += CheckRotateReflector;
-    }
-    private void OnDisable()
-    {
-        EventManager.OnRotateReflectors -= CheckRotateReflector;
-    }
+
+    float f_rotTime;
+    bool b_rotating = false;
 
     private void Start()
     {
@@ -57,45 +52,58 @@ public class ReflectorRotator : MonoBehaviour
         }
     }
 
-    //If the player is within the sphere trigger.
-    public void CheckRotateReflector()
+    private void Update()
     {
-        if (b_openToRotate == true)
+        if (b_openToRotate == true && (Input.GetKeyDown(KeyCode.JoystickButton1)
+         || Input.GetKeyDown(KeyCode.E)))
         {
-            RotateReflector();
+            b_rotating = true;
+            f_rotTime = 0;
+            StartCoroutine(CloseToRotateForTime(F_time));
+            Debug.Log(B_isHorizontal);
+        }
+
+        if (b_rotating)
+        {
+            RotateReflectorUpdate();
+        }
+
+        if (f_rotTime > F_time)
+        {
+            b_rotating = false;
         }
     }
 
-    void RotateReflector()
+    void RotateReflectorUpdate()
     {
-        if (b_openToRotate)
-        {
-            MakeHorizontalOrVertical();
-            StartCoroutine(CloseToRotateForTime(F_time));//This is for lerping. MUST ADD LERPING
-        }
+        f_rotTime += Time.deltaTime;
+        trans_reflectorTransform.rotation = Quaternion.Lerp(trans_reflectorTransform.rotation,
+         GetTargetRotation(), f_rotTime);
     }
 
-    void MakeHorizontalOrVertical() //Depending on which angle the reflector starts with, make it the other one.
+    Quaternion GetTargetRotation() //Depending on which angle the reflector starts with, make it the other one.
     {
         if (B_isHorizontal)
         {
             Vector3 verticalTransform = new Vector3(0, F_angleOne, 0);
-            trans_reflectorTransform.eulerAngles = verticalTransform;
-            B_isHorizontal = false;
+            Quaternion quat_verticalTransform = Quaternion.Euler(verticalTransform);
+            return quat_verticalTransform;
         }
 
-        else if (!B_isHorizontal)
+        else
         {
             Vector3 horizontalTransform = new Vector3(0, F_angleTwo, 0);
-            trans_reflectorTransform.eulerAngles = horizontalTransform;
-            B_isHorizontal = true;
+            Quaternion quat_horTransform = Quaternion.Euler(horizontalTransform);
+            return quat_horTransform;
         }
+
     }
 
     IEnumerator CloseToRotateForTime(float time) //Lock rotation for a few seconds (OnTriggerStay calls every frame)
     {
         b_openToRotate = false;
         yield return new WaitForSeconds(time);
+        CheckAmHorOrVer();
         b_openToRotate = true;
     }
 }

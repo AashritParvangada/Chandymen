@@ -23,8 +23,6 @@ public class EventManager : MonoBehaviour
     public static event LastEnemyKilledToken2 OnLastEnemyKilledToken2;
     int i_markedFugeHit = 0;
 
-    public delegate void RotateActiveReflectors();
-    public static event RotateActiveReflectors OnRotateReflectors;
 
     Scene_Manager ScnMan;
     private void Start()
@@ -62,12 +60,4 @@ public class EventManager : MonoBehaviour
         else if (ScnMan.GetActiveSceneString() == "Token2") OnLastEnemyKilledToken2();
     }
 
-    public void RotateReflectors()
-    {
-        Debug.Log("Rotating Reflectors");
-        if (OnRotateReflectors != null)
-        {
-            OnRotateReflectors();
-        }
-    }
 }
