@@ -22,7 +22,10 @@ public class EventManager : MonoBehaviour
     public delegate void LastEnemyKilledToken2();
     public static event LastEnemyKilledToken2 OnLastEnemyKilledToken2;
     int i_markedFugeHit = 0;
-
+    public delegate void EndCreditsTrigger();
+    public static event EndCreditsTrigger OnEndCreditsTrigger;
+    public delegate void TimboiDeath();
+    public static event TimboiDeath OnTimboiHealthDepleted;
 
     Scene_Manager ScnMan;
     private void Start()
@@ -58,6 +61,16 @@ public class EventManager : MonoBehaviour
         if (ScnMan.GetActiveSceneString() == "Level1" && FindObjectOfType<GameManager>().B_ChandyOfficeDone) OnLastEnemyKilledLevel2();
         else if (ScnMan.GetActiveSceneString() == "Level3") OnLastEnemyKilledLevel3();
         else if (ScnMan.GetActiveSceneString() == "Token2") OnLastEnemyKilledToken2();
+    }
+
+    public void TimboiDeathEvent()
+    {
+        if (OnTimboiHealthDepleted != null) OnTimboiHealthDepleted();
+    }
+
+    public void EndCreditTriggerEvent()
+    {
+        if (OnEndCreditsTrigger != null) OnEndCreditsTrigger();
     }
 
 }

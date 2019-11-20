@@ -15,7 +15,20 @@ public class DialogueManager : MonoBehaviour
     public GameObject[] GO_Arr_Characters;
     GameObject go_playerHealth;
     bool b_textAvailable = true, b_active = false;
+    public bool B_IsEndCredits = false;
     [SerializeField] AudioClip[] AudClp_CharacterVoices; AudioSource audioSource;
+    [SerializeField] GameObject Go_TimboiDeathDialogue;
+
+    private void OnEnable()
+    {
+        EventManager.OnTimboiHealthDepleted += ActivateTimboiDeathDialogue;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnTimboiHealthDepleted -= ActivateTimboiDeathDialogue;
+    }
+
     private void Start()
     {
         GetVariables();
@@ -152,6 +165,8 @@ public class DialogueManager : MonoBehaviour
         Txt_NameText.enabled = false; Txt_SentenceText.enabled = false;
         go_playerHealth.SetActive(true);
         FindObjectOfType<EventManager>().FinishDialogueEvent();
+
+        if (B_IsEndCredits) FindObjectOfType<EventManager>().EndCreditTriggerEvent();
     }
 
     private void Update()
@@ -160,5 +175,10 @@ public class DialogueManager : MonoBehaviour
         {
             CheckNextSentence();
         }
+    }
+
+    void ActivateTimboiDeathDialogue()
+    {
+        Go_TimboiDeathDialogue.SetActive(true);
     }
 }
