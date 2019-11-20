@@ -5,14 +5,15 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue Dia_Dialogue;
-    [SerializeField] bool isEndCreditDialogue=false;
+    [SerializeField] bool B_isEndCreditDialogue = false;
 
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(Dia_Dialogue, this);
 
-        if(isEndCreditDialogue)
+        if (B_isEndCreditDialogue)
         {
+            FindObjectOfType<DialogueManager>().B_IsEndCredits = true;
         }
     }
 

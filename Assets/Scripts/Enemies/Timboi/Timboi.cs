@@ -29,13 +29,13 @@ public class Timboi : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnDialogueComplete += DialogueEventEnded;
-
+        EventManager.OnEndCreditsTrigger += Explode;
     }
 
     private void OnDisable()
     {
         EventManager.OnDialogueComplete -= DialogueEventEnded;
-
+        EventManager.OnEndCreditsTrigger -= Explode;
     }
 
     private void Update()
@@ -248,13 +248,29 @@ public class Timboi : MonoBehaviour
 
     void Die()
     {
-        InstantiateParticles(ParticleSpawn_die);
         SpwnMan_OnTimboiHealth.enabled = false;
         foreach (Grunt grunt in FindObjectsOfType<Grunt>())
         {
             grunt.DamageHealth(1000);
         }
-        FindObjectOfType<Scene_Manager>().SceneChangeInt(2);
+        ShutTimboiDown();
+        evMan_eventManager.TimboiDeathEvent();
+    }
+
+    void Explode()
+    {
+        InstantiateParticles(ParticleSpawn_die);
         Destroy(gameObject);
+        FindObjectOfType<Scene_Manager>().SceneChangeInt(2);
+    }
+
+    void ShutTimboiDown()
+    {
+        StopAllCoroutines();
+
+        foreach (GameObject Go in GO_tempArray)
+            Destroy(Go);
+        GetComponentInChildren<AttackRadiusTimboi>().enabled = false;
+        animator.SetTrigger("Idle");
     }
 }

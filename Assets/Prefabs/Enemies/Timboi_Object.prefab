@@ -704,6 +704,11 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8020869675488814359, guid: acab32d50b14c4877a74ecab088867c8,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acab32d50b14c4877a74ecab088867c8, type: 3}
 --- !u!1001 &7356997518301845751
@@ -878,7 +883,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AudClp_toPlayOnStart
       value: 
-      objectReference: {fileID: 8300000, guid: dd403074c52c0d444a57bab925279671, type: 3}
+      objectReference: {fileID: 8300000, guid: d5540aba63e6bf64abbd45c1b81d9b69, type: 3}
     - target: {fileID: 7519566448471268672, guid: 1f54df800b2b89e4cac3a403ca6bbb69,
         type: 3}
       propertyPath: m_audioClip

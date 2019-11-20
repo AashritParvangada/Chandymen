@@ -33,6 +33,9 @@ public class Credits : MonoBehaviour
         yield return new WaitForSeconds(5);
         RunFlare();
         RunName(Anim_davin);
+        yield return new WaitForSeconds(5);
+        FindObjectOfType<Scene_Manager>().SceneChangeInt(0);
+
     }
 
 }
