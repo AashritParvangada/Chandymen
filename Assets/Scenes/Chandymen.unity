@@ -61775,7 +61775,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.3
+      value: 14.72
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -61785,7 +61785,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -57.2
+      value: 124.22
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -87548,6 +87548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
         type: 3}
+      propertyPath: AudClp_CharacterVoices.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
       propertyPath: Txt_NameText
       value: 
       objectReference: {fileID: 1228004413}
@@ -87591,6 +87596,16 @@ PrefabInstance:
       propertyPath: GO_Arr_Characters.Array.data[3]
       value: 
       objectReference: {fileID: 1228004420}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: AudClp_CharacterVoices.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: a3f65510eeba5694ca54e97b685ea942, type: 3}
+    - target: {fileID: 187275434706973010, guid: d9e398d4863b75247a8d13a12ec9caa4,
+        type: 3}
+      propertyPath: AudClp_CharacterVoices.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17d2bce7ee4f44f45ba58693b92a19ce, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e398d4863b75247a8d13a12ec9caa4, type: 3}
 --- !u!1001 &1728435866
