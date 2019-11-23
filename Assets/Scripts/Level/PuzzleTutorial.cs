@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PuzzleTutorial : MonoBehaviour
 {
-    [SerializeField] GameObject Go_panel;
-    bool b_canInteract = false;
+    [SerializeField] GameObject Go_panel, Go_xButtonActive, Go_xButtonInactive;
+
+    bool b_canInteract = false, b_timeLock = false;
     bool b_panelActive = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,6 +14,7 @@ public class PuzzleTutorial : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             b_canInteract = true;
+            SetXButtonActive(true);
         }
     }
 
@@ -22,9 +24,13 @@ public class PuzzleTutorial : MonoBehaviour
         {
             b_canInteract = false;
             Go_panel.SetActive(false);
+            SetXButtonActive(false);
         }
     }
-
+    void GetVariables()
+    {
+        SetXButtonActive(false);
+    }
     private void Update()
     {
         CheckPlayerInput();
@@ -32,13 +38,13 @@ public class PuzzleTutorial : MonoBehaviour
 
     void CheckPlayerInput()
     {
-        if (b_canInteract && !b_panelActive && (Input.GetKeyDown(KeyCode.JoystickButton1)
+        if (!b_timeLock && b_canInteract && !b_panelActive && (Input.GetKeyDown(KeyCode.JoystickButton1)
  || Input.GetKeyDown(KeyCode.E)))
         {
             SetPanelActive(true);
         }
 
-        if (b_canInteract && b_panelActive && (Input.GetKeyDown(KeyCode.JoystickButton1)
+        if (!b_timeLock && b_canInteract && b_panelActive && (Input.GetKeyDown(KeyCode.JoystickButton1)
 || Input.GetKeyDown(KeyCode.E)))
         {
             SetPanelActive(false);
@@ -54,8 +60,14 @@ public class PuzzleTutorial : MonoBehaviour
 
     IEnumerator IEnum_InteractCooldown()
     {
-        b_canInteract = false;
+        b_timeLock = true;
         yield return new WaitForSeconds(1);
-        b_canInteract = true;
+        b_timeLock = false;
+    }
+
+    void SetXButtonActive(bool _active)
+    {
+        Go_xButtonActive.SetActive(_active);
+        Go_xButtonInactive.SetActive(!_active);
     }
 }

@@ -112,11 +112,11 @@ GameObject:
   - component: {fileID: 1221631766267504319}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: TutorialPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1673982862946337827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9033852595012446653
 CanvasRenderer:
