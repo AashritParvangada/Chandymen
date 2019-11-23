@@ -20,24 +20,18 @@ public class PlasmaBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Reflector")
-        {
-            Reflect(V3_Dir);
-            other.GetComponent<Animator>().SetTrigger("Wobble");
-            GetComponent<AudioSource>().clip = (AudClp_ReflectorBump);
-            GetComponent<AudioSource>().Play();
-        }
+        CheckHitReflector(other);
 
-        else if (other.GetComponent<Grunt>())
+        CheckHitWall(other);
+
+
+        if (other.GetComponent<Grunt>())
         {
             other.GetComponent<Grunt>().DamageHealth(F_bulletDamage);
             Destroy(gameObject);
         }
 
-        else if (other.gameObject.layer == 9)//Wall layer.
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     void Reflect(Vector3 _dir)//Ray that reflects the bullet. Must be placed in separate object.
@@ -52,4 +46,24 @@ public class PlasmaBullet : MonoBehaviour
         yield return new WaitForSeconds(F_bulletDestroyTime);
         Destroy(gameObject);
     }
+
+    void CheckHitReflector(Collider other)
+    {
+        if (other.tag == "Reflector")
+        {
+            Reflect(V3_Dir);
+            other.GetComponent<Animator>().SetTrigger("Wobble");
+            GetComponent<AudioSource>().clip = (AudClp_ReflectorBump);
+            GetComponent<AudioSource>().Play();
+        }
+    }
+
+    void CheckHitWall(Collider other)
+    {
+        if (other.gameObject.layer == 11 || other.GetComponentInParent<ElectricDoor>())//Wall layer.
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
