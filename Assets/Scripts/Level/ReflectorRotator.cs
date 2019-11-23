@@ -9,6 +9,7 @@ public class ReflectorRotator : MonoBehaviour
     [SerializeField] bool B_isHorizontal;
     [SerializeField] float F_time = 0.5f;
     [SerializeField] float F_angleOne = 45, F_angleTwo = 135;
+    [SerializeField] GameObject Go_xButton;
 
 
     float f_rotTime;
@@ -24,6 +25,7 @@ public class ReflectorRotator : MonoBehaviour
     {
         trans_reflectorTransform = transform.parent;
         b_openToRotate = false;
+        Go_xButton.SetActive(false);
     }
 
     void CheckAmHorOrVer()
@@ -41,6 +43,7 @@ public class ReflectorRotator : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             b_openToRotate = true;
+            Go_xButton.SetActive(true);
         }
     }
 
@@ -49,6 +52,7 @@ public class ReflectorRotator : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             b_openToRotate = false;
+            Go_xButton.SetActive(false);
         }
     }
 
