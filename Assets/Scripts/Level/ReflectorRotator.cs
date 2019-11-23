@@ -6,6 +6,7 @@ public class ReflectorRotator : MonoBehaviour
 {
     Transform trans_reflectorTransform;
     bool b_openToRotate = false;
+    bool b_timeLocked = false;
     [SerializeField] bool B_isHorizontal;
     [SerializeField] float F_time = 0.5f;
     [SerializeField] float F_angleOne = 45, F_angleTwo = 135;
@@ -58,7 +59,7 @@ public class ReflectorRotator : MonoBehaviour
 
     private void Update()
     {
-        if (b_openToRotate == true && (Input.GetKeyDown(KeyCode.JoystickButton1)
+        if (!b_timeLocked && b_openToRotate == true && (Input.GetKeyDown(KeyCode.JoystickButton1)
          || Input.GetKeyDown(KeyCode.E)))
         {
             b_rotating = true;
@@ -105,9 +106,9 @@ public class ReflectorRotator : MonoBehaviour
 
     IEnumerator CloseToRotateForTime(float time) //Lock rotation for a few seconds (OnTriggerStay calls every frame)
     {
-        b_openToRotate = false;
+        b_timeLocked = true;
         yield return new WaitForSeconds(time);
         CheckAmHorOrVer();
-        b_openToRotate = true;
+        b_timeLocked = false;
     }
 }
