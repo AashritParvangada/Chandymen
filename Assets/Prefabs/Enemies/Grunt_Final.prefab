@@ -757,6 +757,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt@Animations
       objectReference: {fileID: 0}
+    - target: {fileID: 2278275384232134056, guid: da4f01233a01f42faaeb91172463ec76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: da4f01233a01f42faaeb91172463ec76,
         type: 3}
       propertyPath: m_LocalPosition.x
