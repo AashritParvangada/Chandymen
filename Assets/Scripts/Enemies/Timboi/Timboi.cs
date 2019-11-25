@@ -13,13 +13,15 @@ public class Timboi : MonoBehaviour
     AudioSource audSrc_thisSource;
     NavMeshAgent navMesAg_agent;
     Animator animator;
-    [SerializeField] int I_health = 100, I_damage = 30;
+    [SerializeField] int I_health, I_damage = 30, I_totalHealth = 400;
     [SerializeField] float F_minAttackTime, F_maxAttackTime, F_minMovementCheckTime, F_maxMovementCheckTime, F_recoverTime;
     bool b_lookAtPlayer = true;
     public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
     public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
     [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit, ParticleSpawn_die;
+    [SerializeField] GameObject GO_healthBarAnchor;
+
     private void Start()//Get variables.
     {
         GetVariables();
@@ -74,6 +76,7 @@ public class Timboi : MonoBehaviour
         audSrc_thisSource = GetComponent<AudioSource>();
         GetZones();
         animator = GetComponentInChildren<Animator>();
+        I_health = I_totalHealth;
     }
 
     void SetAnimTrigger(string _trigger)
@@ -199,8 +202,10 @@ public class Timboi : MonoBehaviour
         Recover();
         StopAllCoroutines();
         StartCoroutine(Enum_MoveToZonePoint());
+
         InstantiateParticles(ParticleSpawn_hit);
         I_health -= _Damage;
+        GO_healthBarAnchor.transform.localScale = new Vector3((float)I_health / I_totalHealth, 1, 1);
 
         if (I_health <= F_thresehold1)
         {
