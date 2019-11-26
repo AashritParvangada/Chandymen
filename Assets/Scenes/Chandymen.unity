@@ -62308,7 +62308,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.55
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -62318,7 +62318,7 @@ PrefabInstance:
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55.75
+      value: -39
       objectReference: {fileID: 0}
     - target: {fileID: 522892350955896528, guid: 07523acf795f54f49b863df3592ec9e1,
         type: 3}
@@ -97691,6 +97691,41 @@ PrefabInstance:
       propertyPath: Go_panel
       value: 
       objectReference: {fileID: 8080759878034961596}
+    - target: {fileID: 3899806953586970639, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146258234769234564, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146258234769234564, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146258234769234564, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146258234769234564, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.25849602
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146258234769234564, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.08235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146258234769234564, guid: 113cfa5ea1280084aa8a9ceb0e104457,
+        type: 3}
+      propertyPath: m_Range
+      value: 2.98
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113cfa5ea1280084aa8a9ceb0e104457, type: 3}
 --- !u!4 &1906996397 stripped
