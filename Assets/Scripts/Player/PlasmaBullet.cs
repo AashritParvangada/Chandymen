@@ -12,6 +12,7 @@ public class PlasmaBullet : MonoBehaviour
     Rigidbody rb_rb;
     public Vector3 V3_Dir;
     public AudioClip AudClp_ReflectorBump;
+    [SerializeField] ParticleSpawner ParticleSpawner_wallHit;
     private void Start()
     {
         rb_rb = GetComponent<Rigidbody>();
@@ -62,8 +63,16 @@ public class PlasmaBullet : MonoBehaviour
     {
         if (other.gameObject.layer == 11 || other.GetComponentInParent<ElectricDoor>())//Wall layer.
         {
+            InstantiateParticles(ParticleSpawner_wallHit);
             Destroy(gameObject);
         }
+    }
+
+    void InstantiateParticles(ParticleSpawner _prtclSpawn)
+    {
+        ParticleSpawner prtclSpawn = Instantiate(_prtclSpawn, transform);
+        prtclSpawn.GetVariables();
+        prtclSpawn.Activate();
     }
 
 }
