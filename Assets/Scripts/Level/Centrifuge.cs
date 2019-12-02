@@ -10,6 +10,8 @@ public class Centrifuge : MonoBehaviour
     public AudioClip AudClp_FugeFail;
     public AudioClip AudClp_FugeOn;
     Animator animator;
+
+    bool b_fugeActive = false;
     [SerializeField] bool B_countFugeInEvent = false;
 
     private void Start()
@@ -36,22 +38,31 @@ public class Centrifuge : MonoBehaviour
 
     void ActivateFuge(PlasmaBullet _plsbull)
     {
-        audioSource.clip = AudClp_FugeOn;
-        audioSource.Play();
-        if (ElecDoor_door) ElecDoor_door.SwitchDoor(false);
-        Destroy(_plsbull.gameObject);
-
-        if (B_countFugeInEvent)
+        if (!b_fugeActive)
         {
-            FindObjectOfType<EventManager>().FugeHitEvent();
+            audioSource.clip = AudClp_FugeOn;
+            audioSource.Play();
+            animator.SetTrigger("Success");
+
+            if (ElecDoor_door) ElecDoor_door.SwitchDoor(false);
+
+            if (B_countFugeInEvent)
+            {
+                FindObjectOfType<EventManager>().FugeHitEvent();
+            }
+            b_fugeActive = true;
         }
+        Destroy(_plsbull.gameObject);
     }
 
     void FailFuge(PlasmaBullet _plsBull)
     {
-        audioSource.clip = AudClp_FugeFail;
-        audioSource.Play();
-        animator.SetTrigger("Fail");
+        if (!b_fugeActive)
+        {
+            audioSource.clip = AudClp_FugeFail;
+            audioSource.Play();
+            animator.SetTrigger("Fail");
+        }
         Destroy(_plsBull.gameObject);
     }
 
