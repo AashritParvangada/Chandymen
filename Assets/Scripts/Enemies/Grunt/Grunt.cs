@@ -26,7 +26,9 @@ public class Grunt : MonoBehaviour
     Rigidbody rb_RB;
     float f_currentSpeed;
     [SerializeField] ParticleSpawner ParticleSpawner_death, ParticleSpawner_hit;
-
+    [SerializeField] SkinnedMeshRenderer SknMshRndr_gruntSkin;
+    [SerializeField] Material Mat_grunt;
+    bool b_spawning = true;
     AudioSource audSrc_thisSource;
     //How this agent works:
     //Ray cast to player.
@@ -43,6 +45,7 @@ public class Grunt : MonoBehaviour
     private void Start()//Get variables.
     {
         GetVariables();
+        StartCoroutine(IEnum_LerpClippingThresehold(F_minShootTime));
     }
 
     public void CheckAttackOnStart()
@@ -202,12 +205,16 @@ public class Grunt : MonoBehaviour
 
     public void DamageHealth(int _Damage)//Called in Plasma Bullet.
     {
-        i_currentHealth -= _Damage;
-        InstantiateParticles(ParticleSpawner_hit);
-        GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
-        if (i_currentHealth <= 0)
+        if (!b_spawning)
         {
-            Die();
+            i_currentHealth -= _Damage;
+            InstantiateParticles(ParticleSpawner_hit);
+            GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
+
+            if (i_currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -227,5 +234,24 @@ public class Grunt : MonoBehaviour
     private void OnDestroy()//When this enemy is killed, trigger event count enemies killed.   
     {
         evMan_eventManager.CountEnemyKilled();
+    }
+
+    IEnumerator IEnum_LerpClippingThresehold(float _time)
+    {
+        b_spawning = true;
+        float _newClipSrength = 1;
+        float elapsedTime = 0;
+        float startingClippingSrength = SknMshRndr_gruntSkin.material.GetFloat("Vector1_B15186D7");
+
+        while (elapsedTime < _time)
+        {
+            float _currentClipStrength = Mathf.Lerp(startingClippingSrength, _newClipSrength, elapsedTime / _time);
+            SknMshRndr_gruntSkin.material.SetFloat("Vector1_B15186D7", _currentClipStrength);
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        SknMshRndr_gruntSkin.material = Mat_grunt;
+        b_spawning = false;
     }
 }

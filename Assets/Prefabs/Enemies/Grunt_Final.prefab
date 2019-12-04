@@ -67,6 +67,8 @@ MonoBehaviour:
   B_ShootOnDialogue: 0
   ParticleSpawner_death: {fileID: 2565641991789603851}
   ParticleSpawner_hit: {fileID: 7197645316219773997}
+  SknMshRndr_gruntSkin: {fileID: 1752170706224244290}
+  Mat_grunt: {fileID: 2100000, guid: 6ce26fdf8139abf4db5ac8d2c273525f, type: 2}
 --- !u!65 &3398568554397525481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -827,11 +829,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b071dea4b3420534c96765042189a1ba, type: 2}
+    - target: {fileID: -5225633651689060130, guid: da4f01233a01f42faaeb91172463ec76,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2449cdc70a0204eff89ddf1d7b6920bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4f01233a01f42faaeb91172463ec76, type: 3}
 --- !u!4 &7660782217965192582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: da4f01233a01f42faaeb91172463ec76,
+    type: 3}
+  m_PrefabInstance: {fileID: 3398568555156369052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1752170706224244290 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5225633651689060130, guid: da4f01233a01f42faaeb91172463ec76,
     type: 3}
   m_PrefabInstance: {fileID: 3398568555156369052}
   m_PrefabAsset: {fileID: 0}
