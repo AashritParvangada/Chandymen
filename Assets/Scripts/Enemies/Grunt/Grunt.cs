@@ -239,8 +239,9 @@ public class Grunt : MonoBehaviour
     IEnumerator IEnum_LerpClippingThresehold(float _time)
     {
         b_spawning = true;
-        float _newClipSrength = 1;
+        float _newClipSrength = 0;
         float elapsedTime = 0;
+        SknMshRndr_gruntSkin.material.SetFloat("Vector1_B15186D7", 1);
         float startingClippingSrength = SknMshRndr_gruntSkin.material.GetFloat("Vector1_B15186D7");
 
         while (elapsedTime < _time)
