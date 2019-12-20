@@ -58,6 +58,7 @@ MonoBehaviour:
   F_maxMovementCheckTime: 3
   F_minShootTime: 1
   F_maxShootTime: 3
+  F_lerpTime: 1.5
   Trans_gruntGun: {fileID: 1722108894473775598}
   GO_bullet: {fileID: 8953453763912395388, guid: 759d6c5bfaeac40f0b37e28434c4439a,
     type: 3}

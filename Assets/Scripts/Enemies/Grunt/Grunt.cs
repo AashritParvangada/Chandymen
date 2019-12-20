@@ -12,7 +12,7 @@ public class Grunt : MonoBehaviour
     [SerializeField] float F_rayDistance = 50;
     List<Zone> zon_List_zones = new List<Zone>();
     [SerializeField] float F_minMovementCheckTime, F_maxMovementCheckTime;
-    [SerializeField] float F_minShootTime, F_maxShootTime;
+    [SerializeField] float F_minShootTime, F_maxShootTime, F_lerpTime;
 
     NavMeshAgent navMesAg_agent;
 
@@ -45,7 +45,7 @@ public class Grunt : MonoBehaviour
     private void Start()//Get variables.
     {
         GetVariables();
-        StartCoroutine(IEnum_LerpClippingThresehold(F_minShootTime));
+        StartCoroutine(IEnum_LerpClippingThresehold(F_lerpTime));
     }
 
     public void CheckAttackOnStart()
