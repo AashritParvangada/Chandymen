@@ -9948,9 +9948,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8953453763912395389}
-  - component: {fileID: 8316769168949234137}
   - component: {fileID: 3081850894696231991}
-  - component: {fileID: 7886979018935267627}
+  - component: {fileID: 8316769168949234137}
+  - component: {fileID: 4441642820426384027}
   - component: {fileID: 7755466187634753131}
   m_Layer: 12
   m_Name: Grunt_Projectile
@@ -9980,6 +9980,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3081850894696231991
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953453763912395388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8316769168949234137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9996,20 +10009,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &3081850894696231991
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8953453763912395388}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7886979018935267627
+--- !u!114 &4441642820426384027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10018,18 +10018,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8953453763912395388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a5cf3dc08814a4b9dd13f78517961f, type: 3}
+  m_Script: {fileID: 11500000, guid: b855cd7002e17a149b3d5813c4d9645b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  I_MaxReflectionCount: 10
-  F_MaxStepDistance: 200
-  F_bulletDamage: 50
-  I_BulletCharge: 0
-  F_bulletDestroyTime: 10
-  V3_Dir: {x: 0, y: 0, z: 0}
-  AudClp_ReflectorBump: {fileID: 8300000, guid: 6fd66a1081a4c4ff4a0465f0a19ef012,
-    type: 3}
-  ParticleSpawner_wallHit: {fileID: 1929754091183164415}
+  I_damageCaused: 10
 --- !u!82 &7755466187634753131
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10212,18 +10204,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3080623028351438596}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1929754091183164415 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3460822033725834491, guid: 1f54df800b2b89e4cac3a403ca6bbb69,
-    type: 3}
-  m_PrefabInstance: {fileID: 3080623028351438596}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb798d3de90f7c46bc50da8e732b965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4003808113049059902
 PrefabInstance:
   m_ObjectHideFlags: 0

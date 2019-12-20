@@ -59,7 +59,7 @@ MonoBehaviour:
   F_minShootTime: 1
   F_maxShootTime: 3
   Trans_gruntGun: {fileID: 1722108894473775598}
-  GO_bullet: {fileID: 6351978325533245481, guid: 3d654e802b4075241902d60bc3e8d74b,
+  GO_bullet: {fileID: 8953453763912395388, guid: 759d6c5bfaeac40f0b37e28434c4439a,
     type: 3}
   GO_healthBarAnchor: {fileID: 6916193627796214034}
   F_bulletSpeed: 7
@@ -769,6 +769,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -5225633651689060130, guid: da4f01233a01f42faaeb91172463ec76,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2449cdc70a0204eff89ddf1d7b6920bd, type: 2}
     - target: {fileID: -4216859302048453862, guid: da4f01233a01f42faaeb91172463ec76,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,11 +834,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b071dea4b3420534c96765042189a1ba, type: 2}
-    - target: {fileID: -5225633651689060130, guid: da4f01233a01f42faaeb91172463ec76,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2449cdc70a0204eff89ddf1d7b6920bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4f01233a01f42faaeb91172463ec76, type: 3}
 --- !u!4 &7660782217965192582 stripped
