@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int I_maxHealth = 100;
     Rigidbody rb;
     public float F_DefaultWalkSpeed = 5;
-    bool b_canDash = true, b_controllerActive = true;
+    bool b_canDash = true, b_controllerActive = true, b_canShoot = true;
     public float F_WalkSpeed = 5;
     public float F_DashSpeed = 10;
     public float F_DashTime = 0.3f;
@@ -88,9 +88,10 @@ public class PlayerController : MonoBehaviour
 
     void CheckForShot()//On input, shoot.
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetMouseButtonDown(0)) //Was 5 PS4
+        if ((Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetMouseButtonDown(0)) && b_canShoot) //Was 5 PS4
         {
             Shoot();
+            StartCoroutine(IEnum_ShootRecovery());
         }
     }
 
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             _prtcl.Play();
         }
+
     }
 
     void CheckDash(float _motionX, float _motionY)//Check Dash input.
@@ -271,5 +273,12 @@ public class PlayerController : MonoBehaviour
     public void TempDisableController(float _disableTime)
     {
         StartCoroutine(IEnum_TempDisableController(_disableTime));
+    }
+
+    IEnumerator IEnum_ShootRecovery()
+    {
+        b_canShoot = false;
+        yield return new WaitForSeconds(0.5f);
+        b_canShoot = true;
     }
 }
