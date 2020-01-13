@@ -5,11 +5,12 @@ using UnityEditor;
 
 public class PlasmaBulletRayDetect : MonoBehaviour
 {
-    PlasmaBullet PlasBull_ParentBullet;
-
+    PlasmaBullet plasBull_parentBullet;
+    GruntBullet gruntBullet_parentBullet;
     private void Start()
     {
-        PlasBull_ParentBullet = GetComponentInParent<PlasmaBullet>();
+        plasBull_parentBullet = GetComponentInParent<PlasmaBullet>();
+        gruntBullet_parentBullet = GetComponent<GruntBullet>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +36,8 @@ public class PlasmaBulletRayDetect : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
@@ -52,6 +54,8 @@ public class PlasmaBulletRayDetect : MonoBehaviour
 
     void SetPlasBullRot(Vector3 _dir)
     {
-        PlasBull_ParentBullet.V3_Dir = _dir;
+        if (plasBull_parentBullet) plasBull_parentBullet.V3_Dir = _dir;
+
+        else if (gruntBullet_parentBullet) gruntBullet_parentBullet.V3_Dir = _dir;
     }
 }
