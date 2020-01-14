@@ -128,7 +128,7 @@ public class Timboi : MonoBehaviour
         transform.LookAt(playcont_player.transform);
         StopAllCoroutines();
         navMesAg_agent.SetDestination(transform.position);
-        StartCoroutine(Enum_Slash(_attackDelay));
+        StartCoroutine(Enum_SlashPlayer(_attackDelay));
     }
 
     public void SlashBullet()
@@ -136,10 +136,10 @@ public class Timboi : MonoBehaviour
         transform.LookAt(playcont_player.transform);
         StopAllCoroutines();
         navMesAg_agent.SetDestination(transform.position);
-        StartCoroutine(Enum_Slash(0));
+        StartCoroutine(Enum_SlashBullet(0));
     }
 
-    IEnumerator Enum_Slash(float _attackDelay)
+    IEnumerator Enum_SlashPlayer(float _attackDelay)
     {
         b_lookAtPlayer = false;
         navMesAg_agent.isStopped = true;
@@ -147,15 +147,45 @@ public class Timboi : MonoBehaviour
 
         yield return new WaitForSeconds(_attackDelay);
 
+
+
         SetAnimTrigger("Attack");
         InstantiateParticles(ParticleSpawn_slash);
-
         foreach (GameObject _go in GO_tempArray)
         {
             _go.SetActive(true);
         }
+        yield return new WaitForSeconds(F_recoverTime / 3);
+        
+        SetAnimTrigger("Attack");
+        InstantiateParticles(ParticleSpawn_slash);
+        yield return new WaitForSeconds(F_recoverTime / 3);
+        
+        SetAnimTrigger("Attack");
+        InstantiateParticles(ParticleSpawn_slash);
+        yield return new WaitForSeconds(F_recoverTime / 3);
 
-        yield return new WaitForSeconds(F_recoverTime);
+        Recover();
+        StartCoroutine(Enum_MoveToZonePoint());
+    }
+
+        IEnumerator Enum_SlashBullet(float _attackDelay)
+    {
+        b_lookAtPlayer = false;
+        navMesAg_agent.isStopped = true;
+        SetAnimTrigger("Charge");
+
+        yield return new WaitForSeconds(_attackDelay);
+
+
+
+        SetAnimTrigger("Attack");
+        InstantiateParticles(ParticleSpawn_slash);
+        foreach (GameObject _go in GO_tempArray)
+        {
+            _go.SetActive(true);
+        }
+        yield return new WaitForSeconds(F_recoverTime / 3);
 
         Recover();
         StartCoroutine(Enum_MoveToZonePoint());
