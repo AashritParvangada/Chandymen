@@ -19,6 +19,7 @@ public class Timboi : MonoBehaviour
     public bool B_AttackOnDialogue = true;
     [SerializeField] GameObject[] GO_tempArray;
     public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
+    bool b_thresehold2Reached = false;
     [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit, ParticleSpawn_die;
     [SerializeField] GameObject GO_healthBarAnchor;
 
@@ -244,7 +245,9 @@ public class Timboi : MonoBehaviour
 
         if (I_health <= F_thresehold2)
         {
-            SpwnMan_OnTimboiHealth.IncreaseMaxSimultaneousEnemies(1);
+            //if (!b_thresehold2Reached) SpwnMan_OnTimboiHealth.IncreaseMaxSimultaneousEnemies(1);
+            FindObjectOfType<ReflectorManager>().SwitchReflectorMaterials();
+            b_thresehold2Reached = true;
         }
 
         if (I_health <= 0)

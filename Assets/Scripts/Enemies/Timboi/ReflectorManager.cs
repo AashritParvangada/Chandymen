@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class ReflectorManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] GO_reflectors;
-    Dictionary<int, Material> dic_reflectorMaterials = new Dictionary<int, Material>();
-    // Start is called before the first frame update
-    void Start()
+    List<StaticReflector> BossReflectors = new List<StaticReflector>();
+    [SerializeField] float _switchTime;
+    private void Start()
     {
-
+        GetBossReflectors();
+        ToggleReflectors(false);
     }
 
-    void GetReflectorPositions()
+    void GetBossReflectors()
     {
-        foreach (GameObject _reflector in GO_reflectors)
+        foreach (StaticReflector _refl in FindObjectsOfType<StaticReflector>())
         {
-
+            if (_refl.B_isBossBattle)
+                BossReflectors.Add(_refl);
         }
+    }
+    void ToggleReflectors(bool _On)
+    {
+        foreach (StaticReflector _statRef in BossReflectors)
+        {
+            _statRef.GetComponentInChildren<BoxCollider>().enabled = _On;
+        }
+    }
+
+    public void SwitchReflectorMaterials()
+    {
+        foreach (StaticReflector _statRefl in BossReflectors)
+        {
+            _statRefl.SwitchMaterials(_switchTime);
+        }
+        ToggleReflectors(true);
     }
 
 }

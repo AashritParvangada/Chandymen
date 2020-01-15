@@ -13,7 +13,7 @@ public class GruntBullet : MonoBehaviour
     private void Start()
     {
         GetVariables();
-        Destroy(gameObject, 10);//Bullet only lasts for x seconds.
+        Destroy(gameObject, 7);//Bullet only lasts for x seconds.
     }
 
     void GetVariables()

@@ -151,7 +151,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.33, y: 1.52, z: 1.27}
+  m_Size: {x: 2, y: 1.52, z: 1.27}
   m_Center: {x: 0, y: 0.88, z: 0.8}
 --- !u!114 &4583931684742033529
 MonoBehaviour:
@@ -388,8 +388,8 @@ MonoBehaviour:
   I_health: 400
   I_damage: 20
   I_totalHealth: 400
-  F_minAttackTime: 0.2
-  F_maxAttackTime: 0.2
+  F_minAttackTime: 0.3
+  F_maxAttackTime: 0.3
   F_minMovementCheckTime: 1
   F_maxMovementCheckTime: 1
   F_recoverTime: 1.5
@@ -548,7 +548,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 2, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &892054438005334411
 PrefabInstance:
