@@ -156,11 +156,11 @@ public class Timboi : MonoBehaviour
             _go.SetActive(true);
         }
         yield return new WaitForSeconds(F_recoverTime / 3);
-        
+
         SetAnimTrigger("Attack");
         InstantiateParticles(ParticleSpawn_slash);
         yield return new WaitForSeconds(F_recoverTime / 3);
-        
+
         SetAnimTrigger("Attack");
         InstantiateParticles(ParticleSpawn_slash);
         yield return new WaitForSeconds(F_recoverTime / 3);
@@ -169,7 +169,7 @@ public class Timboi : MonoBehaviour
         StartCoroutine(Enum_MoveToZonePoint());
     }
 
-        IEnumerator Enum_SlashBullet(float _attackDelay)
+    IEnumerator Enum_SlashBullet(float _attackDelay)
     {
         b_lookAtPlayer = false;
         navMesAg_agent.isStopped = true;
@@ -240,6 +240,11 @@ public class Timboi : MonoBehaviour
         if (I_health <= F_thresehold1)
         {
             SpwnMan_OnTimboiHealth.Activate();
+        }
+
+        if (I_health <= F_thresehold2)
+        {
+            SpwnMan_OnTimboiHealth.IncreaseMaxSimultaneousEnemies(1);
         }
 
         if (I_health <= 0)

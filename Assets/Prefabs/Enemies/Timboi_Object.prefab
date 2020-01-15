@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   I_health: 400
-  I_damage: 30
+  I_damage: 20
   I_totalHealth: 400
   F_minAttackTime: 0.2
   F_maxAttackTime: 0.2

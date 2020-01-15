@@ -149,7 +149,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        return _audClpsList[Random.Range(0, _audClpsList.Count - 1)];
+        return _audClpsList[Random.Range(0, _audClpsList.Count)];
 
     }
 

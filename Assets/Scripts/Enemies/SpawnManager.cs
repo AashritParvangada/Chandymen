@@ -112,8 +112,6 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy(int _totalEnemies)//Spawn enemies until total enemies = max simultaneous, but not if there's only a few enemies left until goal.
     {
-        Debug.Log(_totalEnemies + "is less than " + I_maxSimultanEnemies);
-        Debug.Log(i_enemiesSpawned + "is less than " + I_totalEnemiesToKill);
 
         while (_totalEnemies < I_maxSimultanEnemies && i_enemiesSpawned < I_totalEnemiesToKill)
         {
@@ -152,6 +150,11 @@ public class SpawnManager : MonoBehaviour
         if (i_enemiesKilled >= I_killedThresehold_1) I_maxSimultanEnemies = 2;
         if (i_enemiesKilled >= I_killedThresehold_2) I_maxSimultanEnemies++;
         if (i_enemiesKilled >= I_killedThresehold_3) I_maxSimultanEnemies++;
+    }
+
+    public void IncreaseMaxSimultaneousEnemies(int _increaseBy)
+    {
+        I_maxSimultanEnemies++;
     }
 
 }
