@@ -44,7 +44,7 @@ public class StaticReflector : MonoBehaviour
     {
         SetForceFieldMaterial();
 
-        float _newClipSrength = 0;
+        float _newClipSrength = 1;
         float elapsedTime = 0;
 
         Material[] materials = SknMsh_plasma.materials;
@@ -53,7 +53,7 @@ public class StaticReflector : MonoBehaviour
 
         MshRn_frame.materials[0].SetFloat("Vector1_B15186D7", 1);
 
-        float startingClippingSrength = 1;
+        float startingClippingSrength = 0;
 
         while (elapsedTime < _time)
         {
