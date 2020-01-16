@@ -12,7 +12,8 @@ public class ReactivatedBot : MonoBehaviour
     public bool B_AttackOnStart, B_ActivateOnDialogue;
     EventManager evMan_eventManager;
     PlayerController plCont_playa;
-
+    Animator animator;
+    [SerializeField] ParticleSpawner ParticleSpawner_death;
     private void OnEnable()
     {
         EventManager.OnDialogueComplete += DialogueEventEnded;
@@ -40,7 +41,7 @@ public class ReactivatedBot : MonoBehaviour
     void GetVariables()
     {
         i_currentHealth = I_totalHealth;
-
+        animator = GetComponentInChildren<Animator>();
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
         plCont_playa = FindObjectOfType<PlayerController>();
@@ -85,8 +86,26 @@ public class ReactivatedBot : MonoBehaviour
 
         if (i_currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        AnimTrigger("Die");
+        InstantiateParticles(ParticleSpawner_death);
+        FindObjectOfType<GameCamera>().CamShake();
+        Destroy(gameObject, 0.2f);
+    }
+    void InstantiateParticles(ParticleSpawner _prtclSpawn)
+    {
+        ParticleSpawner prtclSpawn = Instantiate(_prtclSpawn, transform);
+        prtclSpawn.GetVariables();
+        prtclSpawn.Activate();
+    }
+    public void AnimTrigger(string _trigger)
+    {
+        animator.SetTrigger(_trigger);
     }
 
     private void OnDestroy()//Event manager destroy event.
