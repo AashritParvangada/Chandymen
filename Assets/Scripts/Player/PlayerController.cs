@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     void Shoot()//Shoot from gun script.
     {
         anmtr_anim.SetTrigger("Shot");
-        PlaySound("SFX_Jai_Jgun_2x");
+        PlaySound("SFX_Jai_Jgun_2x");//Overly complicated process.
         gun_playerGun.ShootProjectile(gun_playerGun.transform);
 
         foreach (ParticleSystem _prtcl in Go_muzzleShot.GetComponentsInChildren<ParticleSystem>())
@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
         directionCalc.transform.SetParent(null);
 
         //Jai starts dashing before the anim.
+        PlaySound("SFX_Jai_Dash_2x");
         b_canDash = false;
         F_WalkSpeed = F_DashSpeed;
         B_AboveAcid = true;

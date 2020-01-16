@@ -10,7 +10,7 @@ public class PlasmaBulletRayDetect : MonoBehaviour
     private void Start()
     {
         plasBull_parentBullet = GetComponentInParent<PlasmaBullet>();
-        gruntBullet_parentBullet = GetComponent<GruntBullet>();
+        gruntBullet_parentBullet = GetComponentInParent<GruntBullet>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,7 +55,6 @@ public class PlasmaBulletRayDetect : MonoBehaviour
     void SetPlasBullRot(Vector3 _dir)
     {
         if (plasBull_parentBullet) plasBull_parentBullet.V3_Dir = _dir;
-
         else if (gruntBullet_parentBullet) gruntBullet_parentBullet.V3_Dir = _dir;
     }
 }
