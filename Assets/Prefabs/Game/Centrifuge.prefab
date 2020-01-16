@@ -610,16 +610,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Centrifuge Model
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: d697f716568aa4aba9161d3a337f8b11,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 217136156249f01459d204828bf45ebc, type: 2}
-    - target: {fileID: -5310467527759763092, guid: d697f716568aa4aba9161d3a337f8b11,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8231ba49ac2b74b3f8eee2d62f366d75, type: 2}
     - target: {fileID: -4216859302048453862, guid: d697f716568aa4aba9161d3a337f8b11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -690,6 +680,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d697f716568aa4aba9161d3a337f8b11,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 217136156249f01459d204828bf45ebc, type: 2}
+    - target: {fileID: -5310467527759763092, guid: d697f716568aa4aba9161d3a337f8b11,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8231ba49ac2b74b3f8eee2d62f366d75, type: 2}
     - target: {fileID: -1504249654422204816, guid: d697f716568aa4aba9161d3a337f8b11,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -789,6 +789,28 @@ PrefabInstance:
         type: 3}
       propertyPath: Go_panel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 117083300548086288, guid: e8e0390cdc2057740a890859e7735d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab915446341af4a96a4e8efaf665452d,
+        type: 3}
+    - target: {fileID: 117083300548086288, guid: e8e0390cdc2057740a890859e7735d41,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724783406752684587, guid: e8e0390cdc2057740a890859e7735d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 50ad5d3b351924ad3b890fe722e9a97e,
+        type: 3}
+    - target: {fileID: 1724783406752684587, guid: e8e0390cdc2057740a890859e7735d41,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e0390cdc2057740a890859e7735d41, type: 3}
