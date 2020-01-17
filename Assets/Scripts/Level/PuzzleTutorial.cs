@@ -27,7 +27,7 @@ public class PuzzleTutorial : MonoBehaviour
             SetXButtonActive(false);
         }
     }
-    void GetVariables()
+    void Start()
     {
         SetXButtonActive(false);
     }

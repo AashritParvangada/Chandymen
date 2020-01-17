@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text Txt_NameText;
     public Text Txt_SentenceText;
     PlayerController plCont_playa;
-    public Animator Anim_DialogBox, Anim_Name, Anim_Sentence;
+    public Animator Anim_DialogBox, Anim_Name, Anim_Sentence, Anim_DBButton;
     public GameObject[] GO_Arr_Characters;
     GameObject go_playerHealth;
     bool b_textAvailable = true, b_active = false;
@@ -109,6 +109,7 @@ public class DialogueManager : MonoBehaviour
         if (_name == "Jai")
         {
             Anim_DialogBox.SetTrigger("Open_Left");
+            Anim_DBButton.SetTrigger("Right");
 
             Anim_Name.SetTrigger("Place_Left");
             Anim_Name.GetComponentInParent<Text>().alignment = TextAnchor.UpperLeft;
@@ -120,6 +121,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Anim_DialogBox.SetTrigger("Open_Right");
+            Anim_DBButton.SetTrigger("Left");
 
             Anim_Name.SetTrigger("Place_Right");
             Anim_Name.GetComponentInParent<Text>().alignment = TextAnchor.UpperRight;
@@ -157,6 +159,8 @@ public class DialogueManager : MonoBehaviour
     {
         EnableOrDisableCont(true);
         Anim_DialogBox.SetTrigger("Close");
+        Anim_DBButton.SetTrigger("Close");
+
         foreach (GameObject _GO in GO_Arr_Characters)
         {
             _GO.SetActive(false);

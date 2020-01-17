@@ -789,7 +789,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Go_panel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7879574065209533669}
     - target: {fileID: 117083300548086288, guid: e8e0390cdc2057740a890859e7735d41,
         type: 3}
       propertyPath: m_Sprite
@@ -817,6 +817,12 @@ PrefabInstance:
 --- !u!4 &6975254561165959812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5695454880960591361, guid: e8e0390cdc2057740a890859e7735d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 3442798612677121157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7879574065209533669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4800443327027753056, guid: e8e0390cdc2057740a890859e7735d41,
     type: 3}
   m_PrefabInstance: {fileID: 3442798612677121157}
   m_PrefabAsset: {fileID: 0}
