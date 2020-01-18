@@ -222,14 +222,6 @@ public class PlayerController : MonoBehaviour
         Txt_tempHealthIndicator.text = I_health.ToString();
     }
 
-    public void AddHealthFromPotion(int _amountToAdd, HealthPotion _HP)
-    {
-        if (I_health < I_maxHealth)
-        {
-            ChangeHealth(_amountToAdd);
-            Destroy(_HP.gameObject);
-        }
-    }
 
     void PlaySound(string _soundName)
     {
