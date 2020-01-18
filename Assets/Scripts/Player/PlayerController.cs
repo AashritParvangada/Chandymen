@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         GetVariables();
         SwitchDashParticles(false);
+        StartCoroutine(IEnum_HealthRegen());
     }
 
     // Update is called once per frame
@@ -193,25 +194,25 @@ public class PlayerController : MonoBehaviour
         if (I_health >= I_maxHealth)
         {
             I_health = I_maxHealth;
-            HlthBr_Script.SwitchRightCap(true);
+            if (HlthBr_Script.gameObject.activeInHierarchy == true) HlthBr_Script.SwitchRightCap(true);
         }
         else
         {
-            HlthBr_Script.SwitchRightCap(false);
+            if (HlthBr_Script.gameObject.activeInHierarchy == true) HlthBr_Script.SwitchRightCap(false);
         }
 
         if (I_health <= 0)
         {
             I_health = 0;
-            HlthBr_Script.SwitchLeftCap(false);
+            if (HlthBr_Script.gameObject.activeInHierarchy == true) HlthBr_Script.SwitchLeftCap(false);
         }
         else
         {
-            HlthBr_Script.SwitchLeftCap(true);
+            if (HlthBr_Script.gameObject.activeInHierarchy == true) HlthBr_Script.SwitchLeftCap(true);
         }
 
-        HlthBr_Script.ScalePurpleBar((float)I_health / I_maxHealth);
-        HlthBr_Script.ScaleYellowBar((float)I_health / I_maxHealth);
+        if (HlthBr_Script.gameObject.activeInHierarchy == true) HlthBr_Script.ScalePurpleBar((float)I_health / I_maxHealth);
+        if (HlthBr_Script.gameObject.activeInHierarchy == true) HlthBr_Script.ScaleYellowBar((float)I_health / I_maxHealth);
 
         if (I_health <= 0)
         {
@@ -273,5 +274,12 @@ public class PlayerController : MonoBehaviour
         b_canShoot = false;
         yield return new WaitForSeconds(0.5f);
         b_canShoot = true;
+    }
+
+    IEnumerator IEnum_HealthRegen()
+    {
+        yield return new WaitForSeconds(1);
+        ChangeHealth(1);
+        StartCoroutine(IEnum_HealthRegen());
     }
 }

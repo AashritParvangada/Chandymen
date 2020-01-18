@@ -115,7 +115,6 @@ public class SpawnManager : MonoBehaviour
 
         while (_totalEnemies < I_maxSimultanEnemies && i_enemiesSpawned < I_totalEnemiesToKill)
         {
-            Debug.Log("Instantiating");
             RandomlyInstantiate();
             _totalEnemies++;
         }
