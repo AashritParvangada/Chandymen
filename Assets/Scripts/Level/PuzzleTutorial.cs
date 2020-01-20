@@ -5,7 +5,7 @@ using UnityEngine;
 public class PuzzleTutorial : MonoBehaviour
 {
     [SerializeField] GameObject Go_panel, Go_xButtonActive, Go_xButtonInactive;
-
+    Controls ctrl_ControlPanel;
     bool b_canInteract = false, b_timeLock = false;
     bool b_panelActive = false;
 
@@ -25,11 +25,18 @@ public class PuzzleTutorial : MonoBehaviour
             b_canInteract = false;
             Go_panel.SetActive(false);
             SetXButtonActive(false);
+            ctrl_ControlPanel.gameObject.SetActive(true);
         }
     }
     void Start()
     {
+        GetVariables();
         SetXButtonActive(false);
+    }
+
+    void GetVariables()
+    {
+        ctrl_ControlPanel = FindObjectOfType<Controls>();
     }
     private void Update()
     {
@@ -53,15 +60,24 @@ public class PuzzleTutorial : MonoBehaviour
 
     void SetPanelActive(bool _active)
     {
-        StartCoroutine(IEnum_InteractCooldown());
-        Go_panel.SetActive(_active);
-        b_panelActive = _active;
+        if (!GetControlsActiveState())
+        {
+            ctrl_ControlPanel.gameObject.SetActive(!_active);
+            StartCoroutine(IEnum_InteractCooldown());
+            Go_panel.SetActive(_active);
+            b_panelActive = _active;
+        }
+    }
+
+    bool GetControlsActiveState()
+    {
+        return ctrl_ControlPanel.IsPanelOn();
     }
 
     IEnumerator IEnum_InteractCooldown()
     {
         b_timeLock = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         b_timeLock = false;
     }
 

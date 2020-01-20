@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     public bool B_IsEndCredits = false;
     [SerializeField] AudioClip[] AudClp_CharacterVoices; AudioSource audioSource;
     [SerializeField] GameObject Go_TimboiDeathDialogue;
-
+    Controls ctrl_Controls;
     private void OnEnable()
     {
         EventManager.OnTimboiHealthDepleted += ActivateTimboiDeathDialogue;
@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         plCont_playa = FindObjectOfType<PlayerController>();
         audioSource = GetComponent<AudioSource>();
         go_playerHealth = FindObjectOfType<HealthBar>().gameObject;
+        ctrl_Controls = FindObjectOfType<Controls>();
     }
 
     public void StartDialogue(Dialogue _dialogue, DialogueTrigger _dtrig)
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
         dTrig_shutDownOnEnd = _dtrig;
         b_active = true;
         Txt_NameText.enabled = true; Txt_SentenceText.enabled = true;
+        ctrl_Controls.gameObject.SetActive(false);
         go_playerHealth.SetActive(false);
         EnableOrDisableCont(false);
         ClearQueues();
@@ -169,6 +171,7 @@ public class DialogueManager : MonoBehaviour
         Txt_NameText.enabled = false; Txt_SentenceText.enabled = false;
         go_playerHealth.SetActive(true);
         FindObjectOfType<EventManager>().FinishDialogueEvent();
+        ctrl_Controls.gameObject.SetActive(true);
 
         if (B_IsEndCredits) FindObjectOfType<EventManager>().EndCreditTriggerEvent();
     }
