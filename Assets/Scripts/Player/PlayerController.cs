@@ -89,10 +89,15 @@ public class PlayerController : MonoBehaviour
 
     void CheckForShot()//On input, shoot.
     {
-        if ((Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetMouseButtonDown(0)) && b_canShoot) //Was 5 PS4
+        if (Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetMouseButtonDown(0)) //Was 5 PS4
         {
-            Shoot();
-            StartCoroutine(IEnum_ShootRecovery());
+            if (b_canShoot)
+            {
+                Shoot();
+                StartCoroutine(IEnum_ShootRecovery());
+            }
+
+            else PlaySound("SFX_Jai_GunCock_01");
         }
     }
 
