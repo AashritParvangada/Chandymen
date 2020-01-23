@@ -113,7 +113,11 @@ public class Scene_Manager : MonoBehaviour
 
     void Fade(bool _toBlack)
     {
-        if (_toBlack) anim_fadeScreen.SetTrigger("FadeBlack");
+        if (_toBlack) 
+        {
+            anim_fadeScreen.SetTrigger("FadeBlack");
+            anim_fadeScreen.GetComponentInParent<Canvas>().sortingOrder=999;
+        }
         else anim_fadeScreen.SetTrigger("FadeIn");
     }
 
