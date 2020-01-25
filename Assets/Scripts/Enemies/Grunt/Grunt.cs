@@ -209,6 +209,7 @@ public class Grunt : MonoBehaviour
         {
             i_currentHealth -= _Damage;
             InstantiateParticles(ParticleSpawner_hit);
+            PlaySound("SFX_Grunt_Damage_01");
             GO_healthBarAnchor.transform.localScale = new Vector3((float)i_currentHealth / I_totalHealth, 1, 1);
 
             if (i_currentHealth <= 0)

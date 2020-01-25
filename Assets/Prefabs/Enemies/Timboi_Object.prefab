@@ -304,6 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   I_damage: 40
+  AudClp_shock: {fileID: 8300000, guid: 21fd4711f5206424eb286409488e0026, type: 3}
+  AudClp_absorb: {fileID: 8300000, guid: e60a1e5090abbe1449f917350aea2bab, type: 3}
 --- !u!54 &8544761518043804958
 Rigidbody:
   m_ObjectHideFlags: 0
