@@ -5,6 +5,9 @@ using UnityEngine;
 public class PoliceShield : MonoBehaviour
 {
     [SerializeField] int I_damage = 40;
+
+    [SerializeField] AudioClip AudClp_shock, AudClp_absorb;
+    AudioSource audioSource;
     //Destroy bullets that hit the shield, but damage the player who hits it.
     private void OnTriggerEnter(Collider other)
     {
@@ -13,11 +16,16 @@ public class PoliceShield : MonoBehaviour
         CheckPlayerGun(other);
     }
 
+    private void Start() {
+        GetVariables();
+    }
+
     void CheckPlasmaBullet(Collider other)
     {
         if (other.GetComponent<PlasmaBullet>())
         {
             Destroy(other.gameObject);
+            PlaySound(AudClp_absorb);
         }
     }
 
@@ -25,6 +33,7 @@ public class PoliceShield : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
+            PlaySound(AudClp_shock);
             ShockPlayer(other.GetComponent<PlayerController>());
         }
     }
@@ -43,5 +52,17 @@ public class PoliceShield : MonoBehaviour
         {
             ShockPlayer(other.GetComponentInParent<PlayerController>());
         }
+    }
+
+    void GetVariables()
+    {
+        audioSource = GetComponentInParent<AudioSource>();
+    }
+
+
+    public void PlaySound(AudioClip _clip)
+    {
+        audioSource.clip = _clip;
+        audioSource.Play();
     }
 }

@@ -17,8 +17,8 @@ public class PoliceBot : MonoBehaviour
     Animator animator;
     PlayerController playCont_Controller;
     [SerializeField] ParticleSpawner ParticleSpawner_death, ParticleSpawner_hit;
-    [SerializeField] AudioClip AudClp_screech, AudClp_siren, AudClp_shock, AudClp_absorb;
-
+    [SerializeField] AudioClip AudClp_screech, AudClp_siren;
+    AudioSource audioSource;
     private void OnEnable()
     {
         EventManager.OnDialogueComplete += DialogueEventEnded;
@@ -46,6 +46,7 @@ public class PoliceBot : MonoBehaviour
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void CheckAttackOnStart()
@@ -64,6 +65,8 @@ public class PoliceBot : MonoBehaviour
     IEnumerator IEnum_ChargeTowardsPlayer(PlayerController _target)//Loops with Set Target
     {
         AnimTrigger("Dash");
+
+        PlaySound(AudClp_siren);
 
         StopAllParticles();
         foreach (ParticleSystem _prtcl in GO_dashParticle.GetComponentsInChildren<ParticleSystem>()) _prtcl.Play();
@@ -146,6 +149,8 @@ public class PoliceBot : MonoBehaviour
     {
         AnimTrigger("Charge");
 
+        PlaySound(AudClp_screech);
+
         float _countingDownTime = _timer;
         foreach (ParticleSystem _prtcl in GO_chargeParticle.GetComponentsInChildren<ParticleSystem>()) _prtcl.Play();
 
@@ -170,5 +175,11 @@ public class PoliceBot : MonoBehaviour
     void StopAllParticles()
     {
         foreach (ParticleSystem _prtcl in GetComponentsInChildren<ParticleSystem>()) _prtcl.Stop();
+    }
+
+    public void PlaySound(AudioClip _clip)
+    {
+        audioSource.clip = _clip;
+        audioSource.Play();
     }
 }
