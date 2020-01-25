@@ -17,6 +17,7 @@ public class PoliceBot : MonoBehaviour
     Animator animator;
     PlayerController playCont_Controller;
     [SerializeField] ParticleSpawner ParticleSpawner_death, ParticleSpawner_hit;
+    [SerializeField] AudioClip AudClp_screech, AudClp_siren, AudClp_shock, AudClp_absorb;
 
     private void OnEnable()
     {
