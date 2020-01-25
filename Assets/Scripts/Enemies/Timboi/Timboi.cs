@@ -20,7 +20,7 @@ public class Timboi : MonoBehaviour
     [SerializeField] GameObject[] GO_tempArray;
     public SpawnManager SpwnMan_OnTimboiHealth;[SerializeField] float F_thresehold1 = 350, F_thresehold2 = 200;
     bool b_thresehold2Reached = false;
-    [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit, ParticleSpawn_die;
+    [SerializeField] ParticleSpawner ParticleSpawn_slash, ParticleSpawn_hit, ParticleSpawn_die, ParticleSpawn_hit02;
     [SerializeField] GameObject GO_healthBarAnchor;
 
     private void Start()//Get variables.
@@ -235,6 +235,7 @@ public class Timboi : MonoBehaviour
         StartCoroutine(Enum_MoveToZonePoint());
 
         InstantiateParticles(ParticleSpawn_hit);
+        InstantiateParticles(ParticleSpawn_hit02);
         I_health -= _Damage;
         GO_healthBarAnchor.transform.localScale = new Vector3((float)I_health / I_totalHealth, 1, 1);
 
@@ -278,7 +279,6 @@ public class Timboi : MonoBehaviour
         if (other.GetComponent<PlasmaBullet>())
         {
             DamageHealth(50);
-            Debug.Log(I_health);
         }
     }
 
