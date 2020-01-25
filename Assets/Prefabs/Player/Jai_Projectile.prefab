@@ -10007,7 +10007,7 @@ MonoBehaviour:
   F_MaxStepDistance: 200
   F_bulletDamage: 50
   I_BulletCharge: 0
-  F_bulletDestroyTime: 10
+  F_bulletDestroyTime: 7
   V3_Dir: {x: 0, y: 0, z: 0}
   AudClp_ReflectorBump: {fileID: 8300000, guid: 6fd66a1081a4c4ff4a0465f0a19ef012,
     type: 3}
