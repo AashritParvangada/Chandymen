@@ -25,6 +25,7 @@ public class PoliceShield : MonoBehaviour
         if (other.GetComponent<PlasmaBullet>())
         {
             Destroy(other.gameObject);
+            other.GetComponent<PlasmaBullet>().WallParticles();
             PlaySound(AudClp_absorb);
         }
     }

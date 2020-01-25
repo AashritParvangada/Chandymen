@@ -16,7 +16,7 @@ public class PlasmaBullet : MonoBehaviour
     private void Start()
     {
         rb_rb = GetComponent<Rigidbody>();
-        StartCoroutine(DestroyBullet());
+        StartCoroutine(IEnum_DestroyBullet());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,7 +42,7 @@ public class PlasmaBullet : MonoBehaviour
         I_BulletCharge++;
     }
 
-    IEnumerator DestroyBullet()
+    IEnumerator IEnum_DestroyBullet()
     {
         yield return new WaitForSeconds(F_bulletDestroyTime);
         Destroy(gameObject);
@@ -66,6 +66,11 @@ public class PlasmaBullet : MonoBehaviour
             InstantiateParticles(ParticleSpawner_wallHit);
             Destroy(gameObject);
         }
+    }
+
+    public void WallParticles()
+    {
+        InstantiateParticles(ParticleSpawner_wallHit);
     }
 
     void InstantiateParticles(ParticleSpawner _prtclSpawn)

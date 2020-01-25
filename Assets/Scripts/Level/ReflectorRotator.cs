@@ -8,7 +8,7 @@ public class ReflectorRotator : MonoBehaviour
     bool b_openToRotate = false;
     bool b_timeLocked = false;
     [SerializeField] bool B_isHorizontal;
-    [SerializeField] float F_time = 0.5f;
+    [SerializeField] float F_time;
     [SerializeField] float F_angleOne = 45, F_angleTwo = 135;
     [SerializeField] GameObject Go_xButton;
     AudioSource source;
@@ -66,7 +66,7 @@ public class ReflectorRotator : MonoBehaviour
             b_rotating = true;
             f_rotTime = 0;
             StartCoroutine(CloseToRotateForTime(F_time));
-            PlayClip(0.7f);
+            PlayClip(1f);
         }
 
         if (b_rotating)

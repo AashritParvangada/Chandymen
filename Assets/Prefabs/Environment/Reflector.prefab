@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   B_isHorizontal: 0
-  F_time: 0.5
+  F_time: 1
   F_angleOne: 45
   F_angleTwo: 135
   Go_xButton: {fileID: 7750389853010231142}
@@ -242,7 +242,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4ccee593d5fbcb640862ca3a39abf8d7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9ba3554fd372d774ebb6b20ac7335d57, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
