@@ -637,6 +637,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5100004
       objectReference: {fileID: 0}
+    - target: {fileID: 7071763781788971931, guid: 86c0671806ac5426e8ba62e9e55facac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f143f562f2f274ef4b3a49f2b8aea107, type: 2}
     - target: {fileID: 1714814183563735654, guid: 86c0671806ac5426e8ba62e9e55facac,
         type: 3}
       propertyPath: m_Enabled
@@ -957,6 +962,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5100012
       objectReference: {fileID: 0}
+    - target: {fileID: 7071763781788971931, guid: 86c0671806ac5426e8ba62e9e55facac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f143f562f2f274ef4b3a49f2b8aea107, type: 2}
     - target: {fileID: 1714814183563735654, guid: 86c0671806ac5426e8ba62e9e55facac,
         type: 3}
       propertyPath: m_Enabled
@@ -1497,6 +1507,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5100004
       objectReference: {fileID: 0}
+    - target: {fileID: 7071763781788971931, guid: 86c0671806ac5426e8ba62e9e55facac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f143f562f2f274ef4b3a49f2b8aea107, type: 2}
     - target: {fileID: 1714814183563735654, guid: 86c0671806ac5426e8ba62e9e55facac,
         type: 3}
       propertyPath: m_Enabled
@@ -2037,6 +2052,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5100004
       objectReference: {fileID: 0}
+    - target: {fileID: 7071763781788971931, guid: 86c0671806ac5426e8ba62e9e55facac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f143f562f2f274ef4b3a49f2b8aea107, type: 2}
     - target: {fileID: 1714814183563735654, guid: 86c0671806ac5426e8ba62e9e55facac,
         type: 3}
       propertyPath: m_Enabled
