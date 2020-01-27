@@ -25,10 +25,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_13949F8E: 0.8
+    - Vector1_13949F8E: -2.01
     - Vector1_153F0352: 0.01
-    - Vector1_3BC1D147: 0.5
+    - Vector1_3BC1D147: 1.05
     - Vector1_9A36B12C: 5.15
     m_Colors:
-    - Color_75638B0E: {r: 0.003921569, g: 0.7490196, b: 0, a: 0}
+    - Color_75638B0E: {r: 0.0009803922, g: 0.094607845, b: 0, a: 0}
     - Color_FC600D61: {r: 0.24344923, g: 0, b: 2.670157, a: 0}
