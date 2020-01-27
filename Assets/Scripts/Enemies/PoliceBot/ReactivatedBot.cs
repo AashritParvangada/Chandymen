@@ -13,6 +13,7 @@ public class ReactivatedBot : MonoBehaviour
     EventManager evMan_eventManager;
     PlayerController plCont_playa;
     Animator animator;
+    AudioSource audioSource;
     [SerializeField] ParticleSpawner ParticleSpawner_death;
     private void OnEnable()
     {
@@ -45,6 +46,8 @@ public class ReactivatedBot : MonoBehaviour
         navMeshAg_agent = GetComponent<NavMeshAgent>();
         evMan_eventManager = FindObjectOfType<EventManager>();
         plCont_playa = FindObjectOfType<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     public void CheckAttackOnStart()
