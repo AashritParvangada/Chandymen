@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_PoliceBotShield
+  m_Name: mat_PoliceBotVisor_Blue
   m_Shader: {fileID: -6465566751694194690, guid: b4b4acdec9c084689a70f28c802a3626,
     type: 3}
   m_ShaderKeywords: 
@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_346B1C2A:
-        m_Texture: {fileID: 2800000, guid: 88b091a43ab6f4dfd802fc9c72fcc8fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 51bde87bbec19498790de727a0d1843d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_9DFAE8F6:
@@ -44,12 +44,12 @@ Material:
     - Vector1_4731A77C: -0.06
     - Vector1_764FED13: 2.76
     - Vector1_B15186D7: 0
-    - Vector1_CC2F5D11: 20.32
+    - Vector1_CC2F5D11: 5.84
     - _Vector1_B15186D7: 0
     m_Colors:
-    - Color_536CD3ED: {r: 11.984314, g: 3.3198051, b: 0, a: 0}
-    - Color_56B398E3: {r: 11.984314, g: 2.6352942, b: 0, a: 0}
-    - Color_AE0A0F1: {r: 0, g: 6.9890637, b: 8.502619, a: 0}
-    - Color_E00018E6: {r: 14.259475, g: 1.0068076, b: 0, a: 0}
-    - Vector2_B97CB43D: {r: 0.5, g: 5, b: 0, a: 0}
-    - Vector2_F1951898: {r: 1, g: 5, b: 0, a: 0}
+    - Color_536CD3ED: {r: 0, g: 2.2588236, b: 47.937256, a: 0}
+    - Color_56B398E3: {r: 0, g: 840.3547, b: 1023.9999, a: 0}
+    - Color_AE0A0F1: {r: 15.155363, g: 15.155363, b: 15.155363, a: 0}
+    - Color_E00018E6: {r: 0, g: 0, b: 1367.1202, a: 0}
+    - Vector2_B97CB43D: {r: 0.95, g: 0, b: 0, a: 0}
+    - Vector2_F1951898: {r: 0, g: -3.4, b: 0, a: 0}
