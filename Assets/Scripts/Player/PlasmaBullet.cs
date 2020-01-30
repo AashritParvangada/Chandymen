@@ -63,9 +63,14 @@ public class PlasmaBullet : MonoBehaviour
     {
         if (other.gameObject.layer == 11 || other.GetComponentInParent<ElectricDoor>())//Wall layer.
         {
-            InstantiateParticles(ParticleSpawner_wallHit);
-            Destroy(gameObject);
+            DestroyBullet();
         }
+    }
+
+    public void DestroyBullet()
+    {
+        InstantiateParticles(ParticleSpawner_wallHit);
+        Destroy(gameObject);
     }
 
     public void WallParticles()

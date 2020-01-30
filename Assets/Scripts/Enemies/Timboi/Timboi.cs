@@ -296,6 +296,9 @@ public class Timboi : MonoBehaviour
         {
             grunt.DamageHealth(1000);
         }
+
+        foreach (GruntBullet gruntBullet in FindObjectsOfType<GruntBullet>()) gruntBullet.DestroyBullet();
+        foreach (PlasmaBullet plasmaBullet in FindObjectsOfType<PlasmaBullet>()) plasmaBullet.DestroyBullet();
         ShutTimboiDown();
         evMan_eventManager.TimboiDeathEvent();
     }

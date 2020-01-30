@@ -33,8 +33,7 @@ public class GruntBullet : MonoBehaviour
     {
         if (other.gameObject.layer == 11 || other.GetComponentInParent<ElectricDoor>())//Wall layer.
         {
-            InstantiateParticles(ParticleSpawner_hit);
-            Destroy(gameObject);
+            DestroyBullet();
         }
     }
 
@@ -42,9 +41,8 @@ public class GruntBullet : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>())
         {
-            InstantiateParticles(ParticleSpawner_hit);
             other.GetComponent<PlayerController>().DamageHealth(I_damageCaused);
-            Destroy(gameObject);
+            DestroyBullet();
         }
     }
 
@@ -57,6 +55,12 @@ public class GruntBullet : MonoBehaviour
             GetComponent<AudioSource>().clip = (AudClp_ReflectorBump);
             GetComponent<AudioSource>().Play();
         }
+    }
+
+    public void DestroyBullet()
+    {
+        InstantiateParticles(ParticleSpawner_hit);
+        Destroy(gameObject);
     }
 
     void InstantiateParticles(ParticleSpawner _prtclSpawn)
