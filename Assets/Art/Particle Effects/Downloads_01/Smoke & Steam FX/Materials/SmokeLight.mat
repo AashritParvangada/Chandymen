@@ -22,9 +22,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: SmokeLight
   m_Shader: {fileID: 4800000, guid: b7839dad95683814aa64166edc107ae2, type: 3}
-  m_ShaderKeywords: _EMISSION _FADING_ON _FLIPBOOKBLENDING_ON _NORMALMAP _RECEIVE_SHADOWS_OFF
-    _SOFTPARTICLES_ON
-  m_LightmapFlags: 0
+  m_ShaderKeywords: _COLORADDSUBDIFF_ON _EMISSION _FLIPBOOKBLENDING_ON _RECEIVE_SHADOWS_OFF
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3050
@@ -41,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: ec0fffbfc1b9f9f4d82b1328a0fa87ab, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -88,7 +87,7 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
+    - _ColorMode: 1
     - _Cull: 2
     - _Cutoff: 0.083
     - _DetailNormalMapScale: 1
@@ -112,7 +111,7 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 1
+    - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 0.5
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
@@ -121,12 +120,12 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.30188674, g: 0.30188674, b: 0.30188674, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0.3018867, g: 0.3018867, b: 0.3018867, a: 0.4117647}
+    - _BaseColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
     - _EmisColor: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
-    - _SoftParticleFadeParams: {r: 0, g: 2, b: 0, a: 0}
+    - _EmissionColor: {r: 0.50002164, g: 0.28379607, b: 0.5315545, a: 1}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 0.5}
