@@ -143,6 +143,7 @@ MonoBehaviour:
   ElecDoor_door: {fileID: 0}
   AudClp_FugeFail: {fileID: 8300000, guid: 7ceaa857ef2194b808d29533967d9b7d, type: 3}
   AudClp_FugeOn: {fileID: 8300000, guid: 41ba8436fb4a8034a847d968098efc43, type: 3}
+  MshRndr_core: {fileID: 2500249718082547040}
   B_countFugeInEvent: 0
 --- !u!82 &5902195235048311699
 AudioSource:
@@ -700,6 +701,12 @@ PrefabInstance:
 --- !u!4 &5874227710283018006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: d697f716568aa4aba9161d3a337f8b11,
+    type: 3}
+  m_PrefabInstance: {fileID: 1513145927545996300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2500249718082547040 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5310467527759763092, guid: d697f716568aa4aba9161d3a337f8b11,
     type: 3}
   m_PrefabInstance: {fileID: 1513145927545996300}
   m_PrefabAsset: {fileID: 0}

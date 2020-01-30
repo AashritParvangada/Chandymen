@@ -11,6 +11,8 @@ public class Centrifuge : MonoBehaviour
     public AudioClip AudClp_FugeOn;
     Animator animator;
 
+    [SerializeField] MeshRenderer MshRndr_core;
+
     bool b_fugeActive = false;
     [SerializeField] bool B_countFugeInEvent = false;
 
@@ -43,6 +45,9 @@ public class Centrifuge : MonoBehaviour
             audioSource.clip = AudClp_FugeOn;
             audioSource.Play();
             animator.SetTrigger("Success");
+
+            MshRndr_core.material.SetFloat("Vector1_B931F91C", -3.5f);
+
 
             if (ElecDoor_door) ElecDoor_door.SwitchDoor(false);
 
