@@ -49,7 +49,9 @@ MonoBehaviour:
   Anim_DialogBox: {fileID: 0}
   Anim_Name: {fileID: 0}
   Anim_Sentence: {fileID: 0}
+  Anim_DBButton: {fileID: 0}
   GO_Arr_Characters: []
+  B_IsEndCredits: 0
   AudClp_CharacterVoices:
   - {fileID: 8300000, guid: 454309ff2987bc143807645ef38e45f7, type: 3}
   - {fileID: 8300000, guid: 27eb246644017e44f841c9ba5dccec27, type: 3}
@@ -61,9 +63,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b9f09272e1973fe42b5646d709c0da1d, type: 3}
   - {fileID: 8300000, guid: a4b8114c47813dc4383b49c57a86af15, type: 3}
   - {fileID: 8300000, guid: 2dcbf9c998f4d9143876899addf9efd3, type: 3}
-  - {fileID: 8300000, guid: f37dc5744ccf0a648a08e29e6102204c, type: 3}
+  - {fileID: 8300000, guid: 9dcba08618a9ce54b8ecf2c0c4999873, type: 3}
   - {fileID: 8300000, guid: a3f65510eeba5694ca54e97b685ea942, type: 3}
   - {fileID: 8300000, guid: 17d2bce7ee4f44f45ba58693b92a19ce, type: 3}
+  - {fileID: 8300000, guid: 45d8d2bc40c582447961759a56515463, type: 3}
+  - {fileID: 8300000, guid: 714b3e62298bcb8428f5133bb220abe3, type: 3}
+  - {fileID: 8300000, guid: 681b7654f9471964696c3dae6a07ccdc, type: 3}
+  Go_TimboiDeathDialogue: {fileID: 0}
 --- !u!82 &2203421500606477887
 AudioSource:
   m_ObjectHideFlags: 0
