@@ -128,14 +128,14 @@ public class Grunt : MonoBehaviour
         GameObject _bullet2 = Instantiate(GO_bullet, null);
         _bullet2.transform.position = Trans_gruntGun.position;
         _bullet2.transform.forward = transform.forward;
-        _bullet2.transform.eulerAngles = new Vector3(_bullet2.transform.eulerAngles.x, _bullet2.transform.eulerAngles.y + 10, 0);
+        _bullet2.transform.eulerAngles = new Vector3(_bullet2.transform.eulerAngles.x, _bullet2.transform.eulerAngles.y + 20, 0);
         _bullet2.GetComponent<Rigidbody>().velocity = _bullet2.transform.forward * F_bulletSpeed;
 
 
         GameObject _bullet3 = Instantiate(GO_bullet, null);
         _bullet3.transform.position = Trans_gruntGun.position;
         _bullet3.transform.forward = transform.forward;
-        _bullet3.transform.eulerAngles = new Vector3(_bullet3.transform.eulerAngles.x, _bullet3.transform.eulerAngles.y - 10, 0);
+        _bullet3.transform.eulerAngles = new Vector3(_bullet3.transform.eulerAngles.x, _bullet3.transform.eulerAngles.y - 20, 0);
         _bullet3.GetComponent<Rigidbody>().velocity = _bullet3.transform.forward * F_bulletSpeed;
 
     }
