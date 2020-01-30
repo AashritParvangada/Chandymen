@@ -5922,11 +5922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012832170722, guid: 96b2ec0239d11fa4b9792311efceb8ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00065129314
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012832170722, guid: 96b2ec0239d11fa4b9792311efceb8ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9115501
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4000012832170722, guid: 96b2ec0239d11fa4b9792311efceb8ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5994,7 +5994,7 @@ PrefabInstance:
     - target: {fileID: 198000012283690144, guid: 96b2ec0239d11fa4b9792311efceb8ed,
         type: 3}
       propertyPath: VelocityModule.z.scalar
-      value: 1.34
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 198000012283690144, guid: 96b2ec0239d11fa4b9792311efceb8ed,
         type: 3}
@@ -6009,7 +6009,7 @@ PrefabInstance:
     - target: {fileID: 198000012283690144, guid: 96b2ec0239d11fa4b9792311efceb8ed,
         type: 3}
       propertyPath: moveWithTransform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198000012283690144, guid: 96b2ec0239d11fa4b9792311efceb8ed,
         type: 3}
@@ -6030,6 +6030,16 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 46.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012283690144, guid: 96b2ec0239d11fa4b9792311efceb8ed,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012283690144, guid: 96b2ec0239d11fa4b9792311efceb8ed,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96b2ec0239d11fa4b9792311efceb8ed, type: 3}
