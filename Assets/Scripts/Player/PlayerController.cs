@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             anmtr_anim.SetFloat("Speed", rb.velocity.magnitude);
             motion += Vector3.up * -8;
             CheckForShot();
-            CheckDash(motion.x, motion.z);
+            CheckDash();
             CheckMousePoint();
         }
     }
@@ -114,14 +114,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void CheckDash(float _motionX, float _motionY)//Check Dash input.
+    void CheckDash()//Check Dash input.
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.Space)) //Was 4 PS4
+        if ((Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.Space))
+         && (rb.velocity.x * rb.velocity.x > 2 || rb.velocity.z * rb.velocity.z > 2)
+        && b_canDash) //Was 4 PS4
         {
-            if (b_canDash)
-            {
-                StartCoroutine(Dash());
-            }
+            StartCoroutine(Dash());
         }
     }
 
