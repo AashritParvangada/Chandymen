@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator Anim_DialogBox, Anim_Name, Anim_Sentence, Anim_DBButton;
     public GameObject[] GO_Arr_Characters;
     GameObject go_playerHealth;
-    bool b_textAvailable = true, b_active = false;
+    bool b_textAvailable = true, b_active = false, b_coolingDown = false;
     public bool B_IsEndCredits = false;
     [SerializeField] AudioClip[] AudClp_CharacterVoices; AudioSource audioSource;
     [SerializeField] GameObject Go_TimboiDeathDialogue;
@@ -178,14 +178,22 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E)) && b_active)
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.E)) && b_active && !b_coolingDown)
         {
             CheckNextSentence();
+            StartCoroutine(IEnum_Cooldown());
         }
     }
 
     void ActivateTimboiDeathDialogue()
     {
         Go_TimboiDeathDialogue.SetActive(true);
+    }
+
+    IEnumerator IEnum_Cooldown()
+    {
+        b_coolingDown = true;
+        yield return new WaitForSeconds(.5f);
+        b_coolingDown = false;
     }
 }
