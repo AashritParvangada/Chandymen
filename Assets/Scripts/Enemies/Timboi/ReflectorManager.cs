@@ -24,7 +24,8 @@ public class ReflectorManager : MonoBehaviour
     {
         foreach (StaticReflector _statRef in BossReflectors)
         {
-            _statRef.GetComponentInChildren<BoxCollider>().enabled = _On;
+            foreach(BoxCollider boxCollider in _statRef.GetComponentInChildren<Animator>().GetComponents<BoxCollider>())
+            boxCollider.enabled = _On;
         }
     }
 
