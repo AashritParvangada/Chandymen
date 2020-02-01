@@ -144,5 +144,5 @@ MonoBehaviour:
   F_totalFadeTime: 2
   F_sourceMaxVolume: 0.5
   AudClp_mainMenu: {fileID: 8300000, guid: 28b07c6758a2f4e44b5f406ec4ae2f47, type: 3}
-  AudClp_combat: {fileID: 8300000, guid: 64e188ca40cae3e4ea29ad567cdd7685, type: 3}
+  AudClp_combat: {fileID: 8300000, guid: aab4b8a6dcb79d0428b324e105cf4843, type: 3}
   AudClp_puzzle: {fileID: 8300000, guid: 48e4fa077de1b8843a5896938ba13765, type: 3}
